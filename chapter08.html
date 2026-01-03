@@ -1046,18 +1046,26 @@
         </section>
     </main>
 
-    <!-- 底部导航区 -->
-    <div class="fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 py-4 px-6 z-30 md:relative md:bg-transparent md:border-t-0 md:py-0 md:px-0">
-        <div class="container mx-auto flex justify-between items-center">
-            <a href="chapter07.html" class="flex items-center text-bcc-blue hover:text-bcc-gold transition">
-                <i class="ri-arrow-left-line mr-2"></i>
-                <span class="hidden sm:inline">上一章</span>
-            </a>
-            <span class="text-sm text-gray-400">第八章</span>
-            <a href="chapter09.html" class="flex items-center text-bcc-blue hover:text-bcc-gold transition">
-                <span class="hidden sm:inline">下一章</span>
-                <i class="ri-arrow-right-line ml-2"></i>
-            </a>
+    <!-- 章节导航区 -->
+    <div class="bg-white border-t border-gray-100 py-6">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                <a href="chapter07.html" class="flex items-center gap-2 text-bcc-blue hover:text-bcc-gold transition active-scale">
+                    <i class="ri-arrow-left-line"></i>
+                    <span>上一章</span>
+                </a>
+
+                <div class="flex items-center gap-2 text-sm text-gray-400">
+                    <span>第八章</span>
+                    <span class="mx-2">|</span>
+                    <span>共10章</span>
+                </div>
+
+                <a href="chapter09.html" class="flex items-center gap-2 bg-bcc-gold text-white px-6 py-2.5 rounded-full font-medium shadow-lg hover:bg-yellow-600 transition active-scale">
+                    <span>下一章：真实案例</span>
+                    <i class="ri-arrow-right-line"></i>
+                </a>
+            </div>
         </div>
     </div>
 
@@ -1097,35 +1105,31 @@
                 <div>
                     <h4 class="font-semibold mb-4">快速链接</h4>
                     <div class="space-y-2 text-sm text-gray-400">
-                        <a href="#" class="block hover:text-white transition">关于我们</a>
-                        <a href="#" class="block hover:text-white transition">服务项目</a>
-                        <a href="#" class="block hover:text-white transition">案例展示</a>
-                        <a href="#" class="block hover:text-white transition">联系我们</a>
+                        <a href="index.html" class="block hover:text-bcc-gold transition">首页</a>
+                        <a href="contents.html" class="block hover:text-bcc-gold transition">目录</a>
+                        <a href="appendix.html" class="block hover:text-bcc-gold transition">附录工具</a>
+                        <a href="https://github.com/sooogooo/ChemicalPeels" target="_blank" class="block hover:text-bcc-gold transition">GitHub</a>
                     </div>
                 </div>
             </div>
             <div class="border-t border-gray-700 pt-8 text-center text-sm text-gray-400">
-                <p>&copy; 2024 重庆联合丽格科技有限公司. All rights reserved.</p>
-                <p class="mt-2">
-                    <a href="https://beian.miit.gov.cn/" target="_blank" class="hover:text-white transition">渝ICP备2024023473号</a>
-                </p>
+                <p>© 2024-2026 ChemicalPeels Project | <a href="https://github.com/sooogooo/ChemicalPeels" target="_blank" class="hover:text-white transition">GitHub</a></p>
+                <p class="mt-2">CC BY-NC-SA 4.0</p>
             </div>
         </div>
     </footer>
 
-    <!-- Mobile Bottom Bar -->
-    <div class="mobile-bottom-bar fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 flex z-50 shadow-lg">
-        <button class="flex-1 py-3 flex flex-col items-center justify-center text-gray-600 hover:text-[#0d2c54] transition" onclick="alert('智能咨询功能开发中')">
-            <i class="ri-robot-line text-xl"></i>
-            <span class="text-xs mt-1">智能咨询</span>
-        </button>
-        <button class="flex-1 py-3 flex flex-col items-center justify-center text-gray-600 hover:text-[#0d2c54] transition" onclick="sharePage()">
-            <i class="ri-share-line text-xl"></i>
-            <span class="text-xs mt-1">分享</span>
-        </button>
-        <a href="tel:023-68726872" class="flex-[2] py-3 bg-[#0d2c54] text-white flex flex-col items-center justify-center">
-            <i class="ri-phone-line text-xl"></i>
-            <span class="text-xs mt-1">023-68726872</span>
+    <!-- 移动端底部常驻条 -->
+    <div class="md:hidden fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 flex z-50 shadow-lg">
+        <a href="chapter07.html" class="flex-1 py-3 text-bcc-blue flex flex-col items-center justify-center active:bg-gray-50 transition border-r border-gray-100">
+            <i class="ri-arrow-left-line text-xl mb-1"></i>
+            <span class="text-xs">上一章</span>
+        </a>
+        <a href="chapter09.html" class="flex-[2] bg-bcc-blue text-white flex flex-col items-center justify-center active:bg-bcc-navy transition">
+            <span class="text-xs opacity-80 mb-0.5">下一章</span>
+            <span class="flex items-center text-sm font-medium">
+                <i class="ri-arrow-right-line mr-1 text-sm"></i> 案例
+            </span>
         </a>
     </div>
 

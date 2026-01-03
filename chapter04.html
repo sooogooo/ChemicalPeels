@@ -782,6 +782,29 @@
         </div>
     </section>
 
+    <!-- 章节导航区 -->
+    <div class="bg-white border-t border-gray-100 py-6">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                <a href="chapter03.html" class="flex items-center gap-2 text-bcc-blue hover:text-bcc-gold transition active-scale">
+                    <i class="ri-arrow-left-line"></i>
+                    <span>上一章</span>
+                </a>
+
+                <div class="flex items-center gap-2 text-sm text-gray-400">
+                    <span>第四章</span>
+                    <span class="mx-2">|</span>
+                    <span>共10章</span>
+                </div>
+
+                <a href="chapter05.html" class="flex items-center gap-2 bg-bcc-gold text-white px-6 py-2.5 rounded-full font-medium shadow-lg hover:bg-yellow-600 transition active-scale">
+                    <span>下一章：专业刷酸全流程</span>
+                    <i class="ri-arrow-right-line"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer class="bg-bcc-navy text-white py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -820,30 +843,32 @@
                 <div>
                     <h4 class="font-medium mb-4">快速链接</h4>
                     <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="index.html" class="hover:text-white transition">首页</a></li>
-                        <li><a href="chapter01.html" class="hover:text-white transition">第一章</a></li>
-                        <li><a href="chapter02.html" class="hover:text-white transition">第二章</a></li>
-                        <li><a href="chapter03.html" class="hover:text-white transition">第三章</a></li>
-                        <li><a href="chapter04.html" class="hover:text-white transition">第四章</a></li>
-                        <li><a href="chapter05.html" class="hover:text-white transition">第五章</a></li>
-                        <li><a href="chapter06.html" class="hover:text-white transition">第六章</a></li>
+                        <li><a href="index.html" class="hover:text-bcc-gold transition">首页</a></li>
+                        <li><a href="contents.html" class="hover:text-bcc-gold transition">目录</a></li>
+                        <li><a href="appendix.html" class="hover:text-bcc-gold transition">附录工具</a></li>
+                        <li><a href="design-01.html" class="hover:text-bcc-gold transition">设计规范</a></li>
+                        <li><a href="https://github.com/sooogooo/ChemicalPeels" target="_blank" class="hover:text-bcc-gold transition">GitHub</a></li>
                     </ul>
                 </div>
             </div>
             <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-400">
-                <p>ICP备案：<a href="https://beian.miit.gov.cn/" target="_blank" class="hover:text-white">渝ICP备2024023473号</a></p>
-                <p class="mt-2">&copy; 2024 重庆联合丽格科技有限公司 版权所有</p>
+                <p>© 2024-2026 ChemicalPeels Project | <a href="https://github.com/sooogooo/ChemicalPeels" target="_blank" class="hover:text-white">GitHub</a></p>
+                <p class="mt-2">CC BY-NC-SA 4.0</p>
             </div>
         </div>
     </footer>
 
-    <!-- Mobile Bottom Bar -->
-    <div class="md:hidden fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 flex z-50">
-        <a href="tel:023-68726872" class="flex-[2] bg-bcc-blue text-white py-4 text-center font-medium">
-            <i class="ri-phone-line mr-1"></i> 立即咨询
+    <!-- 移动端底部常驻条 -->
+    <div class="md:hidden fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 flex z-50 shadow-lg">
+        <a href="chapter03.html" class="flex-1 py-3 text-bcc-blue flex flex-col items-center justify-center active:bg-gray-50 transition border-r border-gray-100">
+            <i class="ri-arrow-left-line text-xl mb-1"></i>
+            <span class="text-xs">上一章</span>
         </a>
-        <a href="chapter05.html" class="flex-1 bg-bcc-gold text-white py-4 text-center">
-            <i class="ri-arrow-right-line"></i>
+        <a href="chapter05.html" class="flex-[2] bg-bcc-blue text-white flex flex-col items-center justify-center active:bg-bcc-navy transition">
+            <span class="text-xs opacity-80 mb-0.5">下一章</span>
+            <span class="flex items-center text-sm font-medium">
+                <i class="ri-arrow-right-line mr-1 text-sm"></i> 全流程
+            </span>
         </a>
     </div>
 
