@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="第三章：常见酸类详解——全面解析AHAs、BHAs、复合酸及医美级专业酸剂的特性与使用方法。">
+    <meta name="keywords" content="果酸,水杨酸,甘醇酸,乳酸,杏仁酸,壬二酸,复合酸,化学剥脱">
+    <meta name="author" content="ChemicalPeels Project">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="第三章：常见酸类详解 | 科学刷酸完全指南">
+    <meta property="og:description" content="全面解析AHAs、BHAs、复合酸及医美级专业酸剂的特性和使用方法。">
+    <meta property="og:image" content="https://docs.bccsw.cn/logo.png">
+    <meta property="og:site_name" content="ChemicalPeels 刷酸科普">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="第三章：常见酸类详解">
+    <meta name="twitter:description" content="全面解析各类酸剂的特性与使用方法">
+
+    <meta itemprop="name" content="第三章：常见酸类详解">
+    <meta" content="全面 itemprop="description解析AHAs、BHAs、复合酸及医美级专业酸剂">
+
+    <link rel="icon" href="https://docs.bccsw.cn/favicon.png" type="image/png">
+    <link rel="canonical" href="https://sooogooo.github.io/ChemicalPeels/chapter03.html">
+
+    <title>第三章：常见酸类详解 | 科学刷酸完全指南</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'bcc-blue': '#0d2c54',
+                        'bcc-gold': '#f5a623',
+                        'bcc-navy': '#0a2240',
+                        'warm-white': '#faf9f7',
+                        'beige': '#e8e4df',
+                        'mint-green': '#c1e3d3',
+                        'pale-purple': '#d8ccf0',
+                        'powder-blue': '#c5d8f0',
+                        'soft-rose': '#f5e6e0',
+                        'rose-gold': '#e8b4a8'
+                    },
+                    fontFamily: {
+                        sans: ['Noto Sans SC', 'Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Noto Sans SC', 'Inter', sans-serif; font-weight: 300; line-height: 1.9; letter-spacing: 0.03em; }
+
+        .hero-section {
+            background: linear-gradient(135deg, rgba(13, 44, 84, 0.92), rgba(13, 44, 84, 0.85)),
+                        url('https://images.unsplash.com/photo-1556228578-8d844869b276?w=1920&q=80');
+            background-size: cover; background-position: center; background-attachment: fixed;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -30px) scale(1.05); }
+            66% { transform: translate(-20px, 20px) scale(0.95); }
+        }
+        .float-animation { animation: float 20s ease-in-out infinite; }
+        .float-animation-delay { animation: float 25s ease-in-out infinite reverse; }
+
+        .fade-in { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        .fade-in-delay-1 { transition-delay: 0.1s; }
+        .fade-in-delay-2 { transition-delay: 0.2s; }
+        .fade-in-delay-3 { transition-delay: 0.3s; }
+
+        .active-scale:active { transform: scale(0.97); }
+
+        /* Molecule visual */
+        .molecule-icon { transition: all 0.3s ease; }
+        .molecule-icon:hover { transform: scale(1.1); }
+
+        /* Tree diagram */
+        .tree-line { stroke-dasharray: 1000; stroke-dashoffset: 1000; animation: drawLine 1s forwards; }
+        @keyframes drawLine { to { stroke-dashoffset: 0; } }
+
+        /* Concentration bar */
+        .conc-bar { transition: width 1.5s ease-out; }
+    </style>
+</head>
+<body class="bg-warm-white text-gray-800 pb-20 md:pb-0">
+
+    <!-- 导航栏 -->
+    <nav class="fixed w-full z-40 bg-white/95 backdrop-blur-md border-b border-gray-100 transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center relative z-50">
+            <a href="index.html" class="active-scale transition">
+                <span class="text-2xl font-light text-bcc-blue">
+                    <i class="ri-drop-line text-bcc-gold"></i>
+                    Chemical<span class="font-medium">Peels</span>
+                </span>
+            </a>
+
+            <div class="hidden lg:flex space-x-8 text-bcc-blue font-medium text-sm">
+                <a href="index.html" class="hover:text-bcc-gold transition py-2 border-b-2 border-transparent hover:border-bcc-gold">首页</a>
+                <a href="#section3-1" class="hover:text-bcc-gold transition py-2 border-b-2 border-bcc-gold">AHAs</a>
+                <a href="#section3-2" class="hover:text-bcc-gold transition py-2 border-b-2 border-transparent hover:border-bcc-gold">BHAs</a>
+                <a href="#section3-3" class="hover:text-bcc-gold transition py-2 border-b-2 border-transparent hover:border-bcc-gold">复合酸</a>
+            </div>
+
+            <div class="hidden lg:flex items-center gap-4">
+                <a href="https://github.com/sooogooo/ChemicalPeels" target="_blank" class="text-bcc-blue hover:text-bcc-gold transition px-2 active-scale" title="GitHub">
+                    <i class="ri-github-line text-xl"></i>
+                </a>
+                <a href="chapter04.html" class="bg-bcc-gold text-white px-6 py-2.5 rounded-full font-medium shadow-lg hover:bg-yellow-600 transition active-scale text-sm">
+                    下一章 <i class="ri-arrow-right-line ml-1"></i>
+                </a>
+            </div>
+
+            <button class="lg:hidden text-bcc-blue text-2xl focus:outline-none active-scale" onclick="toggleMobileMenu()">
+                <i class="ri-menu-line" id="menu-icon"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="absolute top-full left-0 w-full bg-white shadow-lg border-t border-gray-100 z-40 lg:hidden flex flex-col">
+            <a href="index.html" onclick="toggleMobileMenu()" class="py-4 px-6 border-b border-gray-100 font-medium text-bcc-blue hover:bg-gray-50">首页</a>
+            <a href="#section3-1" onclick="toggleMobileMenu()" class="py-4 px-6 border-b border-gray-100 font-medium text-bcc-blue hover:bg-gray-50">AHAs</a>
+            <a href="#section3-2" onclick="toggleMobileMenu()" class="py-4 px-6 border-b border-gray-100 font-medium text-bcc-blue hover:bg-gray-50">BHAs</a>
+            <a href="#section3-3" onclick="toggleMobileMenu()" class="py-4 px-6 font-medium text-bcc-blue hover:bg-gray-50">复合酸</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section min-h-[50vh] flex items-center pt-24 pb-16 relative overflow-hidden">
+        <div class="absolute top-20 right-10 w-72 h-72 rounded-full bg-mint-green/10 float-animation blur-3xl"></div>
+        <div class="absolute bottom-10 left-10 w-60 h-60 rounded-full bg-pale-purple/10 float-animation-delay blur-3xl"></div>
+
+        <div class="container mx-auto px-6 text-center text-white relative z-10">
+            <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-5 py-2.5 rounded-full mb-6 border border-white/20">
+                <i class="ri-book-3-line text-bcc-gold"></i>
+                <span class="text-sm tracking-widest font-light">第三章</span>
+            </div>
+
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-light mb-4 leading-tight tracking-tight">
+                常见酸类详解
+            </h1>
+            <p class="text-lg md:text-xl font-light text-gray-200 mb-6 max-w-2xl mx-auto leading-relaxed">
+                全面了解各类酸剂特性，选对成分科学刷酸
+            </p>
+
+            <div class="flex flex-wrap justify-center gap-4 text-sm">
+                <span class="bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20">
+                    <i class="ri-leaf-line mr-2 text-bcc-gold"></i>AHAs
+                </span>
+                <span class="bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20">
+                    <i class="ri-seedling-line mr-2 text-bcc-gold"></i>BHAs
+                </span>
+                <span class="bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20">
+                    <i class="ri-contrast-drop-line mr-2 text-bcc-gold"></i>复合酸
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 章节导航 -->
+    <div class="bg-white border-b border-gray-100 sticky top-[72px] z-30">
+        <div class="container mx-auto px-6">
+            <div class="flex items-center gap-2 md:gap-6 py-3 overflow-x-auto scrollbar-hide">
+                <a href="#section3-1" class="chapter-nav-item active whitespace-nowrap px-4 py-2 rounded-lg text-sm font-medium text-bcc-blue border-l-4 border-transparent transition">
+                    3.1 AHAs
+                </a>
+                <a href="#section3-2" class="chapter-nav-item whitespace-nowrap px-4 py-2 rounded-lg text-sm font-medium text-bcc-blue border-l-4 border-transparent transition">
+                    3.2 BHAs
+                </a>
+                <a href="#section3-3" class="chapter-nav-item whitespace-nowrap px-4 py-2 rounded-lg text-sm font-medium text-bcc-blue border-l-4 border-transparent transition">
+                    3.3 复合酸
+                </a>
+                <a href="#section3-4" class="chapter-nav-item whitespace-nowrap px-4 py-2 rounded-lg text-sm font-medium text-bcc-blue border-l-4 border-transparent transition">
+                    3.4 医美级酸剂
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 主内容区 -->
+    <main class="py-16">
+
+        <!-- 3.1 AHAs -->
+        <section id="section3-1" class="mb-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <div class="inline-flex items-center gap-2 bg-gradient-to-r from-mint-green to-pale-purple px-5 py-2 rounded-full mb-4">
+                        <i class="ri-leaf-line text-bcc-blue"></i>
+                        <span class="text-sm font-medium text-bcc-blue tracking-wider">3.1 α-羟基酸（AHAs）</span>
+                    </div>
+                    <h2 class="text-2xl md:text-3xl font-light text-bcc-blue mb-4 tracking-tight">α-羟基酸家族</h2>
+                    <p class="text-gray-500 font-light max-w-2xl mx-auto">水溶性有机酸，主要来源于水果和乳制品</p>
+                </div>
+
+                <!-- 酸类家族树状图 -->
+                <div class="bg-white rounded-3xl shadow-lg border border-beige p-8 mb-12">
+                    <h3 class="text-xl font-medium text-bcc-blue mb-6 text-center">酸类家族分类</h3>
+                    <svg viewBox="0 0 800 280" class="w-full">
+                        <!-- 主干 -->
+                        <rect x="350" y="10" width="100" height="30" rx="15" fill="#0d2c54"/>
+                        <text x="400" y="30" text-anchor="middle" class="text-sm font-medium fill-white">化学剥脱剂</text>
+
+                        <!-- 连接线 -->
+                        <path d="M400 40 L400 60 L200 60 L200 80" stroke="#f5a623" stroke-width="2" fill="none" class="tree-line"/>
+                        <path d="M400 40 L400 60 L600 60 L600 80" stroke="#f5a623" stroke-width="2" fill="none" class="tree-line"/>
+
+                        <!-- AHAs分支 -->
+                        <rect x="150" y="80" width="100" height="30" rx="15" fill="#c1e3d3"/>
+                        <text x="200" y="100" text-anchor="middle" class="text-sm font-medium fill-bcc-blue">AHAs</text>
+                        <text x="200" y="118" text-anchor="middle" class="text-xs fill-gray-600">α-羟基酸</text>
+
+                        <!-- BHAs分支 -->
+                        <rect x="550" y="80" width="100" height="30" rx="15" fill="#d8ccf0"/>
+                        <text x="600" y="100" text-anchor="middle" class="text-sm font-medium fill-bcc-blue">BHAs</text>
+                        <text x="600" y="118" text-anchor="middle" class="text-xs fill-gray-600">β-羟基酸</text>
+
+                        <!-- 子分支 -->
+                        <path d="M200 110 L200 130 L100 130 L100 150" stroke="#f5a623" stroke-width="2" fill="none"/>
+                        <path d="M200 110 L200 130 L300 130 L300 150" stroke="#f5a623" stroke-width="2" fill="none"/>
+                        <path d="M200 110 L200 130 L500 130 L500 150" stroke="#f5a623" stroke-width="2" fill="none"/>
+
+                        <!-- 各种酸 -->
+                        <g>
+                            <rect x="50" y="150" width="90" height="45" rx="8" fill="#f5e6e0" stroke="#0d2c54" stroke-width="1"/>
+                            <text x="95" y="172" text-anchor="middle" class="text-xs font-medium fill-bcc-blue">甘醇酸</text>
+                            <text x="95" y="188" text-anchor="middle" class="text-xs fill-gray-600">76 Da</text>
+                        </g>
+
+                        <g>
+                            <rect x="255" y="150" width="90" height="45" rx="8" fill="#f5e6e0" stroke="#0d2c54" stroke-width="1"/>
+                            <text x="300" y="172" text-anchor="middle" class="text-xs font-medium fill-bcc-blue">乳酸</text>
+                            <text x="300" y="188" text-anchor="middle" class="text-xs fill-gray-600">90 Da</text>
+                        </g>
+
+                        <g>
+                            <rect x="455" y="150" width="90" height="45" rx="8" fill="#d8ccf0" stroke="#0d2c54" stroke-width="1"/>
+                            <text x="500" y="172" text-anchor="middle" class="text-xs font-medium fill-bcc-blue">水杨酸</text>
+                            <text x="500" y="188" text-anchor="middle" class="text-xs fill-gray-600">138 Da</text>
+                        </g>
+
+                        <g>
+                            <rect x="660" y="150" width="90" height="45" rx="8" fill="#d8ccf0" stroke="#0d2c54" stroke-width="1"/>
+                            <text x="705" y="172" text-anchor="middle" class="text-xs font-medium fill-bcc-blue">壬二酸</text>
+                            <text x="705" y="188" text-anchor="middle" class="text-xs fill-gray-600">188 Da</text>
+                        </g>
+                    </svg>
+                </div>
+
+                <!-- AHAs详细卡片 -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                    <!-- 甘醇酸 -->
+                    <div class="bg-white rounded-3xl shadow-lg border border-beige overflow-hidden hover:shadow-xl transition group">
+                        <div class="h-24 bg-gradient-to-br from-mint-green/30 to-white flex items-center justify-center">
+                            <div class="text-4xl">🍬</div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-3">
+                                <h3 class="text-lg font-medium text-bcc-blue">甘醇酸</h3>
+                                <span class="text-xs text-gray-400">乙醇酸</span>
+                            </div>
+                            <p class="text-xs text-gray-500 mb-3">分子量最小，穿透力最强</p>
+                            <div class="space-y-2 text-sm">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-500">分子量</span>
+                                    <span class="font-medium text-bcc-blue">76 Da</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-500">来源</span>
+                                    <span class="font-medium">甘蔗</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-500">浓度</span>
+                                    <span class="font-medium text-bcc-gold">5-70%</span>
+                                </div>
+                            </div>
+                            <div class="mt-4 pt-4 border-t border-gray-100">
+                                <p class="text-xs text-gray-500">适合：油性肌肤、痤疮、老化肌肤</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 乳酸 -->
+                    <div class="bg-white rounded-3xl shadow-lg border border-beige overflow-hidden hover:shadow-xl transition group">
+                        <div class="h-24 bg-gradient-to-br from-soft-rose/30 to-white flex items-center justify-center">
+                            <div class="text-4xl">🥛</div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-3">
+                                <h3 class="text-lg font-medium text-bcc-blue">乳酸</h3>
+                                <span class="text-xs text-gray-400">2-羟基丙酸</span>
+                            </div>
+                            <p class="text-xs text-gray-500 mb-3">天然保湿因子，温和低刺激</p>
+                            <div class="space-y-2 text-sm">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-500">分子量</span>
+                                    <span class="font-medium text-bcc-blue">90 Da</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-500">来源</span>
+                                    <span class="font-medium">酸奶</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-500">浓度</span>
+                                    <span class="font-medium text-bcc-gold">5-30%</span>
+                                </div>
+                            </div>
+                            <div class="mt-4 pt-4 border-t border-gray-100">
+                                <p class="text-xs text-gray-500">适合：敏感肌、干性肌肤</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 柠檬酸 -->
+                    <div class="bg-white rounded-3xl shadow-lg border border-beige overflow-hidden hover:shadow-xl transition group">
+                        <div class="h-24 bg-gradient-to-br from-bcc-gold/20 to-white flex items-center justify-center">
+                            <div class="text-4xl">🍋</div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-3">
+                                <h3 class="text-lg font-medium text-bcc-blue">柠檬酸</h3>
+                                <span class="text-xs text-gray-400">枸橼酸</span>
+                            </div>
+                            <p class="text-xs text-gray-500 mb-3">强抗氧化，抑制酪氨酸酶</p>
+                            <div class="space-y-2 text-sm">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-500">分子量</span>
+                                    <span class="font-medium text-bcc-blue">192 Da</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-500">来源</span>
+                                    <span class="font-medium">柑橘</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-500">浓度</span>
+                                    <span class="font-medium text-bcc-gold">2-10%</span>
+                                </div>
+                            </div>
+                            <div class="mt-4 pt-4 border-t border-gray-100">
+                                <p class="text-xs text-gray-500">适合：暗沉、色斑肌肤</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 苹果酸 & 酒石酸 -->
+                    <div class="bg-white rounded-3xl shadow-lg border border-beige overflow-hidden hover:shadow-xl transition group">
+                        <div class="h-24 bg-gradient-to-br from-mint-green/20 to-white flex items-center justify-center">
+                            <div class="text-4xl">🍎</div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-3">
+                                <h3 class="text-lg font-medium text-bcc-blue">苹果酸/酒石酸</h3>
+                                <span class="text-xs text-gray-400">复配辅助</span>
+                            </div>
+                            <p class="text-xs text-gray-500 mb-3">促进胶原合成，增强配方</p>
+                            <div class="space-y-2 text-sm">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-500">苹果酸</span>
+                                    <span class="font-medium text-bcc-blue">134 Da</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-500">酒石酸</span>
+                                    <span class="font-medium text-bcc-blue">150 Da</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-500">作用</span>
+                                    <span class="font-medium text-bcc-gold">辅助</span>
+                                </div>
+                            </div>
+                            <div class="mt-4 pt-4 border-t border-gray-100">
+                                <p class="text-xs text-gray-500">适合：复合配方中使用</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 分子量渗透深度对比图 -->
+                <div class="bg-white rounded-3xl shadow-lg border border-beige p-8">
+                    <h3 class="text-xl font-medium text-bcc-blue mb-6 text-center">分子量与渗透深度关系</h3>
+                    <div class="relative h-48">
+                        <!-- Y轴 -->
+                        <div class="absolute left-0 top-0 bottom-0 w-12 flex flex-col justify-between text-xs text-gray-400">
+                            <span>真皮深层</span>
+                            <span>表皮深层</span>
+                            <span>角质层</span>
+                        </div>
+
+                        <!-- 图表区域 -->
+                        <div class="absolute left-14 right-4 top-2 bottom-10">
+                            <!-- 背景线 -->
+                            <div class="absolute top-0 left-0 right-0 h-1 bg-gray-100"></div>
+                            <div class="absolute top-1/3 left-0 right-0 h-1 bg-gray-100"></div>
+                            <div class="absolute top-2/3 left-0 right-0 h-1 bg-gray-100"></div>
+                            <div class="absolute bottom-0 left-0 right-0 h-1 bg-gray-100"></div>
+
+                            <!-- 甘醇酸 -->
+                            <div class="absolute bottom-2 left-[5%] w-16 conc-bar bg-gradient-to-t from-bcc-blue to-blue-400 rounded-t-lg" style="height: 85%">
+                                <span class="absolute -top-6 left-0 right-0 text-center text-xs font-medium text-bcc-blue">甘醇酸</span>
+                                <span class="absolute bottom-1 left-0 right-0 text-center text-xs text-white">76</span>
+                            </div>
+
+                            <!-- 乳酸 -->
+                            <div class="absolute bottom-2 left-[25%] w-16 conc-bar bg-gradient-to-t from-bcc-gold to-yellow-400 rounded-t-lg" style="height: 70%">
+                                <span class="absolute -top-6 left-0 right-0 text-center text-xs font-medium text-bcc-blue">乳酸</span>
+                                <span class="absolute bottom-1 left-0 right-0 text-center text-xs text-white">90</span>
+                            </div>
+
+                            <!-- 苹果酸 -->
+                            <div class="absolute bottom-2 left-[45%] w-16 conc-bar bg-gradient-to-t from-mint-green to-green-400 rounded-t-lg" style="height: 55%">
+                                <span class="absolute -top-6 left-0 right-0 text-center text-xs font-medium text-bcc-blue">苹果酸</span>
+                                <span class="absolute bottom-1 left-0 right-0 text-center text-xs text-white">134</span>
+                            </div>
+
+                            <!-- 水杨酸 -->
+                            <div class="absolute bottom-2 left-[65%] w-16 conc-bar bg-gradient-to-t from-pale-purple to-purple-400 rounded-t-lg" style="height: 50%">
+                                <span class="absolute -top-6 left-0 right-0 text-center text-xs font-medium text-bcc-blue">水杨酸</span>
+                                <span class="absolute bottom-1 left-0 right-0 text-center text-xs text-white">138</span>
+                            </div>
+
+                            <!-- 乳糖酸 -->
+                            <div class="absolute bottom-2 left-[85%] w-16 conc-bar bg-gradient-to-t from-soft-rose to-red-300 rounded-t-lg" style="height: 20%">
+                                <span class="absolute -top-6 left-0 right-0 text-center text-xs font-medium text-bcc-blue">乳糖酸</span>
+                                <span class="absolute bottom-1 left-0 right-0 text-center text-xs text-white">358</span>
+                            </div>
+                        </div>
+
+                        <!-- X轴标签 -->
+                        <div class="absolute bottom-0 left-14 right-4 flex justify-around text-xs text-gray-400">
+                            <span>分子量越小</span>
+                            <span class="absolute right-0 -bottom-6">渗透越深</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3.2 BHAs -->
+        <section id="section3-2" class="mb-20 bg-white py-16">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <div class="inline-flex items-center gap-2 bg-gradient-to-r from-pale-purple to-powder-blue px-5 py-2 rounded-full mb-4">
+                        <i class="ri-seedling-line text-bcc-blue"></i>
+                        <span class="text-sm font-medium text-bcc-blue tracking-wider">3.2 β-羟基酸（BHAs）</span>
+                    </div>
+                    <h2 class="text-2xl md:text-3xl font-light text-bcc-blue mb-4 tracking-tight">脂溶性酸类</h2>
+                    <p class="text-gray-500 font-light max-w-2xl mx-auto">能够深入毛孔，溶解油脂和角栓</p>
+                </div>
+
+                <!-- AHAs vs BHAs 对比表 -->
+                <div class="overflow-x-auto mb-12">
+                    <table class="w-full min-w-[700px] bg-white rounded-3xl border border-beige overflow-hidden">
+                        <thead class="bg-bcc-blue text-white">
+                            <tr>
+                                <th class="px-6 py-4 text-left text-sm font-medium">对比项</th>
+                                <th class="px-6 py-4 text-left text-sm font-medium bg-bcc-gold">AHAs</th>
+                                <th class="px-6 py-4 text-left text-sm font-medium">BHAs</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-beige">
+                            <tr class="hover:bg-warm-white transition">
+                                <td class="px-6 py-4 font-medium text-bcc-blue">溶解性</td>
+                                <td class="px-6 py-4 text-sm text-gray-600">水溶性</td>
+                                <td class="px-6 py-4 text-sm text-gray-600">脂溶性</td>
+                            </tr>
+                            <tr class="hover:bg-warm-white transition">
+                                <td class="px-6 py-4 font-medium text-bcc-blue">作用部位</td>
+                                <td class="px-6 py-4 text-sm text-gray-600">皮肤表面 & 角质层</td>
+                                <td class="px-6 py-4 text-sm text-gray-600">毛孔内部 & 皮脂腺</td>
+                            </tr>
+                            <tr class="hover:bg-warm-white transition">
+                                <td class="px-6 py-4 font-medium text-bcc-blue">主要功效</td>
+                                <td class="px-6 py-4 text-sm text-gray-600">去角质、美白、抗老</td>
+                                <td class="px-6 py-4 text-sm text-gray-600">控油、祛痘、疏通毛孔</td>
+                            </tr>
+                            <tr class="hover:bg-warm-white transition">
+                                <td class="px-6 py-4 font-medium text-bcc-blue">代表成分</td>
+                                <td class="px-6 py-4 text-sm text-gray-600">甘醇酸、乳酸、柠檬酸</td>
+                                <td class="px-6 py-4 text-sm text-gray-600">水杨酸、壬二酸</td>
+                            </tr>
+                            <tr class="hover:bg-warm-white transition">
+                                <td class="px-6 py-4 font-medium text-bcc-blue">适用肤质</td>
+                                <td class="px-6 py-4 text-sm text-gray-600">干性、混合性、成熟肌肤</td>
+                                <td class="px-6 py-4 text-sm text-gray-600">油性、痘痘肌</td>
+                            </tr>
+                            <tr class="hover:bg-warm-white transition">
+                                <td class="px-6 py-4 font-medium text-bcc-blue">刺激性</td>
+                                <td class="px-6 py-4 text-sm text-gray-600">相对较高（低pH值）</td>
+                                <td class="px-6 py-4 text-sm text-gray-600">相对温和</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- BHAs卡片 -->
+                <div class="grid md:grid-cols-2 gap-8 mb-12">
+                    <!-- 水杨酸 -->
+                    <div class="bg-warm-white rounded-3xl p-8 border border-beige">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-16 h-16 rounded-2xl bg-pale-purple/40 flex items-center justify-center">
+                                <span class="text-3xl">💧</span>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-medium text-bcc-blue">水杨酸</h3>
+                                <p class="text-sm text-gray-500">Salicylic Acid</p>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-4 mb-6">
+                            <div class="bg-white rounded-xl p-4 text-center">
+                                <p class="text-xs text-gray-400 mb-1">分子量</p>
+                                <p class="text-lg font-medium text-bcc-blue">138 Da</p>
+                            </div>
+                            <div class="bg-white rounded-xl p-4 text-center">
+                                <p class="text-xs text-gray-400 mb-1">脂溶性</p>
+                                <p class="text-lg font-medium text-bcc-gold">是</p>
+                            </div>
+                            <div class="bg-white rounded-xl p-4 text-center">
+                                <p class="text-xs text-gray-400 mb-1">浓度范围</p>
+                                <p class="text-lg font-medium text-bcc-blue">0.5-30%</p>
+                            </div>
+                            <div class="bg-white rounded-xl p-4 text-center">
+                                <p class="text-xs text-gray-400 mb-1">抗炎抗菌</p>
+                                <p class="text-lg font-medium text-green-600">强</p>
+                            </div>
+                        </div>
+
+                        <div class="space-y-3 text-sm text-gray-600">
+                            <div class="flex items-start gap-2">
+                                <i class="ri-checkbox-circle-fill text-bcc-gold mt-1"></i>
+                                <p>溶解毛孔内油脂和角栓</p>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <i class="ri-checkbox-circle-fill text-bcc-gold mt-1"></i>
+                                <p>抑制痤疮丙酸杆菌</p>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <i class="ri-checkbox-circle-fill text-bcc-gold mt-1"></i>
+                                <p>减少前列腺素合成（抗炎）</p>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <i class="ri-error-warning-fill text-red-400 mt-1"></i>
+                                <p>妊娠期女性避免使用</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 壬二酸 -->
+                    <div class="bg-warm-white rounded-3xl p-8 border border-beige">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-16 h-16 rounded-2xl bg-mint-green/40 flex items-center justify-center">
+                                <span class="text-3xl">🛡️</span>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-medium text-bcc-blue">壬二酸</h3>
+                                <p class="text-sm text-gray-500">Azelaic Acid</p>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-4 mb-6">
+                            <div class="bg-white rounded-xl p-4 text-center">
+                                <p class="text-xs text-gray-400 mb-1">分子量</p>
+                                <p class="text-lg font-medium text-bcc-blue">188 Da</p>
+                            </div>
+                            <div class="bg-white rounded-xl p-4 text-center">
+                                <p class="text-xs text-gray-400 mb-1">脂溶性</p>
+                                <p class="text-lg font-medium text-bcc-gold">中等</p>
+                            </div>
+                            <div class="bg-white rounded-xl p-4 text-center">
+                                <p class="text-xs text-gray-400 mb-1">浓度范围</p>
+                                <p class="text-lg font-medium text-bcc-blue">10-20%</p>
+                            </div>
+                            <div class="bg-white rounded-xl p-4 text-center">
+                                <p class="text-xs text-gray-400 mb-1">孕期安全</p>
+                                <p class="text-lg font-medium text-green-600">是</p>
+                            </div>
+                        </div>
+
+                        <div class="space-y-3 text-sm text-gray-600">
+                            <div class="flex items-start gap-2">
+                                <i class="ri-checkbox-circle-fill text-bcc-gold mt-1"></i>
+                                <p>抗菌（痤疮丙酸杆菌）</p>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <i class="ri-checkbox-circle-fill text-bcc-gold mt-1"></i>
+                                <p>抑制酪氨酸酶（美白）</p>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <i class="ri-checkbox-circle-fill text-bcc-gold mt-1"></i>
+                                <p>玫瑰痤疮一线外用药物</p>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <i class="ri-checkbox-circle-fill text-bcc-gold mt-1"></i>
+                                <p>孕期可安全使用</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3.3 复合酸 -->
+        <section id="section3-3" class="mb-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <div class="inline-flex items-center gap-2 bg-gradient-to-r from-powder-blue to-mint-green px-5 py-2 rounded-full mb-4">
+                        <i class="ri-contrast-drop-line text-bcc-blue"></i>
+                        <span class="text-sm font-medium text-bcc-blue tracking-wider">3.3 复合酸与新型酸类</span>
+                    </div>
+                    <h2 class="text-2xl md:text-3xl font-light text-bcc-blue mb-4 tracking-tight">复配酸的优势</h2>
+                    <p class="text-gray-500 font-light max-w-2xl mx-auto">协同增效，温和有效</p>
+                </div>
+
+                <!-- 新型酸类卡片 -->
+                <div class="grid md:grid-cols-3 gap-6 mb-12">
+                    <!-- 杏仁酸 -->
+                    <div class="bg-white rounded-3xl p-6 border border-beige hover:shadow-xl transition">
+                        <div class="w-14 h-14 rounded-2xl bg-mint-green/40 flex items-center justify-center mb-4">
+                            <span class="text-2xl">🌰</span>
+                        </div>
+                        <h3 class="text-lg font-medium text-bcc-blue mb-2">杏仁酸</h3>
+                        <p class="text-xs text-gray-500 mb-4">扁桃酸 | 脂溶性果酸</p>
+                        <div class="space-y-2 text-sm text-gray-600">
+                            <p class="flex justify-between"><span>分子量</span><span class="font-medium">152 Da</span></p>
+                            <p class="flex justify-between"><span>特性</span><span class="font-medium">温和渗透</span></p>
+                            <p class="flex justify-between"><span>适合</span><span class="font-medium">敏感肌/亚洲肌</span></p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-gray-100">
+                            <p class="text-xs text-gray-500">大分子脂溶性酸，刺激性低，兼具温和性与有效性</p>
+                        </div>
+                    </div>
+
+                    <!-- 乳糖酸 -->
+                    <div class="bg-white rounded-3xl p-6 border border-beige hover:shadow-xl transition">
+                        <div class="w-14 h-14 rounded-2xl bg-pale-purple/40 flex items-center justify-center mb-4">
+                            <span class="text-2xl">🧬</span>
+                        </div>
+                        <h3 class="text-lg font-medium text-bcc-blue mb-2">乳糖酸</h3>
+                        <p class="text-xs text-gray-500 mb-4">第三代果酸</p>
+                        <div class="space-y-2 text-sm text-gray-600">
+                            <p class="flex justify-between"><span>分子量</span><span class="font-medium">358 Da</span></p>
+                            <p class="flex justify-between"><span>特性</span><span class="font-medium">无刺激/强保湿</span></p>
+                            <p class="flex justify-between"><span>适合</span><span class="font-medium">敏感肌/术后修复</span></p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-gray-100">
+                            <p class="text-xs text-gray-500">分子量最大，几乎无穿透力，以保湿修复为主</p>
+                        </div>
+                    </div>
+
+                    <!-- 丙酮酸 -->
+                    <div class="bg-white rounded-3xl p-6 border border-beige hover:shadow-xl transition">
+                        <div class="w-14 h-14 rounded-2xl bg-bcc-gold/30 flex items-center justify-center mb-4">
+                            <span class="text-2xl">⚡</span>
+                        </div>
+                        <h3 class="text-lg font-medium text-bcc-blue mb-2">丙酮酸</h3>
+                        <p class="text-xs text-gray-500 mb-4">水脂双溶性</p>
+                        <div class="space-y-2 text-sm text-gray-600">
+                            <p class="flex justify-between"><span>分子量</span><span class="font-medium">88 Da</span></p>
+                            <p class="flex justify-between"><span>特性</span><span class="font-medium">调节能量代谢</span></p>
+                            <p class="flex justify-between"><span>适合</span><span class="font-medium">复合问题肌肤</span></p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-gray-100">
+                            <p class="text-xs text-gray-500">新型成分，水脂双溶，可同时解决多种问题</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 复配优势 -->
+                <div class="bg-bcc-blue rounded-3xl p-8 text-white">
+                    <h3 class="text-xl font-medium mb-6 text-center">复配酸配比原则</h3>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="text-center">
+                            <div class="w-20 h-20 mx-auto rounded-full bg-white/10 flex items-center justify-center mb-4">
+                                <i class="ri-flow-chart text-3xl text-bcc-gold"></i>
+                            </div>
+                            <h4 class="font-medium mb-2">协同增效</h4>
+                            <p class="text-sm text-gray-300">不同酸作用于不同层次，多层面调理皮肤</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-20 h-20 mx-auto rounded-full bg-white/10 flex items-center justify-center mb-4">
+                                <i class="ri-shield-check-line text-3xl text-bcc-gold"></i>
+                            </div>
+                            <h4 class="font-medium mb-2">降低刺激</h4>
+                            <p class="text-sm text-gray-300">复配降低单一成分浓度，减少不耐受风险</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-20 h-20 mx-auto rounded-full bg-white/10 flex items-center justify-center mb-4">
+                                <i class="ri-target-line text-3xl text-bcc-gold"></i>
+                            </div>
+                            <h4 class="font-medium mb-2">精准配比</h4>
+                            <p class="text-sm text-gray-300">总酸浓度控制在安全范围，pH值平衡</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3.4 医美级酸剂 -->
+        <section id="section3-4" class="mb-20 bg-white py-16">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <div class="inline-flex items-center gap-2 bg-gradient-to-r from-bcc-gold/20 to-soft-rose px-5 py-2 rounded-full mb-4">
+                        <i class="ri-hospital-line text-bcc-blue"></i>
+                        <span class="text-sm font-medium text-bcc-blue tracking-wider">3.4 医美级专业酸剂</span>
+                    </div>
+                    <h2 class="text-2xl md:text-3xl font-light text-bcc-blue mb-4 tracking-tight">专业级化学剥脱剂</h2>
+                    <p class="text-gray-500 font-light max-w-2xl mx-auto">需由专业医生操作的强效剥脱剂</p>
+                </div>
+
+                <!-- 医美酸剂对比 -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                    <!-- Jessner's溶液 -->
+                    <div class="bg-warm-white rounded-3xl p-6 border border-beige">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-pale-purple/40 flex items-center justify-center">
+                                <i class="ri-flask-line text-xl text-bcc-blue"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-medium text-bcc-blue">Jessner溶液</h3>
+                                <p class="text-xs text-gray-400">复合配方</p>
+                            </div>
+                        </div>
+                        <div class="space-y-2 text-sm mb-4">
+                            <p class="flex justify-between"><span>水杨酸</span><span>14%</span></p>
+                            <p class="flex justify-between"><span>间苯二酚</span><span>14%</span></p>
+                            <p class="flex justify-between"><span>乳酸</span><span>14%</span></p>
+                        </div>
+                        <p class="text-xs text-gray-500">浅层至中层剥脱，可通过层数控制深度</p>
+                    </div>
+
+                    <!-- TCA -->
+                    <div class="bg-warm-white rounded-3xl p-6 border border-beige">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-mint-green/40 flex items-center justify-center">
+                                <i class="ri-contrast-drop-2-line text-xl text-bcc-blue"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-medium text-bcc-blue">TCA</h3>
+                                <p class="text-xs text-gray-400">三氯醋酸</p>
+                            </div>
+                        </div>
+                        <div class="space-y-2 text-sm mb-4">
+                            <p class="flex justify-between"><span>浅层</span><span class="text-green-600">15-20%</span></p>
+                            <p class="flex justify-between"><span>中层</span><span class="text-bcc-gold">25-30%</span></p>
+                            <p class="flex justify-between"><span>深层</span><span class="text-red-500">35%+</span></p>
+                        </div>
+                        <p class="text-xs text-gray-500">中层剥脱金标准，效果确切需谨慎操作</p>
+                    </div>
+
+                    <!-- 苯酚 -->
+                    <div class="bg-warm-white rounded-3xl p-6 border border-beige">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-soft-rose/40 flex items-center justify-center">
+                                <i class="ri-error-warning-line text-xl text-red-500"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-medium text-bcc-blue">苯酚</h3>
+                                <p class="text-xs text-gray-400">石碳酸</p>
+                            </div>
+                        </div>
+                        <div class="space-y-2 text-sm mb-4">
+                            <p class="flex justify-between"><span>浓度</span><span>25-88%</span></p>
+                            <p class="flex justify-between"><span>深度</span><span class="text-red-500">真皮深层</span></p>
+                            <p class="flex justify-between"><span>风险</span><span class="text-red-500">高</span></p>
+                        </div>
+                        <p class="text-xs text-gray-500">深层剥脱效果最强，但有心脏毒性风险</p>
+                    </div>
+
+                    <!-- 医生处方酸 -->
+                    <div class="bg-warm-white rounded-3xl p-6 border border-beige border-2 border-bcc-gold">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-bcc-gold/20 flex items-center justify-center">
+                                <i class="ri-doctor-line text-xl text-bcc-gold"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-medium text-bcc-blue">医生处方酸</h3>
+                                <p class="text-xs text-gray-400">处方级</p>
+                            </div>
+                        </div>
+                        <div class="space-y-2 text-sm mb-4">
+                            <p class="flex justify-between"><span>浓度</span><span>20-70%</span></p>
+                            <p class="flex justify-between"><span>pH值</span><span>1-2</span></p>
+                            <p class="flex justify-between"><span>深度</span><span class="text-bcc-gold">真皮浅层</span></p>
+                        </div>
+                        <p class="text-xs text-gray-500">需专业指导使用，定期复诊监测</p>
+                    </div>
+                </div>
+
+                <!-- 总结卡片 -->
+                <div class="bg-gradient-to-r from-bcc-blue to-bcc-navy rounded-3xl p-8 text-white">
+                    <h3 class="text-xl font-medium mb-6 text-center">选酸原则总结</h3>
+                    <div class="grid md:grid-cols-4 gap-6">
+                        <div class="text-center">
+                            <div class="w-14 h-14 mx-auto rounded-full bg-white/10 flex items-center justify-center mb-3">
+                                <i class="ri-question-line text-2xl"></i>
+                            </div>
+                            <h4 class="font-medium mb-2">先了解问题</h4>
+                            <p class="text-xs text-gray-300">明确你的皮肤问题是什么</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-14 h-14 mx-auto rounded-full bg-white/10 flex items-center justify-center mb-3">
+                                <i class="ri-body-scan-line text-2xl"></i>
+                            </div>
+                            <h4 class="font-medium mb-2">再判断肤质</h4>
+                            <p class="text-xs text-gray-300">油性/干性/敏感/混合</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-14 h-14 mx-auto rounded-full bg-white/10 flex items-center justify-center mb-3">
+                                <i class="ri-drop-line text-2xl"></i>
+                            </div>
+                            <h4 class="font-medium mb-2">选择酸类</h4>
+                            <p class="text-xs text-gray-300">AHAs/BHAs/复合酸</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-14 h-14 mx-auto rounded-full bg-bcc-gold/20 flex items-center justify-center mb-3">
+                                <i class="ri-timer-flash-line text-2xl text-bcc-gold"></i>
+                            </div>
+                            <h4 class="font-medium mb-2">确定浓度</h4>
+                            <p class="text-xs text-gray-300">从低到高循序渐进</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 底部导航 -->
+    <div class="bg-white border-t border-gray-100 py-6">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                <a href="chapter02.html" class="flex items-center gap-2 text-bcc-blue hover:text-bcc-gold transition active-scale">
+                    <i class="ri-arrow-left-line"></i>
+                    <span>上一章：化学剥脱的科学原理</span>
+                </a>
+
+                <div class="flex items-center gap-2 text-sm text-gray-400">
+                    <span>第三章</span>
+                    <span class="mx-2">|</span>
+                    <span>共10章</span>
+                </div>
+
+                <a href="chapter04.html" class="flex items-center gap-2 bg-bcc-gold text-white px-6 py-2.5 rounded-full font-medium shadow-lg hover:bg-yellow-600 transition active-scale">
+                    <span>下一章：适应症与禁忌症</span>
+                    <i class="ri-arrow-right-line"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="bg-bcc-navy text-white pt-12 pb-8">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4 mb-8">
+                <span class="text-xl font-light text-white">
+                    <i class="ri-drop-line text-bcc-gold"></i>
+                    Chemical<span class="font-medium">Peels</span>
+                </span>
+                <p class="text-sm text-gray-400">科学刷酸：医美级焕肤完全指南</p>
+                <div class="flex gap-4">
+                    <a href="https://github.com/sooogooo/ChemicalPeels" target="_blank" class="text-gray-400 hover:text-bcc-gold transition">
+                        <i class="ri-github-line text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-white/10 text-center">
+                <p class="text-xs text-gray-500">
+                    © 2024-2026 ChemicalPeels Project | CC BY-NC-SA 4.0
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 移动端底部常驻条 -->
+    <div class="md:hidden fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 flex z-50 shadow-lg">
+        <a href="chapter02.html" class="flex-1 py-3 text-bcc-blue flex flex-col items-center justify-center active:bg-gray-50 transition border-r border-gray-100">
+            <i class="ri-arrow-left-line text-xl mb-1"></i>
+            <span class="text-xs">上一章</span>
+        </a>
+        <a href="chapter04.html" class="flex-[2] bg-bcc-blue text-white flex flex-col items-center justify-center active:bg-bcc-navy transition">
+            <span class="text-xs opacity-80 mb-0.5">下一章</span>
+            <span class="flex items-center text-sm font-medium">
+                <i class="ri-arrow-right-line mr-1 text-sm"></i> 适应症
+            </span>
+        </a>
+    </div>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            if (menu.classList.contains('open')) {
+                menu.classList.remove('open');
+                icon.classList.remove('ri-close-line');
+                icon.classList.add('ri-menu-line');
+            } else {
+                menu.classList.add('open');
+                icon.classList.remove('ri-menu-line');
+                icon.classList.add('ri-close-line');
+            }
+        }
+
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 20) {
+                nav.classList.add('shadow-md');
+            } else {
+                nav.classList.remove('shadow-md');
+            }
+        });
+
+        const sections = document.querySelectorAll('section[id]');
+        const navItems = document.querySelectorAll('.chapter-nav-item');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 150;
+                if (window.scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('href') === '#' + current) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>

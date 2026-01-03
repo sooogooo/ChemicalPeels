@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="第二章：化学剥脱的科学原理——了解化学剥脱的定义、历史、作用机制和剥脱深度分类。">
+    <meta name="keywords" content="化学剥脱,剥脱深度,作用机制,真皮刺激,皮肤重塑">
+    <meta name="author" content="ChemicalPeels Project">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="第二章：化学剥脱的科学原理 | 科学刷酸完全指南">
+    <meta property="og:description" content="深入了解化学剥脱的科学机制与作用原理，从历史演变到现代应用。">
+    <meta property="og:image" content="https://docs.bccsw.cn/logo.png">
+    <meta property="og:site_name" content="ChemicalPeels 刷酸科普">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="第二章：化学剥脱的科学原理">
+    <meta name="twitter:description" content="了解化学剥脱的科学机制与作用原理">
+
+    <meta itemprop="name" content="第二章：化学剥脱的科学原理">
+    <meta itemprop="description" content="深入了解化学剥脱的科学机制与作用原理">
+
+    <link rel="icon" href="https://docs.bccsw.cn/favicon.png" type="image/png">
+    <link rel="canonical" href="https://sooogooo.github.io/ChemicalPeels/chapter02.html">
+
+    <title>第二章：化学剥脱的科学原理 | 科学刷酸完全指南</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'bcc-blue': '#0d2c54',
+                        'bcc-gold': '#f5a623',
+                        'bcc-navy': '#0a2240',
+                        'warm-white': '#faf9f7',
+                        'beige': '#e8e4df',
+                        'mint-green': '#c1e3d3',
+                        'pale-purple': '#d8ccf0',
+                        'powder-blue': '#c5d8f0',
+                        'soft-rose': '#f5e6e0',
+                        'rose-gold': '#e8b4a8'
+                    },
+                    fontFamily: {
+                        sans: ['Noto Sans SC', 'Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Noto Sans SC', 'Inter', sans-serif; font-weight: 300; line-height: 1.9; letter-spacing: 0.03em; }
+
+        .hero-section {
+            background: linear-gradient(135deg, rgba(13, 44, 84, 0.92), rgba(13, 44, 84, 0.85)),
+                        url('https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1920&q=80');
+            background-size: cover; background-position: center; background-attachment: fixed;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -30px) scale(1.05); }
+            66% { transform: translate(-20px, 20px) scale(0.95); }
+        }
+        .float-animation { animation: float 20s ease-in-out infinite; }
+        .float-animation-delay { animation: float 25s ease-in-out infinite reverse; }
+
+        .fade-in { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        .fade-in-delay-1 { transition-delay: 0.1s; }
+        .fade-in-delay-2 { transition-delay: 0.2s; }
+        .fade-in-delay-3 { transition-delay: 0.3s; }
+
+        .active-scale:active { transform: scale(0.97); }
+
+        /* Timeline */
+        .timeline-item::before {
+            content: ''; position: absolute; left: 11px; top: 40px; bottom: -30px; width: 2px; background: linear-gradient(to bottom, #f5a623, #0d2c54);
+        }
+        .timeline-item:last-child::before { display: none; }
+
+        /* Mechanism cards */
+        .mechanism-card { transition: all 0.3s ease; }
+        .mechanism-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+
+        /* Depth comparison */
+        .depth-bar { transition: width 1s ease-out; }
+    </style>
+</head>
+<body class="bg-warm-white text-gray-800 pb-20 md:pb-0">
+
+    <!-- 导航栏 -->
+    <nav class="fixed w-full z-40 bg-white/95 backdrop-blur-md border-b border-gray-100 transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center relative z-50">
+            <a href="index.html" class="active-scale transition">
+                <span class="text-2xl font-light text-bcc-blue">
+                    <i class="ri-drop-line text-bcc-gold"></i>
+                    Chemical<span class="font-medium">Peels</span>
+                </span>
+            </a>
+
+            <div class="hidden lg:flex space-x-8 text-bcc-blue font-medium text-sm">
+                <a href="index.html" class="hover:text-bcc-gold transition py-2 border-b-2 border-transparent hover:border-bcc-gold">首页</a>
+                <a href="#section2-1" class="hover:text-bcc-gold transition py-2 border-b-2 border-transparent hover:border-bcc-gold">定义与历史</a>
+                <a href="#section2-2" class="hover:text-bcc-gold transition py-2 border-b-2 border-bcc-gold">作用原理</a>
+                <a href="#section2-3" class="hover:text-bcc-gold transition py-2 border-b-2 border-transparent hover:border-bcc-gold">剥脱深度</a>
+            </div>
+
+            <div class="hidden lg:flex items-center gap-4">
+                <a href="https://github.com/sooogooo/ChemicalPeels" target="_blank" class="text-bcc-blue hover:text-bcc-gold transition px-2 active-scale" title="GitHub">
+                    <i class="ri-github-line text-xl"></i>
+                </a>
+                <a href="chapter03.html" class="bg-bcc-gold text-white px-6 py-2.5 rounded-full font-medium shadow-lg hover:bg-yellow-600 transition active-scale text-sm">
+                    下一章 <i class="ri-arrow-right-line ml-1"></i>
+                </a>
+            </div>
+
+            <button class="lg:hidden text-bcc-blue text-2xl focus:outline-none active-scale" onclick="toggleMobileMenu()">
+                <i class="ri-menu-line" id="menu-icon"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="absolute top-full left-0 w-full bg-white shadow-lg border-t border-gray-100 z-40 lg:hidden flex flex-col">
+            <a href="index.html" onclick="toggleMobileMenu()" class="py-4 px-6 border-b border-gray-100 font-medium text-bcc-blue hover:bg-gray-50">首页</a>
+            <a href="#section2-1" onclick="toggleMobileMenu()" class="py-4 px-6 border-b border-gray-100 font-medium text-bcc-blue hover:bg-gray-50">定义与历史</a>
+            <a href="#section2-2" onclick="toggleMobileMenu()" class="py-4 px-6 border-b border-gray-100 font-medium text-bcc-blue hover:bg-gray-50">作用原理</a>
+            <a href="#section2-3" onclick="toggleMobileMenu()" class="py-4 px-6 font-medium text-bcc-blue hover:bg-gray-50">剥脱深度</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section min-h-[50vh] flex items-center pt-24 pb-16 relative overflow-hidden">
+        <div class="absolute top-20 right-10 w-72 h-72 rounded-full bg-mint-green/10 float-animation blur-3xl"></div>
+        <div class="absolute bottom-10 left-10 w-60 h-60 rounded-full bg-pale-purple/10 float-animation-delay blur-3xl"></div>
+
+        <div class="container mx-auto px-6 text-center text-white relative z-10">
+            <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-5 py-2.5 rounded-full mb-6 border border-white/20">
+                <i class="ri-book-3-line text-bcc-gold"></i>
+                <span class="text-sm tracking-widest font-light">第二章</span>
+            </div>
+
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-light mb-4 leading-tight tracking-tight">
+                化学剥脱的科学原理
+            </h1>
+            <p class="text-lg md:text-xl font-light text-gray-200 mb-6 max-w-2xl mx-auto leading-relaxed">
+                从古埃及到现代医美，深入理解化学剥脱的科学机制
+            </p>
+
+            <div class="flex flex-wrap justify-center gap-4 text-sm">
+                <span class="bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20">
+                    <i class="ri-history-line mr-2 text-bcc-gold"></i>百年历史
+                </span>
+                <span class="bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20">
+                    <i class="ri-flask-line mr-2 text-bcc-gold"></i>三大机制
+                </span>
+                <span class="bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20">
+                    <i class="ri-stack-line mr-2 text-bcc-gold"></i>剥脱深度
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 章节导航 -->
+    <div class="bg-white border-b border-gray-100 sticky top-[72px] z-30">
+        <div class="container mx-auto px-6">
+            <div class="flex items-center gap-2 md:gap-6 py-3 overflow-x-auto scrollbar-hide">
+                <a href="#section2-1" class="chapter-nav-item active whitespace-nowrap px-4 py-2 rounded-lg text-sm font-medium text-bcc-blue border-l-4 border-transparent transition">
+                    2.1 定义与历史
+                </a>
+                <a href="#section2-2" class="chapter-nav-item whitespace-nowrap px-4 py-2 rounded-lg text-sm font-medium text-bcc-blue border-l-4 border-transparent transition">
+                    2.2 作用原理
+                </a>
+                <a href="#section2-3" class="chapter-nav-item whitespace-nowrap px-4 py-2 rounded-lg text-sm font-medium text-bcc-blue border-l-4 border-transparent transition">
+                    2.3 剥脱深度
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 主内容区 -->
+    <main class="py-16">
+
+        <!-- 2.1 定义与历史 -->
+        <section id="section2-1" class="mb-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <div class="inline-flex items-center gap-2 bg-gradient-to-r from-mint-green to-pale-purple px-5 py-2 rounded-full mb-4">
+                        <i class="ri-history-line text-bcc-blue"></i>
+                        <span class="text-sm font-medium text-bcc-blue tracking-wider">2.1 化学剥脱的定义与历史</span>
+                    </div>
+                    <h2 class="text-2xl md:text-3xl font-light text-bcc-blue mb-4 tracking-tight">从古埃及到现代医美</h2>
+                    <p class="text-gray-500 font-light max-w-2xl mx-auto">化学剥脱有着悠久的历史，经过数百年的发展已成为成熟的医美技术</p>
+                </div>
+
+                <!-- 历史时间线 -->
+                <div class="bg-white rounded-3xl shadow-lg border border-beige p-8 mb-12">
+                    <h3 class="text-xl font-medium text-bcc-blue mb-6 text-center">化学剥脱发展史</h3>
+                    <div class="relative">
+                        <div class="space-y-8">
+                            <!-- 古埃及 -->
+                            <div class="timeline-item relative pl-16">
+                                <div class="absolute left-0 top-0 w-10 h-10 rounded-full bg-soft-rose flex items-center justify-center">
+                                    <span class="text-lg">🏛️</span>
+                                </div>
+                                <div class="bg-warm-white rounded-2xl p-5 border border-beige">
+                                    <div class="flex items-center gap-3 mb-2">
+                                        <span class="text-sm font-medium text-bcc-blue">公元前3000年</span>
+                                        <span class="px-3 py-1 rounded-full bg-soft-rose/40 text-red-600 text-xs">起源</span>
+                                    </div>
+                                    <h4 class="font-medium text-bcc-blue mb-1">古埃及的美容秘方</h4>
+                                    <p class="text-sm text-gray-600">酸奶中的乳酸、葡萄酒中的酒石酸被用于美容护肤</p>
+                                </div>
+                            </div>
+
+                            <!-- 19世纪 -->
+                            <div class="timeline-item relative pl-16">
+                                <div class="absolute left-0 top-0 w-10 h-10 rounded-full bg-mint-green flex items-center justify-center">
+                                    <span class="text-lg">⚗️</span>
+                                </div>
+                                <div class="bg-warm-white rounded-2xl p-5 border border-beige">
+                                    <div class="flex items-center gap-3 mb-2">
+                                        <span class="text-sm font-medium text-bcc-blue">1882年</span>
+                                        <span class="px-3 py-1 rounded-full bg-mint-green/40 text-green-700 text-xs">现代起点</span>
+                                    </div>
+                                    <h4 class="font-medium text-bcc-blue mb-1">德国医生Unna的研究</h4>
+                                    <p class="text-sm text-gray-600">系统研究水杨酸和三氯乙酸的剥脱作用</p>
+                                </div>
+                            </div>
+
+                            <!-- 20世纪中叶 -->
+                            <div class="timeline-item relative pl-16">
+                                <div class="absolute left-0 top-0 w-10 h-10 rounded-full bg-pale-purple flex items-center justify-center">
+                                    <span class="text-lg">🏥</span>
+                                </div>
+                                <div class="bg-warm-white rounded-2xl p-5 border border-beige">
+                                    <div class="flex items-center gap-3 mb-2">
+                                        <span class="text-sm font-medium text-bcc-blue">1941年</span>
+                                        <span class="px-3 py-1 rounded-full bg-pale-purple/40 text-purple-700 text-xs">临床应用</span>
+                                    </div>
+                                    <h4 class="font-medium text-bcc-blue mb-1">Koch医生首次报道</h4>
+                                    <p class="text-sm text-gray-600">石碳酸面部化学剥脱的临床经验引起医学界关注</p>
+                                </div>
+                            </div>
+
+                            <!-- 现代 -->
+                            <div class="relative pl-16">
+                                <div class="absolute left-0 top-0 w-10 h-10 rounded-full bg-bcc-gold flex items-center justify-center">
+                                    <span class="text-lg">✨</span>
+                                </div>
+                                <div class="bg-warm-white rounded-2xl p-5 border border-beige">
+                                    <div class="flex items-center gap-3 mb-2">
+                                        <span class="text-sm font-medium text-bcc-blue">1980年代至今</span>
+                                        <span class="px-3 py-1 rounded-full bg-bcc-gold/40 text-yellow-700 text-xs">规范化发展</span>
+                                    </div>
+                                    <h4 class="font-medium text-bcc-blue mb-1">现代医美时代的规范化</h4>
+                                    <p class="text-sm text-gray-600">形成完整理论体系和操作规范，成为安全有效的美容技术</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 定义卡片 -->
+                <div class="grid md:grid-cols-3 gap-6 mb-12">
+                    <div class="bg-white rounded-3xl p-6 border border-beige hover:shadow-xl transition">
+                        <div class="w-14 h-14 rounded-2xl bg-mint-green/40 flex items-center justify-center mb-4">
+                            <i class="ri-magic-line text-2xl text-bcc-blue"></i>
+                        </div>
+                        <h3 class="text-lg font-medium text-bcc-blue mb-2">化学溶解</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed mb-3">
+                            酸性成分与角蛋白发生化学反应，使老化角质细胞松解脱落
+                        </p>
+                        <div class="text-xs text-gray-400">最直接的作用方式</div>
+                    </div>
+
+                    <div class="bg-white rounded-3xl p-6 border border-beige hover:shadow-xl transition">
+                        <div class="w-14 h-14 rounded-2xl bg-pale-purple/40 flex items-center justify-center mb-4">
+                            <i class="ri-refresh-line text-2xl text-bcc-blue"></i>
+                        </div>
+                        <h3 class="text-lg font-medium text-bcc-blue mb-2">生物刺激</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed mb-3">
+                            刺激成纤维细胞活化，促进胶原蛋白和弹性纤维新生
+                        </p>
+                        <div class="text-xs text-gray-400">深层效果的关键</div>
+                    </div>
+
+                    <div class="bg-white rounded-3xl p-6 border border-beige hover:shadow-xl transition">
+                        <div class="w-14 h-14 rounded-2xl bg-powder-blue/40 flex items-center justify-center mb-4">
+                            <i class="ri-stack-line text-2xl text-bcc-blue"></i>
+                        </div>
+                        <h3 class="text-lg font-medium text-bcc-blue mb-2">皮肤重塑</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed mb-3">
+                            启动修复机制，胶原纤维重排，皮肤结构优化升级
+                        </p>
+                        <div class="text-xs text-gray-400">最终效果的体现</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2.2 作用原理 -->
+        <section id="section2-2" class="mb-20 bg-white py-16">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <div class="inline-flex items-center gap-2 bg-gradient-to-r from-powder-blue to-mint-green px-5 py-2 rounded-full mb-4">
+                        <i class="ri-flask-line text-bcc-blue"></i>
+                        <span class="text-sm font-medium text-bcc-blue tracking-wider">2.2 化学剥脱的作用原理</span>
+                    </div>
+                    <h2 class="text-2xl md:text-3xl font-light text-bcc-blue mb-4 tracking-tight">三大核心作用机制</h2>
+                    <p class="text-gray-500 font-light max-w-2xl mx-auto">化学剥脱通过三大机制协同作用，实现皮肤改善</p>
+                </div>
+
+                <!-- 机制详解 -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                    <!-- 角质溶解 -->
+                    <div class="mechanism-card bg-warm-white rounded-3xl p-8 border border-beige relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-32 h-32 rounded-full bg-mint-green/10 -mr-16 -mt-16"></div>
+                        <div class="w-16 h-16 rounded-full bg-mint-green flex items-center justify-center mb-6 relative z-10">
+                            <i class="ri-scissors-cut-line text-2xl text-bcc-blue"></i>
+                        </div>
+                        <h3 class="text-xl font-medium text-bcc-blue mb-4">角质溶解与松解</h3>
+                        <div class="space-y-3 text-sm text-gray-600 leading-relaxed">
+                            <div class="flex items-start gap-2">
+                                <span class="w-5 h-5 rounded-full bg-bcc-gold flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <i class="ri-check-line text-white text-xs"></i>
+                                </span>
+                                <p>酸性剥脱剂与角蛋白发生变性反应</p>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <span class="w-5 h-5 rounded-full bg-bcc-gold flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <i class="ri-check-line text-white text-xs"></i>
+                                </span>
+                                <p>细胞间桥粒断裂，角质细胞松散</p>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <span class="w-5 h-5 rounded-full bg-bcc-gold flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <i class="ri-check-line text-white text-xs"></i>
+                                </span>
+                                <p>老化角质层可控脱落</p>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <span class="w-5 h-5 rounded-full bg-bcc-gold flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <i class="ri-check-line text-white text-xs"></i>
+                                </span>
+                                <p>表皮更新加速</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 真皮刺激 -->
+                    <div class="mechanism-card bg-warm-white rounded-3xl p-8 border border-beige relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-32 h-32 rounded-full bg-pale-purple/10 -mr-16 -mt-16"></div>
+                        <div class="w-16 h-16 rounded-full bg-pale-purple flex items-center justify-center mb-6 relative z-10">
+                            <i class="ri-seedling-line text-2xl text-bcc-blue"></i>
+                        </div>
+                        <h3 class="text-xl font-medium text-bcc-blue mb-4">真皮层刺激与胶原再生</h3>
+                        <div class="space-y-3 text-sm text-gray-600 leading-relaxed">
+                            <div class="flex items-start gap-2">
+                                <span class="w-5 h-5 rounded-full bg-bcc-gold flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <i class="ri-check-line text-white text-xs"></i>
+                                </span>
+                                <p>成纤维细胞激活</p>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <span class="w-5 h-5 rounded-full bg-bcc-gold flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <i class="ri-check-line text-white text-xs"></i>
+                                </span>
+                                <p>胶原蛋白大量合成</p>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <span class="w-5 h-5 rounded-full bg-bcc-gold flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <i class="ri-check-line text-white text-xs"></i>
+                                </span>
+                                <p>弹性纤维修复</p>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <span class="w-5 h-5 rounded-full bg-bcc-gold flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <i class="ri-check-line text-white text-xs"></i>
+                                </span>
+                                <p>真皮层厚度增加</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 黑色素代谢 -->
+                    <div class="mechanism-card bg-warm-white rounded-3xl p-8 border border-beige relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-32 h-32 rounded-full bg-powder-blue/10 -mr-16 -mt-16"></div>
+                        <div class="w-16 h-16 rounded-full bg-powder-blue flex items-center justify-center mb-6 relative z-10">
+                            <i class="ri-sun-line text-2xl text-bcc-blue"></i>
+                        </div>
+                        <h3 class="text-xl font-medium text-bcc-blue mb-4">黑色素代谢加速</h3>
+                        <div class="space-y-3 text-sm text-gray-600 leading-relaxed">
+                            <div class="flex items-start gap-2">
+                                <span class="w-5 h-5 rounded-full bg-bcc-gold flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <i class="ri-check-line text-white text-xs"></i>
+                                </span>
+                                <p>表皮黑色素剥脱</p>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <span class="w-5 h-5 rounded-full bg-bcc-gold flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <i class="ri-check-line text-white text-xs"></i>
+                                </span>
+                                <p>酪氨酸酶活性抑制</p>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <span class="w-5 h-5 rounded-full bg-bcc-gold flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <i class="ri-check-line text-white text-xs"></i>
+                                </span>
+                                <p>色素转运阻断</p>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <span class="w-5 h-5 rounded-full bg-bcc-gold flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <i class="ri-check-line text-white text-xs"></i>
+                                </span>
+                                <p>黑色素细胞调节</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 皮肤重塑流程图 -->
+                <div class="bg-warm-white rounded-3xl p-8 border border-beige">
+                    <h3 class="text-xl font-medium text-bcc-blue mb-6 text-center">皮肤重塑生物学过程</h3>
+                    <div class="grid md:grid-cols-4 gap-4">
+                        <div class="text-center">
+                            <div class="w-20 h-20 mx-auto rounded-full bg-soft-rose flex items-center justify-center mb-4 shadow-lg">
+                                <i class="ri-fire-line text-3xl text-red-500"></i>
+                            </div>
+                            <h4 class="font-medium text-bcc-blue mb-2">炎症反应阶段</h4>
+                            <p class="text-xs text-gray-500 mb-2">剥脱后立即开始</p>
+                            <div class="text-xs text-gray-400 bg-white rounded-lg p-2">
+                                <p>持续：3-5天</p>
+                                <p class="mt-1">免疫细胞招募</p>
+                                <p>释放细胞因子</p>
+                            </div>
+                        </div>
+
+                        <div class="text-center">
+                            <div class="w-20 h-20 mx-auto rounded-full bg-mint-green flex items-center justify-center mb-4 shadow-lg">
+                                <i class="ri-add-line text-3xl text-green-600"></i>
+                            </div>
+                            <h4 class="font-medium text-bcc-blue mb-2">增殖阶段</h4>
+                            <p class="text-xs text-gray-500 mb-2">炎症反应之后</p>
+                            <div class="text-xs text-gray-400 bg-white rounded-lg p-2">
+                                <p>持续：2-3周</p>
+                                <p class="mt-1">细胞大量增殖</p>
+                                <p>表皮逐渐愈合</p>
+                            </div>
+                        </div>
+
+                        <div class="text-center">
+                            <div class="w-20 h-20 mx-auto rounded-full bg-pale-purple flex items-center justify-center mb-4 shadow-lg">
+                                <i class="ri-artboard-line text-3xl text-purple-600"></i>
+                            </div>
+                            <h4 class="font-medium text-bcc-blue mb-2">重塑阶段</h4>
+                            <p class="text-xs text-gray-500 mb-2">最后也是最长</p>
+                            <div class="text-xs text-gray-400 bg-white rounded-lg p-2">
+                                <p>持续：数月</p>
+                                <p class="mt-1">胶原纤维重排</p>
+                                <p>结构优化升级</p>
+                            </div>
+                        </div>
+
+                        <div class="text-center">
+                            <div class="w-20 h-20 mx-auto rounded-full bg-bcc-gold flex items-center justify-center mb-4 shadow-lg">
+                                <i class="ri-checkbox-circle-line text-3xl text-white"></i>
+                            </div>
+                            <h4 class="font-medium text-bcc-blue mb-2">完全恢复</h4>
+                            <p class="text-xs text-gray-500 mb-2">效果完全显现</p>
+                            <div class="text-xs text-gray-400 bg-white rounded-lg p-2">
+                                <p>浅层：1-2月</p>
+                                <p class="mt-1">中层：3-6月</p>
+                                <p>深层：6-12月</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2.3 剥脱深度 -->
+        <section id="section2-3" class="mb-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <div class="inline-flex items-center gap-2 bg-gradient-to-r from-bcc-gold/20 to-mint-green px-5 py-2 rounded-full mb-4">
+                        <i class="ri-stack-line text-bcc-blue"></i>
+                        <span class="text-sm font-medium text-bcc-blue tracking-wider">2.3 剥脱深度的分类</span>
+                    </div>
+                    <h2 class="text-2xl md:text-3xl font-light text-bcc-blue mb-4 tracking-tight">剥脱深度对比</h2>
+                    <p class="text-gray-500 font-light max-w-2xl mx-auto">根据作用深度不同，化学剥脱分为浅层、中层和深层</p>
+                </div>
+
+                <!-- 深度对比图 -->
+                <div class="bg-white rounded-3xl shadow-lg border border-beige p-8 mb-12">
+                    <h3 class="text-xl font-medium text-bcc-blue mb-6 text-center">皮肤层次与剥脱深度示意图</h3>
+                    <svg viewBox="0 0 800 350" class="w-full max-w-4xl mx-auto">
+                        <defs>
+                            <linearGradient id="shallowGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" style="stop-color:#c1e3d3"/>
+                                <stop offset="100%" style="stop-color:#a8d4c0"/>
+                            </linearGradient>
+                            <linearGradient id="mediumGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" style="stop-color:#f5a623"/>
+                                <stop offset="100%" style="stop-color:#e09615"/>
+                            </linearGradient>
+                            <linearGradient id="deepGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" style="stop-color:#0d2c54"/>
+                                <stop offset="100%" style="stop-color:#0a2240"/>
+                            </linearGradient>
+                        </defs>
+
+                        <!-- 皮肤层次 -->
+                        <rect x="50" y="30" width="700" height="60" rx="8" fill="#f5e6e0" stroke="#0d2c54" stroke-width="2"/>
+                        <text x="400" y="65" text-anchor="middle" class="text-sm font-medium fill-bcc-blue">角质层 - 颗粒层 - 棘层</text>
+
+                        <rect x="50" y="95" width="700" height="50" rx="8" fill="#f5d5c8" stroke="#0d2c54" stroke-width="2"/>
+                        <text x="400" y="125" text-anchor="middle" class="text-sm font-medium fill-bcc-blue">基底层</text>
+
+                        <rect x="50" y="150" width="700" height="80" rx="8" fill="#f0c4b0" stroke="#0d2c54" stroke-width="2"/>
+                        <text x="400" y="195" text-anchor="middle" class="text-sm font-medium fill-bcc-blue">真皮乳头层</text>
+
+                        <rect x="50" y="235" width="700" height="80" rx="8" fill="#e8b4a8" stroke="#0d2c54" stroke-width="2"/>
+                        <text x="400" y="280" text-anchor="middle" class="text-sm font-medium fill-bcc-blue">真皮网状层</text>
+
+                        <!-- 剥脱深度指示器 -->
+                        <!-- 浅层 -->
+                        <g>
+                            <rect x="50" y="25" width="200" height="140" fill="url(#shallowGrad)" opacity="0.8" rx="4"/>
+                            <text x="150" y="50" text-anchor="middle" class="text-sm font-bold fill-bcc-blue">浅层剥脱</text>
+                            <text x="150" y="70" text-anchor="middle" class="text-xs fill-gray-700">0.06-0.45mm</text>
+                            <text x="150" y="90" text-anchor="middle" class="text-xs fill-gray-600">仅表皮层</text>
+                            <text x="150" y="115" text-anchor="middle" class="text-xs fill-gray-700">恢复：1-2周</text>
+                        </g>
+
+                        <!-- 中层 -->
+                        <g>
+                            <rect x="300" y="25" width="200" height="200" fill="url(#mediumGrad)" opacity="0.8" rx="4"/>
+                            <text x="400" y="50" text-anchor="middle" class="text-sm font-bold fill-white">中层剥脱</text>
+                            <text x="400" y="70" text-anchor="middle" class="text-xs fill-gray-100">0.45-0.6mm</text>
+                            <text x="400" y="90" text-anchor="middle" class="text-xs fill-gray-100">表皮-真皮交界</text>
+                            <text x="400" y="115" text-anchor="middle" class="text-xs fill-gray-100">恢复：1-3月</text>
+                        </g>
+
+                        <!-- 深层 -->
+                        <g>
+                            <rect x="550" y="25" width="200" height="290" fill="url(#deepGrad)" opacity="0.8" rx="4"/>
+                            <text x="650" y="50" text-anchor="middle" class="text-sm font-bold fill-bcc-gold">深层剥脱</text>
+                            <text x="650" y="70" text-anchor="middle" class="text-xs fill-gray-300">0.6-0.8mm+</text>
+                            <text x="650" y="90" text-anchor="middle" class="text-xs fill-gray-300">真皮深层</text>
+                            <text x="650" y="115" text-anchor="middle" class="text-xs fill-gray-300">恢复：3-12月</text>
+                        </g>
+                    </svg>
+                </div>
+
+                <!-- 深度对比表格 -->
+                <div class="overflow-x-auto mb-12">
+                    <table class="w-full min-w-[800px] bg-white rounded-3xl border border-beige overflow-hidden">
+                        <thead class="bg-bcc-blue text-white">
+                            <tr>
+                                <th class="px-6 py-4 text-left text-sm font-medium">对比项</th>
+                                <th class="px-6 py-4 text-left text-sm font-medium bg-bcc-gold">浅层剥脱</th>
+                                <th class="px-6 py-4 text-left text-sm font-medium">中层剥脱</th>
+                                <th class="px-6 py-4 text-left text-sm font-medium">深层剥脱</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-beige">
+                            <tr class="hover:bg-warm-white transition">
+                                <td class="px-6 py-4 font-medium text-bcc-blue">作用深度</td>
+                                <td class="px-6 py-4 text-sm text-gray-600">表皮 0.06-0.45mm</td>
+                                <td class="px-6 py-4 text-sm text-gray-600">表皮-真皮交界 0.45-0.6mm</td>
+                                <td class="px-6 py-4 text-sm text-gray-600">真皮深层 0.6-0.8mm+</td>
+                            </tr>
+                            <tr class="hover:bg-warm-white transition">
+                                <td class="px-6 py-4 font-medium text-bcc-blue">常用酸类</td>
+                                <td class="px-6 py-4 text-sm text-gray-600">20-35%甘醇酸、乳酸、水杨酸</td>
+                                <td class="px-6 py-4 text-sm text-gray-600">35-50%甘醇酸、10-35%TCA</td>
+                                <td class="px-6 py-4 text-sm text-gray-600">>50%石碳酸、>35%TCA</td>
+                            </tr>
+                            <tr class="hover:bg-warm-white transition">
+                                <td class="px-6 py-4 font-medium text-bcc-blue">适应症</td>
+                                <td class="px-6 py-4 text-sm text-gray-600">暗沉、粉刺黑头、轻微细纹</td>
+                                <td class="px-6 py-4 text-sm text-gray-600">深色斑、中度皱纹、痘疤</td>
+                                <td class="px-6 py-4 text-sm text-gray-600">深层皱纹、严重疤痕、老化</td>
+                            </tr>
+                            <tr class="hover:bg-warm-white transition">
+                                <td class="px-6 py-4 font-medium text-bcc-blue">恢复期</td>
+                                <td class="px-6 py-4 text-sm text-gray-600">3-7天表皮愈合</td>
+                                <td class="px-6 py-4 text-sm text-gray-600">7-14天表皮愈合</td>
+                                <td class="px-6 py-4 text-sm text-gray-600">2-8周表皮愈合</td>
+                            </tr>
+                            <tr class="hover:bg-warm-white transition">
+                                <td class="px-6 py-4 font-medium text-bcc-blue">风险等级</td>
+                                <td class="px-6 py-4 text-sm text-gray-600">
+                                    <span class="px-2 py-1 rounded-full bg-mint-green/40 text-green-700 text-xs">低</span>
+                                </td>
+                                <td class="px-6 py-4 text-sm text-gray-600">
+                                    <span class="px-2 py-1 rounded-full bg-bcc-gold/40 text-yellow-700 text-xs">中</span>
+                                </td>
+                                <td class="px-6 py-4 text-sm text-gray-600">
+                                    <span class="px-2 py-1 rounded-full bg-soft-rose/60 text-red-700 text-xs">高</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- 影响效果因素 -->
+                <div class="bg-bcc-blue rounded-3xl p-8 text-white">
+                    <h3 class="text-xl font-medium mb-6 text-center">影响剥脱效果的关键因素</h3>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div class="text-center p-4 rounded-2xl bg-white/10">
+                            <div class="w-12 h-12 mx-auto rounded-full bg-bcc-gold/30 flex items-center justify-center mb-3">
+                                <i class="ri-flask-line text-xl"></i>
+                            </div>
+                            <h4 class="font-medium mb-2">酸的浓度与pH值</h4>
+                            <p class="text-xs text-gray-300">浓度越高效果越强，但需在安全范围内</p>
+                        </div>
+                        <div class="text-center p-4 rounded-2xl bg-white/10">
+                            <div class="w-12 h-12 mx-auto rounded-full bg-bcc-gold/30 flex items-center justify-center mb-3">
+                                <i class="ri-time-line text-xl"></i>
+                            </div>
+                            <h4 class="font-medium mb-2">接触时间</h4>
+                            <p class="text-xs text-gray-300">时间越长渗透越深，需精准控制</p>
+                        </div>
+                        <div class="text-center p-4 rounded-2xl bg-white/10">
+                            <div class="w-12 h-12 mx-auto rounded-full bg-bcc-gold/30 flex items-center justify-center mb-3">
+                                <i class="ri-skin-line text-xl"></i>
+                            </div>
+                            <h4 class="font-medium mb-2">皮肤准备状态</h4>
+                            <p class="text-xs text-gray-300">术前皮肤评估与准备至关重要</p>
+                        </div>
+                        <div class="text-center p-4 rounded-2xl bg-white/10">
+                            <div class="w-12 h-12 mx-auto rounded-full bg-bcc-gold/30 flex items-center justify-center mb-3">
+                                <i class="ri-user-line text-xl"></i>
+                            </div>
+                            <h4 class="font-medium mb-2">个体差异</h4>
+                            <p class="text-xs text-gray-300">肤质、年龄、既往史影响效果</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 底部导航 -->
+    <div class="bg-white border-t border-gray-100 py-6">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                <a href="chapter01.html" class="flex items-center gap-2 text-bcc-blue hover:text-bcc-gold transition active-scale">
+                    <i class="ri-arrow-left-line"></i>
+                    <span>上一章：认识你的皮肤</span>
+                </a>
+
+                <div class="flex items-center gap-2 text-sm text-gray-400">
+                    <span>第二章</span>
+                    <span class="mx-2">|</span>
+                    <span>共10章</span>
+                </div>
+
+                <a href="chapter03.html" class="flex items-center gap-2 bg-bcc-gold text-white px-6 py-2.5 rounded-full font-medium shadow-lg hover:bg-yellow-600 transition active-scale">
+                    <span>下一章：常见酸类详解</span>
+                    <i class="ri-arrow-right-line"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="bg-bcc-navy text-white pt-12 pb-8">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4 mb-8">
+                <span class="text-xl font-light text-white">
+                    <i class="ri-drop-line text-bcc-gold"></i>
+                    Chemical<span class="font-medium">Peels</span>
+                </span>
+                <p class="text-sm text-gray-400">科学刷酸：医美级焕肤完全指南</p>
+                <div class="flex gap-4">
+                    <a href="https://github.com/sooogooo/ChemicalPeels" target="_blank" class="text-gray-400 hover:text-bcc-gold transition">
+                        <i class="ri-github-line text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-white/10 text-center">
+                <p class="text-xs text-gray-500">
+                    © 2024-2026 ChemicalPeels Project | CC BY-NC-SA 4.0
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 移动端底部常驻条 -->
+    <div class="md:hidden fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 flex z-50 shadow-lg">
+        <a href="chapter01.html" class="flex-1 py-3 text-bcc-blue flex flex-col items-center justify-center active:bg-gray-50 transition border-r border-gray-100">
+            <i class="ri-arrow-left-line text-xl mb-1"></i>
+            <span class="text-xs">上一章</span>
+        </a>
+        <a href="chapter03.html" class="flex-[2] bg-bcc-blue text-white flex flex-col items-center justify-center active:bg-bcc-navy transition">
+            <span class="text-xs opacity-80 mb-0.5">下一章</span>
+            <span class="flex items-center text-sm font-medium">
+                <i class="ri-arrow-right-line mr-1 text-sm"></i> 酸类详解
+            </span>
+        </a>
+    </div>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            if (menu.classList.contains('open')) {
+                menu.classList.remove('open');
+                icon.classList.remove('ri-close-line');
+                icon.classList.add('ri-menu-line');
+            } else {
+                menu.classList.add('open');
+                icon.classList.remove('ri-menu-line');
+                icon.classList.add('ri-close-line');
+            }
+        }
+
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 20) {
+                nav.classList.add('shadow-md');
+            } else {
+                nav.classList.remove('shadow-md');
+            }
+        });
+
+        const sections = document.querySelectorAll('section[id]');
+        const navItems = document.querySelectorAll('.chapter-nav-item');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 150;
+                if (window.scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('href') === '#' + current) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>

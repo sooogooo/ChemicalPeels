@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第四章：适应症与禁忌症 - 联合丽格（西南）行业资讯分享</title>
+    <meta name="description" content="详细了解化学剥脱的适应症与禁忌症，包括Fitzpatrick分型、禁忌症警示、皮肤问题与酸类对应表等专业内容。">
+    <meta name="keywords" "刷酸禁忌,化学剥脱,痤疮治疗,色素沉着,敏感肌肤">
+    <meta name="author" content="重庆联合丽格科技有限公司">
+    <link rel="canonical" href="https://docs.bccsw.cn/chapter04.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="第四章：适应症与禁忌症 - 联合丽格（西南）行业资讯分享">
+    <meta property="og:description" content="了解化学剥脱的适应症与禁忌症，掌握Fitzpatrick分型决策树、禁忌症警示图等专业知识。">
+    <meta property="og:image" content="https://docs.bccsw.cn/logo.png">
+    <meta property="og:url" content="https://docs.bccsw.cn/chapter04.html">
+    <meta property="og:site_name" content="联合丽格（西南）行业资讯分享">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="第四章：适应症与禁忌症">
+    <meta name="twitter:description" content="了解化学剥脱的适应症与禁忌症，掌握Fitzpatrick分型决策树等专业知识。">
+    <meta name="twitter:image" content="https://docs.bccsw.cn/logo.png">
+
+    <!-- WeChat -->
+    <meta itemprop="name" content="第四章：适应症与禁忌症">
+    <meta itemprop="description" content="了解化学剥脱的适应症与禁忌症，掌握Fitzpatrick分型决策树等专业知识。">
+    <meta itemprop="image" content="https://docs.bccsw.cn/logo.png">
+
+    <!-- Resources -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="https://docs.bccsw.cn/favicon.png">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'bcc-blue': '#0d2c54',
+                        'bcc-navy': '#0a2240',
+                        'bcc-gold': '#f5a623',
+                        'warm-white': '#faf9f7',
+                        'beige': '#e8e4df',
+                        'mint-green': '#c1e3d3',
+                        'pale-purple': '#d8ccf0',
+                        'powder-blue': '#c5d8f0',
+                        'soft-rose': '#f5e6e0',
+                        'rose-gold': '#e8b4a8',
+                    },
+                    fontFamily: {
+                        'sans': ['Noto Sans SC', 'Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Noto Sans SC', 'Inter', system-ui, sans-serif;
+            line-height: 1.9;
+            letter-spacing: 0.03em;
+        }
+
+        .float-animation {
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -30px) scale(1.05); }
+            66% { transform: translate(-20px, 20px) scale(0.95); }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .data-card {
+            background: #faf9f7;
+            border: 1px solid #e8e4df;
+            border-radius: 1.5rem;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 4px solid #0d2c54;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #0d2c54;
+            background: white;
+        }
+
+        .step-number.active {
+            background: #f5a623;
+            border-color: #f5a623;
+            color: white;
+        }
+
+        .tree-node {
+            padding: 1rem 1.5rem;
+            border-radius: 0.75rem;
+            text-align: center;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .tree-node:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .matrix-cell {
+            padding: 1rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            font-size: 0.875rem;
+            transition: all 0.3s ease;
+        }
+
+        .matrix-cell:hover {
+            transform: scale(1.02);
+        }
+
+        .warning-badge {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+    </style>
+</head>
+<body class="bg-warm-white text-gray-800">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-40 bg-white/95 backdrop-blur-md border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="index.html" class="flex items-center space-x-3">
+                    <img src="https://docs.bccsw.cn/logo.png" alt="联合丽格" class="h-10">
+                    <span class="text-sm font-medium text-gray-500 hidden sm:block">联合丽格（西南）行业资讯分享</span>
+                </a>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-bcc-blue transition">首页</a>
+                    <a href="chapter01.html" class="text-gray-600 hover:text-bcc-blue transition">第一章</a>
+                    <a href="chapter02.html" class="text-gray-600 hover:text-bcc-blue transition">第二章</a>
+                    <a href="chapter03.html" class="text-gray-600 hover:text-bcc-blue transition">第三章</a>
+                    <a href="chapter04.html" class="text-bcc-blue font-medium">第四章</a>
+                    <a href="chapter05.html" class="text-gray-600 hover:text-bcc-blue transition">第五章</a>
+                    <a href="chapter06.html" class="text-gray-600 hover:text-bcc-blue transition">第六章</a>
+                </div>
+
+                <button id="mobile-menu-btn" class="md:hidden p-2">
+                    <i class="ri-menu-line text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 py-4 px-4">
+            <div class="flex flex-col space-y-3">
+                <a href="index.html" class="py-2 text-gray-600">首页</a>
+                <a href="chapter01.html" class="py-2 text-gray-600">第一章</a>
+                <a href="chapter02.html" class="py-2 text-gray-600">第二章</a>
+                <a href="chapter03.html" class="py-2 text-gray-600">第三章</a>
+                <a href="chapter04.html" class="py-2 text-bcc-blue font-medium">第四章</a>
+                <a href="chapter05.html" class="py-2 text-gray-600">第五章</a>
+                <a href="chapter06.html" class="py-2 text-gray-600">第六章</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-16 bg-bcc-blue relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute top-10 left-10 w-72 h-72 bg-bcc-gold rounded-full blur-3xl float-animation"></div>
+            <div class="absolute bottom-10 right-10 w-96 h-96 bg-pale-purple rounded-full blur-3xl float-animation" style="animation-delay: -5s;"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="text-center py-16">
+                <span class="px-4 py-2 bg-bcc-gold/20 text-bcc-gold rounded-full text-sm font-medium inline-block mb-4">化学剥脱全指南</span>
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">第四章：适应症与禁忌症</h1>
+                <p class="text-lg text-gray-300 max-w-3xl mx-auto">科学认识刷酸的适用人群与安全边界，掌握Fitzpatrick分型判断，了解禁忌症警示信息</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chapter Navigation -->
+    <section class="py-8 bg-white border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="chapter01.html" class="flex items-center space-x-2 px-4 py-2 rounded-full bg-gray-100 hover:bg-bcc-blue hover:text-white transition">
+                    <i class="ri-arrow-left-s-line"></i>
+                    <span>第一章</span>
+                </a>
+                <a href="index.html" class="flex items-center space-x-2 px-4 py-2 rounded-full bg-bcc-blue text-white">
+                    <i class="ri-home-line"></i>
+                    <span>返回目录</span>
+                </a>
+                <a href="chapter05.html" class="flex items-center space-x-2 px-4 py-2 rounded-full bg-gray-100 hover:bg-bcc-blue hover:text-white transition">
+                    <span>第五章</span>
+                    <i class="ri-arrow-right-s-line"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Section 4.1: 适应症矩阵 -->
+            <section class="mb-20 fade-in">
+                <div class="text-center mb-12">
+                    <span class="text-bcc-gold font-medium text-sm uppercase tracking-wider">适应症概览</span>
+                    <h2 class="text-3xl font-bold text-bcc-blue mt-2">适合刷酸的皮肤问题</h2>
+                    <p class="text-gray-500 mt-2">针对不同皮肤问题的酸类选择与治疗策略</p>
+                </div>
+
+                <!-- 适应症 vs 禁忌症 对比矩阵 -->
+                <div class="bg-white rounded-3xl shadow-lg p-6 lg:p-8 mb-12">
+                    <h3 class="text-xl font-semibold text-bcc-blue mb-6 flex items-center">
+                        <i class="ri-checkbox-multiple-fill text-bcc-gold mr-2"></i>
+                        适应症 vs 禁忌症 对比矩阵
+                    </h3>
+                    <div class="grid lg:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="font-medium text-green-700 mb-3 flex items-center">
+                                <i class="ri-check-line mr-2"></i> 适合刷酸的情况
+                            </h4>
+                            <div class="space-y-2">
+                                <div class="matrix-cell bg-mint-green/40 text-green-700">
+                                    <i class="ri-face-smile-line mr-1"></i> 轻度至中度痤疮
+                                </div>
+                                <div class="matrix-cell bg-mint-green/40 text-green-700">
+                                    <i class="ri-sun-line mr-1"></i> 炎症后色素沉着
+                                </div>
+                                <div class="matrix-cell bg-mint-green/40 text-green-700">
+                                    <i class="ri-leaf-line mr-1"></i> 浅层晒斑与雀斑
+                                </div>
+                                <div class="matrix-cell bg-mint-green/40 text-green-700">
+                                    <i class="ri-time-line mr-1"></i> 光老化细纹
+                                </div>
+                                <div class="matrix-cell bg-mint-green/40 text-green-700">
+                                    <i class="ri-compass-3-line mr-1"></i> 毛孔粗大/角质堆积
+                                </div>
+                                <div class="matrix-cell bg-mint-green/40 text-green-700">
+                                    <i class="ri-body-scan-line mr-1"></i> 毛周角化症
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-medium text-red-700 mb-3 flex items-center">
+                                <i class="ri-close-line mr-2"></i> 不适合刷酸的情况
+                            </h4>
+                            <div class="space-y-2">
+                                <div class="matrix-cell bg-soft-rose/60 text-red-700 warning-badge">
+                                    <i class="ri-women-line mr-1"></i> 妊娠期与哺乳期
+                                </div>
+                                <div class="matrix-cell bg-soft-rose/60 text-red-700">
+                                    <i class="ri-virus-line mr-1"></i> 活动性面部感染
+                                </div>
+                                <div class="matrix-cell bg-soft-rose/60 text-red-700">
+                                    <i class="ri-first-aid-kit-line mr-1"></i> 瘢痕体质
+                                </div>
+                                <div class="matrix-cell bg-soft-rose/60 text-red-700">
+                                    <i class="ri-alert-line mr-1"></i> 酸类成分过敏
+                                </div>
+                                <div class="matrix-cell bg-soft-rose/60 text-red-700">
+                                    <i class="ri-medicine-bottle-line mr-1"></i> 口服异维A酸期间
+                                </div>
+                                <div class="matrix-cell bg-soft-rose/60 text-red-700">
+                                    <i class="ri-skin-line mr-1"></i> 皮肤屏障严重受损
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 皮肤问题与适用酸类对应表 -->
+                <div class="bg-white rounded-3xl shadow-lg p-6 lg:p-8">
+                    <h3 class="text-xl font-semibold text-bcc-blue mb-6 flex items-center">
+                        <i class="ri-table-2 text-bcc-gold mr-2"></i>
+                        皮肤问题与适用酸类对应表
+                    </h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full min-w-[600px]">
+                            <thead>
+                                <tr class="bg-bcc-blue text-white">
+                                    <th class="p-4 text-left rounded-tl-xl">皮肤问题</th>
+                                    <th class="p-4 text-center">首选酸类</th>
+                                    <th class="p-4 text-center">浓度建议</th>
+                                    <th class="p-4 text-center">治疗周期</th>
+                                    <th class="p-4 text-center rounded-tr-xl">注意事项</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-beige">
+                                <tr class="hover:bg-gray-50">
+                                    <td class="p-4">
+                                        <div class="flex items-center">
+                                            <i class="ri-bubble-chart-line text-bcc-gold mr-2"></i>
+                                            <span>痤疮粉刺</span>
+                                        </div>
+                                    </td>
+                                    <td class="p-4 text-center">
+                                        <span class="px-3 py-1 bg-mint-green/40 text-green-700 rounded-full text-sm">水杨酸</span>
+                                    </td>
+                                    <td class="p-4 text-center text-gray-600">2%-30%</td>
+                                    <td class="p-4 text-center text-gray-600">2-4周/次</td>
+                                    <td class="p-4 text-center text-sm text-gray-500">炎症期优先抗炎</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50">
+                                    <td class="p-4">
+                                        <div class="flex items-center">
+                                            <i class="ri-sun-cloudy-line text-bcc-gold mr-2"></i>
+                                            <span>色素沉着</span>
+                                        </div>
+                                    </td>
+                                    <td class="p-4 text-center">
+                                        <span class="px-3 py-1 bg-pale-purple/40 text-purple-700 rounded-full text-sm">果酸/壬二酸</span>
+                                    </td>
+                                    <td class="p-4 text-center text-gray-600">5%-30%</td>
+                                    <td class="p-4 text-center text-gray-600">3-4周/次</td>
+                                    <td class="p-4 text-center text-sm text-gray-500">严格防晒</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50">
+                                    <td class="p-4">
+                                        <div class="flex items-center">
+                                            <i class="ri-seedling-line text-bcc-gold mr-2"></i>
+                                            <span>光老化细纹</span>
+                                        </div>
+                                    </td>
+                                    <td class="p-4 text-center">
+                                        <span class="px-3 py-1 bg-bcc-gold/20 text-bcc-blue rounded-full text-sm">复合果酸</span>
+                                    </td>
+                                    <td class="p-4 text-center text-gray-600">20%-70%</td>
+                                    <td class="p-4 text-center text-gray-600">4-6周/次</td>
+                                    <td class="p-4 text-center text-sm text-gray-500">中深层需专业操作</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50">
+                                    <td class="p-4">
+                                        <div class="flex items-center">
+                                            <i class="ri-layout-grid-line text-bcc-gold mr-2"></i>
+                                            <span>毛孔粗大</span>
+                                        </div>
+                                    </td>
+                                    <td class="p-4 text-center">
+                                        <span class="px-3 py-1 bg-mint-green/40 text-green-700 rounded-full text-sm">水杨酸/果酸</span>
+                                    </td>
+                                    <td class="p-4 text-center text-gray-600">1%-20%</td>
+                                    <td class="p-4 text-center text-gray-600">1-2周/次</td>
+                                    <td class="p-4 text-center text-sm text-gray-500">需长期维护</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50">
+                                    <td class="p-4">
+                                        <div class="flex items-center">
+                                            <i class="ri-body-scan-line text-bcc-gold mr-2"></i>
+                                            <span>毛周角化</span>
+                                        </div>
+                                    </td>
+                                    <td class="p-4 text-center">
+                                        <span class="px-3 py-1 bg-powder-blue/40 text-blue-700 rounded-full text-sm">甘醇酸/乳酸</span>
+                                    </td>
+                                    <td class="p-4 text-center text-gray-600">10%-30%</td>
+                                    <td class="p-4 text-center text-gray-600">2-4周/次</td>
+                                    <td class="p-4 text-center text-sm text-gray-500">需持续护理</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 4.2: Fitzpatrick分型决策树 -->
+            <section class="mb-20 fade-in">
+                <div class="text-center mb-12">
+                    <span class="text-bcc-gold font-medium text-sm uppercase tracking-wider">专业评估</span>
+                    <h2 class="text-3xl font-bold text-bcc-blue mt-2">Fitzpatrick皮肤分型决策树</h2>
+                    <p class="text-gray-500 mt-2">根据皮肤对日晒的反应判断您的皮肤分型</p>
+                </div>
+
+                <!-- 决策树可视化 -->
+                <div class="bg-white rounded-3xl shadow-lg p-6 lg:p-8">
+                    <h3 class="text-xl font-semibold text-bcc-blue mb-8 flex items-center">
+                        <i class="ri-flow-chart text-bcc-gold mr-2"></i>
+                        皮肤分型判断流程
+                    </h3>
+
+                    <div class="relative">
+                        <!-- 连接线 -->
+                        <div class="hidden lg:block absolute left-1/2 top-32 w-0.5 h-32 bg-gradient-to-b from-bcc-blue to-bcc-gold"></div>
+                        <div class="hidden lg:block absolute left-1/2 top-64 w-32 h-0.5 bg-bcc-gold"></div>
+                        <div class="hidden lg:block absolute left-1/3 top-64 w-0.5 h-16 bg-bcc-gold"></div>
+                        <div class="hidden lg:block absolute left-2/3 top-64 w-0.5 h-16 bg-bcc-gold"></div>
+
+                        <!-- 第一层 -->
+                        <div class="grid lg:grid-cols-1 gap-6 mb-16">
+                            <div class="tree-node bg-bcc-blue text-white mx-auto max-w-md">
+                                <i class="ri-sun-line text-2xl mb-2 block"></i>
+                                <strong>问题1：您的皮肤在日晒后会产生什么反应？</strong>
+                                <p class="text-sm mt-1 opacity-80">从不晒伤 / 轻微晒伤 / 容易晒伤 / 非常容易晒伤</p>
+                            </div>
+                        </div>
+
+                        <!-- 第二层 -->
+                        <div class="grid lg:grid-cols-2 gap-8 mb-16">
+                            <div class="tree-node bg-mint-green/40 text-green-700 lg:ml-auto lg:max-w-xs">
+                                <i class="ri-checkbox-circle-line text-xl mb-1 block"></i>
+                                <strong>晒后反应：轻微或从不晒伤</strong>
+                                <p class="text-xs mt-1">继续问题2：您会晒黑吗？</p>
+                            </div>
+                            <div class="tree-node bg-soft-rose/60 text-red-700 lg:mr-auto lg:max-w-xs">
+                                <i class="ri-error-warning-line text-xl mb-1 block"></i>
+                                <strong>晒后反应：容易或非常容易晒伤</strong>
+                                <p class="text-xs mt-1">继续问题3：晒黑程度如何？</p>
+                            </div>
+                        </div>
+
+                        <!-- 第三层 - 分型结果 -->
+                        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                            <div class="data-card p-4 text-center">
+                                <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                                    <span class="text-xl font-bold text-yellow-700">I</span>
+                                </div>
+                                <h4 class="font-medium text-sm">苍白皮肤</h4>
+                                <p class="text-xs text-gray-500 mt-1">从不晒伤<br>从不晒黑</p>
+                                <span class="inline-block mt-2 px-2 py-0.5 bg-mint-green/40 text-green-700 text-xs rounded-full">低风险</span>
+                            </div>
+                            <div class="data-card p-4 text-center">
+                                <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                                    <span class="text-xl font-bold text-orange-700">II</span>
+                                </div>
+                                <h4 class="font-medium text-sm">白皙皮肤</h4>
+                                <p class="text-xs text-gray-500 mt-1">轻微晒伤<br>轻微晒黑</p>
+                                <span class="inline-block mt-2 px-2 py-0.5 bg-mint-green/40 text-green-700 text-xs rounded-full">低风险</span>
+                            </div>
+                            <div class="data-card p-4 text-center">
+                                <div class="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                                    <span class="text-xl font-bold text-amber-700">III</span>
+                                </div>
+                                <h4 class="font-medium text-sm">中间肤色</h4>
+                                <p class="text-xs text-gray-500 mt-1">有时晒伤<br>均匀晒黑</p>
+                                <span class="inline-block mt-2 px-2 py-0.5 bg-beige/70 text-gray-600 text-xs rounded-full">中风险</span>
+                            </div>
+                            <div class="data-card p-4 text-center">
+                                <div class="w-12 h-12 bg-amber-200 rounded-full flex items-center justify-center mx-auto mb-2">
+                                    <span class="text-xl font-bold text-amber-800">IV</span>
+                                </div>
+                                <h4 class="font-medium text-sm">橄榄色皮肤</h4>
+                                <p class="text-xs text-gray-500 mt-1">很少晒伤<br>容易晒黑</p>
+                                <span class="inline-block mt-2 px-2 py-0.5 bg-soft-rose/60 text-red-700 text-xs rounded-full">较高风险</span>
+                            </div>
+                            <div class="data-card p-4 text-center">
+                                <div class="w-12 h-12 bg-amber-300 rounded-full flex items-center justify-center mx-auto mb-2">
+                                    <span class="text-xl font-bold text-amber-900">V</span>
+                                </div>
+                                <h4 class="font-medium text-sm">棕色皮肤</h4>
+                                <p class="text-xs text-gray-500 mt-1">几乎不晒伤<br>非常容易晒黑</p>
+                                <span class="inline-block mt-2 px-2 py-0.5 bg-soft-rose/60 text-red-700 text-xs rounded-full">高风险</span>
+                            </div>
+                            <div class="data-card p-4 text-center">
+                                <div class="w-12 h-12 bg-amber-800 rounded-full flex items-center justify-center mx-auto mb-2">
+                                    <span class="text-xl font-bold text-white">VI</span>
+                                </div>
+                                <h4 class="font-medium text-sm">深色皮肤</h4>
+                                <p class="text-xs text-gray-500 mt-1">从不晒伤<br>深度晒黑</p>
+                                <span class="inline-block mt-2 px-2 py-0.5 bg-soft-rose/60 text-red-700 text-xs rounded-full">最高风险</span>
+                            </div>
+                        </div>
+
+                        <div class="mt-8 p-4 bg-beige/30 rounded-xl">
+                            <div class="flex items-start">
+                                <i class="ri-lightbulb-line text-bcc-gold text-xl mt-0.5 mr-3"></i>
+                                <div>
+                                    <h4 class="font-medium text-bcc-blue">专业建议</h4>
+                                    <p class="text-sm text-gray-600 mt-1">Fitzpatrick IV-VI型皮肤进行刷酸时，色素沉着风险显著增加。建议选择最温和的酸类（如乳糖酸、杏仁酸），从最低浓度开始，严格做好防晒，治疗间隔应当拉长。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 4.3: 禁忌症警示 -->
+            <section class="mb-20 fade-in">
+                <div class="text-center mb-12">
+                    <span class="text-bcc-gold font-medium text-sm uppercase tracking-wider">安全警示</span>
+                    <h2 class="text-3xl font-bold text-bcc-blue mt-2">禁忌症警示图</h2>
+                    <p class="text-gray-500 mt-2">绝对禁忌症与相对禁忌症的详细说明</p>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-8">
+                    <!-- 绝对禁忌症 -->
+                    <div class="bg-gradient-to-br from-red-50 to-rose-100 rounded-3xl p-6 lg:p-8 border-2 border-red-200">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center mr-4">
+                                <i class="ri-forbid-2-line text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-red-700">绝对禁忌症</h3>
+                                <p class="text-sm text-red-600">任何情况下都不适合刷酸</p>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4">
+                            <div class="bg-white rounded-xl p-4 shadow-sm border-l-4 border-red-500">
+                                <div class="flex items-center">
+                                    <i class="ri-women-line text-red-500 text-xl mr-3"></i>
+                                    <div>
+                                        <h4 class="font-medium">妊娠期与哺乳期</h4>
+                                        <p class="text-sm text-gray-500">为确保胎儿和婴儿安全，建议推迟至产后</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-white rounded-xl p-4 shadow-sm border-l-4 border-red-500">
+                                <div class="flex items-center">
+                                    <i class="ri-virus-line text-red-500 text-xl mr-3"></i>
+                                    <div>
+                                        <h4 class="font-medium">活动性面部感染</h4>
+                                        <p class="text-sm text-gray-500">疱疹、细菌感染、毛囊炎等</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-white rounded-xl p-4 shadow-sm border-l-4 border-red-500">
+                                <div class="flex items-center">
+                                    <i class="ri-first-aid-kit-line text-red-500 text-xl mr-3"></i>
+                                    <div>
+                                        <h4 class="font-medium">瘢痕体质</h4>
+                                        <p class="text-sm text-gray-500">容易形成异常增生的瘢痕</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-white rounded-xl p-4 shadow-sm border-l-4 border-red-500">
+                                <div class="flex items-center">
+                                    <i class="ri-error-warning-line text-red-500 text-xl mr-3"></i>
+                                    <div>
+                                        <h4 class="font-medium">酸类成分过敏</h4>
+                                        <p class="text-sm text-gray-500">红斑、丘疹、水疱、剧烈瘙痒</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 相对禁忌症 -->
+                    <div class="bg-gradient-to-br from-amber-50 to-yellow-100 rounded-3xl p-6 lg:p-8 border-2 border-amber-200">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-amber-500 rounded-full flex items-center justify-center mr-4">
+                                <i class="ri-error-warning-line text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-amber-700">相对禁忌症</h3>
+                                <p class="text-sm text-amber-600">特定条件下避免，好转后可考虑</p>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4">
+                            <div class="bg-white rounded-xl p-4 shadow-sm border-l-4 border-amber-500">
+                                <div class="flex items-center">
+                                    <i class="ri-medicine-bottle-line text-amber-500 text-xl mr-3"></i>
+                                    <div>
+                                        <h4 class="font-medium">口服异维A酸期间及停药后6个月</h4>
+                                        <p class="text-sm text-gray-500">皮肤愈合能力下降</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-white rounded-xl p-4 shadow-sm border-l-4 border-amber-500">
+                                <div class="flex items-center">
+                                    <i class="ri-surgical-mask-line text-amber-500 text-xl mr-3"></i>
+                                    <div>
+                                        <h4 class="font-medium">近期进行过其他医美项目</h4>
+                                        <p class="text-sm text-gray-500">需间隔2-4周</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-white rounded-xl p-4 shadow-sm border-l-4 border-amber-500">
+                                <div class="flex items-center">
+                                    <i class="ri-skin-line text-amber-500 text-xl mr-3"></i>
+                                    <div>
+                                        <h4 class="font-medium">皮肤屏障严重受损</h4>
+                                        <p class="text-sm text-gray-500">敏感肌肤急性发作期</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-white rounded-xl p-4 shadow-sm border-l-4 border-amber-500">
+                                <div class="flex items-center">
+                                    <i class="ri-heart-pulse-line text-amber-500 text-xl mr-3"></i>
+                                    <div>
+                                        <h4 class="font-medium">6个月内有面部手术史</h4>
+                                        <p class="text-sm text-gray-500">需咨询原手术医生</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 4.4: 特殊人群选择流程图 -->
+            <section class="mb-20 fade-in">
+                <div class="text-center mb-12">
+                    <span class="text-bcc-gold font-medium text-sm uppercase tracking-wider">个性化方案</span>
+                    <h2 class="text-3xl font-bold text-bcc-blue mt-2">特殊人群选择流程图</h2>
+                    <p class="text-gray-500 mt-2">根据您的皮肤类型制定专属刷酸策略</p>
+                </div>
+
+                <div class="bg-white rounded-3xl shadow-lg p-6 lg:p-8">
+                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <!-- 敏感肌肤 -->
+                        <div class="data-card p-6 hover:shadow-xl transition-all duration-300">
+                            <div class="w-16 h-16 bg-rose-gold/30 rounded-2xl flex items-center justify-center mb-4">
+                                <i class="ri-heart-line text-rose-gold text-2xl"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold text-bcc-blue mb-3">敏感肌肤</h3>
+                            <ul class="text-sm text-gray-600 space-y-2">
+                                <li class="flex items-start">
+                                    <i class="ri-arrow-right-s-line text-bcc-gold mt-1 mr-1"></i>
+                                    <span>首选：乳糖酸、杏仁酸</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="ri-arrow-right-s-line text-bcc-gold mt-1 mr-1"></i>
+                                    <span>浓度：5%以下</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="ri-arrow-right-s-line text-bcc-gold mt-1 mr-1"></i>
+                                    <span>频率：每周1次或更少</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="ri-arrow-right-s-line text-bcc-gold mt-1 mr-1"></i>
+                                    <span>先在耳后测试</span>
+                                </li>
+                            </ul>
+                            <div class="mt-4 pt-4 border-t border-beige">
+                                <span class="text-xs text-gray-500">需格外谨慎</span>
+                            </div>
+                        </div>
+
+                        <!-- 油性肌肤 -->
+                        <div class="data-card p-6 hover:shadow-xl transition-all duration-300">
+                            <div class="w-16 h-16 bg-mint-green/40 rounded-2xl flex items-center justify-center mb-4">
+                                <i class="ri-drop-line text-green-600 text-2xl"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold text-bcc-blue mb-3">油性肌肤</h3>
+                            <ul class="text-sm text-gray-600 space-y-2">
+                                <li class="flex items-start">
+                                    <i class="ri-arrow-right-s-line text-bcc-gold mt-1 mr-1"></i>
+                                    <span>首选：水杨酸</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="ri-arrow-right-s-line text-bcc-gold mt-1 mr-1"></i>
+                                    <span>浓度：可使用较高浓度</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="ri-arrow-right-s-line text-bcc-gold mt-1 mr-1"></i>
+                                    <span>重点：T区护理</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="ri-arrow-right-s-line text-bcc-gold mt-1 mr-1"></i>
+                                    <span>配合控油产品</span>
+                                </li>
+                            </ul>
+                            <div class="mt-4 pt-4 border-t border-beige">
+                                <span class="text-xs text-gray-500">耐受性较好</span>
+                            </div>
+                        </div>
+
+                        <!-- 干性肌肤 -->
+                        <div class="data-card p-6 hover:shadow-xl transition-all duration-300">
+                            <div class="w-16 h-16 bg-powder-blue/40 rounded-2xl flex items-center justify-center mb-4">
+                                <i class="ri-cloud-line text-blue-600 text-2xl"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold text-bcc-blue mb-3">干性肌肤</h3>
+                            <ul class="text-sm text-gray-600 space-y-2">
+                                <li class="flex items-start">
+                                    <i class="ri-arrow-right-s-line text-bcc-gold mt-1 mr-1"></i>
+                                    <span>首选：乳酸、乳糖酸</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="ri-arrow-right-s-line text-bcc-gold mt-1 mr-1"></i>
+                                    <span>浓度：中低浓度</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="ri-arrow-right-s-line text-bcc-gold mt-1 mr-1"></i>
+                                    <span>注重保湿修复</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="ri-arrow-right-s-line text-bcc-gold mt-1 mr-1"></i>
+                                    <span>频率：每周1次或更少</span>
+                                </li>
+                            </ul>
+                            <div class="mt-4 pt-4 border-t border-beige">
+                                <span class="text-xs text-gray-500">需加强保湿</span>
+                            </div>
+                        </div>
+
+                        <!-- 熟龄肌肤 -->
+                        <div class="data-card p-6 hover:shadow-xl transition-all duration-300">
+                            <div class="w-16 h-16 bg-pale-purple/40 rounded-2xl flex items-center justify-center mb-4">
+                                <i class="ri-star-line text-purple-600 text-2xl"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold text-bcc-blue mb-3">熟龄肌肤</h3>
+                            <ul class="text-sm text-gray-600 space-y-2">
+                                <li class="flex items-start">
+                                    <i class="ri-arrow-right-s-line text-bcc-gold mt-1 mr-1"></i>
+                                    <span>首选：温和复合酸</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="ri-arrow-right-s-line text-bcc-gold mt-1 mr-1"></i>
+                                    <span>浓度：中低浓度</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="ri-arrow-right-s-line text-bcc-gold mt-1 mr-1"></i>
+                                    <span>间隔：拉长恢复周期</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="ri-arrow-right-s-line text-bcc-gold mt-1 mr-1"></i>
+                                    <span>配合抗衰成分</span>
+                                </li>
+                            </ul>
+                            <div class="mt-4 pt-4 border-t border-beige">
+                                <span class="text-xs text-gray-500">以抗衰为主</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 男性特殊提示 -->
+                    <div class="mt-8 p-6 bg-bcc-blue/5 rounded-2xl">
+                        <h4 class="font-semibold text-bcc-blue mb-3 flex items-center">
+                            <i class="ri-men-line text-bcc-gold mr-2"></i>
+                            男性特别提示
+                        </h4>
+                        <div class="grid md:grid-cols-3 gap-4 text-sm text-gray-600">
+                            <p><strong>角质层更厚</strong>：男性角质层比女性厚约20%，对酸类耐受性更好</p>
+                            <p><strong>油脂分泌多</strong>：皮脂分泌量是女性的两倍，可选择较高浓度水杨酸</p>
+                            <p><strong>胡须区注意</strong>：刮胡日避免刷酸，避开胡须区域</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-bcc-blue">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-2xl lg:text-3xl font-bold text-white mb-4">专业刷酸，安全变美</h2>
+            <p class="text-gray-300 mb-8">如有任何疑问，欢迎咨询专业皮肤科医生</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="tel:023-68726872" class="inline-flex items-center px-6 py-3 bg-bcc-gold text-white rounded-full hover:bg-amber-600 transition">
+                    <i class="ri-phone-line mr-2"></i>
+                    咨询热线：023-68726872
+                </a>
+                <a href="chapter05.html" class="inline-flex items-center px-6 py-3 bg-white text-bcc-blue rounded-full hover:bg-gray-100 transition">
+                    <span>下一章：专业刷酸全流程</span>
+                    <i class="ri-arrow-right-line ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-bcc-navy text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="col-span-2">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <img src="https://docs.bccsw.cn/logo.png" alt="联合丽格" class="h-12">
+                        <div>
+                            <p class="font-medium">联合丽格（西南）</p>
+                            <p class="text-sm text-gray-400">行业资讯分享</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm mb-4">重庆联合丽格科技有限公司成立于重庆，是专注于医疗美容领域的专业机构，致力于为客户提供安全、高效的美容解决方案。</p>
+                </div>
+                <div>
+                    <h4 class="font-medium mb-4">联系方式</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li class="flex items-center">
+                            <i class="ri-map-pin-line mr-2"></i>
+                            重庆市渝中区临江支路28号
+                        </li>
+                        <li class="flex items-center">
+                            <i class="ri-phone-line mr-2"></i>
+                            023-68726872
+                        </li>
+                        <li class="flex items-center">
+                            <i class="ri-mail-line mr-2"></i>
+                            bccsw@cqlhlg.work
+                        </li>
+                        <li class="flex items-center">
+                            <i class="ri-wechat-line mr-2"></i>
+                            @sooogooo
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-medium mb-4">快速链接</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="index.html" class="hover:text-white transition">首页</a></li>
+                        <li><a href="chapter01.html" class="hover:text-white transition">第一章</a></li>
+                        <li><a href="chapter02.html" class="hover:text-white transition">第二章</a></li>
+                        <li><a href="chapter03.html" class="hover:text-white transition">第三章</a></li>
+                        <li><a href="chapter04.html" class="hover:text-white transition">第四章</a></li>
+                        <li><a href="chapter05.html" class="hover:text-white transition">第五章</a></li>
+                        <li><a href="chapter06.html" class="hover:text-white transition">第六章</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-400">
+                <p>ICP备案：<a href="https://beian.miit.gov.cn/" target="_blank" class="hover:text-white">渝ICP备2024023473号</a></p>
+                <p class="mt-2">&copy; 2024 重庆联合丽格科技有限公司 版权所有</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Bottom Bar -->
+    <div class="md:hidden fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 flex z-50">
+        <a href="tel:023-68726872" class="flex-[2] bg-bcc-blue text-white py-4 text-center font-medium">
+            <i class="ri-phone-line mr-1"></i> 立即咨询
+        </a>
+        <a href="chapter05.html" class="flex-1 bg-bcc-gold text-white py-4 text-center">
+            <i class="ri-arrow-right-line"></i>
+        </a>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1460 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="刷酸护肤工具页 - 刷酸日记模板、浓度pH速查表、产品推荐清单、专业术语表">
+    <meta name="keywords" content="刷酸工具,日记模板,浓度pH速查,术语表,产品推荐">
+    <meta name="author" content="重庆联合丽格科技有限公司">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="附录：刷酸实用工具 - 联合丽格（西南）行业资讯分享">
+    <meta property="og:description" content="刷酸日记模板、浓度pH速查表、产品推荐清单、专业术语表等实用工具">
+    <meta property="og:image" content="https://docs.bccsw.cn/logo.png">
+    <meta property="og:site_name" content="联合丽格（西南）行业资讯分享">
+    <title>附录：刷酸实用工具 - 联合丽格（西南）</title>
+    <link rel="canonical" href="https://docs.bccsw.cn/appendix.html">
+    <link rel="icon" href="https://docs.bccsw.cn/favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'bcc-blue': '#0d2c54',
+                        'bcc-navy': '#0a2240',
+                        'bcc-gold': '#f5a623',
+                        'warm-white': '#faf9f7',
+                        'beige': '#e8e4df',
+                        'mint-green': '#c1e3d3',
+                        'pale-purple': '#d8ccf0',
+                        'powder-blue': '#c5d8f0',
+                        'soft-rose': '#f5e6e0',
+                        'rose-gold': '#e8b4a8'
+                    },
+                    fontFamily: {
+                        'sans': ['Noto Sans SC', 'Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Noto Sans SC', 'Inter', system-ui, sans-serif;
+            line-height: 1.9;
+            letter-spacing: 0.03em;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(232, 228, 223, 0.8);
+        }
+        .glass-card-dark {
+            background: rgba(13, 44, 84, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -30px) scale(1.05); }
+            66% { transform: translate(-20px, 20px) scale(0.95); }
+        }
+        .float-animation { animation: float 20s ease-in-out infinite; }
+        .float-animation-delay { animation: float 25s ease-in-out infinite reverse; }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .hero-bg {
+            background: linear-gradient(135deg, rgba(13, 44, 84, 0.9), rgba(13, 44, 84, 0.75));
+        }
+        .tab-active {
+            background: linear-gradient(135deg, #0d2c54, #0a2240);
+            color: white;
+        }
+        @media (max-width: 768px) {
+            .hero-bg { background-attachment: scroll; }
+            .diary-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body class="bg-warm-white">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-40 bg-white/95 backdrop-blur-md border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="index.html" class="flex items-center space-x-3">
+                    <img src="https://docs.bccsw.cn/logo.png" alt="Logo" class="h-10">
+                    <span class="text-bcc-blue font-medium">联合丽格（西南）</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-bcc-blue transition">首页</a>
+                    <a href="chapter1.html" class="text-gray-600 hover:text-bcc-blue transition">第一章</a>
+                    <a href="chapter5.html" class="text-gray-600 hover:text-bcc-blue transition">第五章</a>
+                    <a href="chapter8.html" class="text-gray-600 hover:text-bcc-blue transition">第八章</a>
+                    <a href="chapter10.html" class="text-gray-600 hover:text-bcc-blue transition">第十章</a>
+                    <a href="appendix.html" class="text-bcc-blue font-medium">附录</a>
+                </div>
+                <button class="md:hidden text-gray-600" onclick="toggleMenu()">
+                    <i class="ri-menu-line text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-100">
+            <div class="px-4 py-4 space-y-2">
+                <a href="index.html" class="block py-2 text-gray-600 hover:text-bcc-blue">首页</a>
+                <a href="chapter1.html" class="block py-2 text-gray-600 hover:text-bcc-blue">第一章</a>
+                <a href="chapter5.html" class="block py-2 text-gray-600 hover:text-bcc-blue">第五章</a>
+                <a href="chapter8.html" class="block py-2 text-gray-600 hover:text-bcc-blue">第八章</a>
+                <a href="chapter10.html" class="block py-2 text-gray-600 hover:text-bcc-blue">第十章</a>
+                <a href="appendix.html" class="block py-2 text-bcc-blue font-medium">附录</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-16 hero-bg relative overflow-hidden">
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute top-20 left-10 w-64 h-64 rounded-full bg-pale-purple/30 blur-3xl float-animation"></div>
+            <div class="absolute bottom-10 right-20 w-96 h-96 rounded-full bg-mint-green/20 blur-3xl float-animation-delay"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="text-center py-16">
+                <span class="inline-block px-4 py-2 bg-bcc-gold/20 text-bcc-gold rounded-full text-sm font-medium mb-6">
+                    附录工具
+                </span>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+                    刷酸护肤实用工具
+                </h1>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    日记模板、浓度速查表、产品推荐、术语表、常见问题索引
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 工具导航标签 -->
+    <section class="py-6 bg-white border-b border-beige sticky top-16 z-30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap justify-center gap-2" id="toolTabs">
+                <button onclick="showTool('diary')" class="tab-btn tab-active px-4 py-2 rounded-full text-sm font-medium transition-all" data-tab="diary">
+                    <i class="ri-edit-box-line mr-1"></i>刷酸日记
+                </button>
+                <button onclick="showTool('lookup')" class="tab-btn px-4 py-2 rounded-full text-sm font-medium bg-beige text-gray-600 hover:bg-bcc-blue hover:text-white transition-all" data-tab="lookup">
+                    <i class="ri-search-line mr-1"></i>浓度pH速查
+                </button>
+                <button onclick="showTool('products')" class="tab-btn px-4 py-2 rounded-full text-sm font-medium bg-beige text-gray-600 hover:bg-bcc-blue hover:text-white transition-all" data-tab="products">
+                    <i class="ri-shopping-bag-line mr-1"></i>产品推荐
+                </button>
+                <button onclick="showTool('glossary')" class="tab-btn px-4 py-2 rounded-full text-sm font-medium bg-beige text-gray-600 hover:bg-bcc-blue hover:text-white transition-all" data-tab="glossary">
+                    <i class="ri-book-2-line mr-1"></i>专业术语表
+                </button>
+                <button onclick="showTool('faq')" class="tab-btn px-4 py-2 rounded-full text-sm font-medium bg-beige text-gray-600 hover:bg-bcc-blue hover:text-white transition-all" data-tab="faq">
+                    <i class="ri-question-line mr-1"></i>常见问题
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 刷酸日记模板 -->
+    <section id="tool-diary" class="tool-section py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-bcc-blue mb-4">
+                    <i class="ri-edit-box-line text-bcc-gold mr-2"></i>
+                    刷酸日记模板
+                </h2>
+                <p class="text-gray-500 max-w-2xl mx-auto">记录你的刷酸历程，追踪皮肤变化</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- 术前记录 -->
+                <div class="glass-card rounded-3xl p-6 fade-in">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-12 h-12 bg-bcc-blue rounded-xl flex items-center justify-center">
+                            <i class="ri-file-text-line text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-bcc-blue">术前记录表</h3>
+                            <p class="text-sm text-gray-500">开始刷酸前的皮肤状态评估</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">姓名/昵称</label>
+                                <input type="text" id="diaryName" class="w-full px-4 py-2 border border-beige rounded-xl focus:outline-none focus:ring-2 focus:ring-bcc-blue/20" placeholder="请输入">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">记录日期</label>
+                                <input type="date" id="diaryDate" class="w-full px-4 py-2 border border-beige rounded-xl focus:outline-none focus:ring-2 focus:ring-bcc-blue/20">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">皮肤类型</label>
+                            <div class="flex flex-wrap gap-2">
+                                <label class="cursor-pointer"><input type="checkbox" class="peer sr-only"> <span class="px-3 py-1.5 rounded-full border border-beige text-sm peer-checked:bg-bcc-blue peer-checked:text-white transition">干性</span></label>
+                                <label class="cursor-pointer"><input type="checkbox" class="peer sr-only"> <span class="px-3 py-1.5 rounded-full border border-beige text-sm peer-checked:bg-bcc-blue peer-checked:text-white transition">油性</span></label>
+                                <label class="cursor-pointer"><input type="checkbox" class="peer sr-only"> <span class="px-3 py-1.5 rounded-full border border-beige text-sm peer-checked:bg-bcc-blue peer-checked:text-white transition">混合性</span></label>
+                                <label class="cursor-pointer"><input type="checkbox" class="peer sr-only"> <span class="px-3 py-1.5 rounded-full border border-beige text-sm peer-checked:bg-bcc-blue peer-checked:text-white transition">中性</span></label>
+                                <label class="cursor-pointer"><input type="checkbox" class="peer sr-only"> <span class="px-3 py-1.5 rounded-full border border-beige text-sm peer-checked:bg-bcc-blue peer-checked:text-white transition">敏感性</span></label>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">主要皮肤问题</label>
+                            <div class="flex flex-wrap gap-2">
+                                <label class="cursor-pointer"><input type="checkbox" class="peer sr-only"> <span class="px-3 py-1.5 rounded-full border border-beige text-sm peer-checked:bg-bcc-blue peer-checked:text-white transition">痤疮</span></label>
+                                <label class="cursor-pointer"><input type="checkbox" class="peer sr-only"> <span class="px-3 py-1.5 rounded-full border border-beige text-sm peer-checked:bg-bcc-blue peer-checked:text-white transition">色斑</span></label>
+                                <label class="cursor-pointer"><input type="checkbox" class="peer sr-only"> <span class="px-3 py-1.5 rounded-full border border-beige text-sm peer-checked:bg-bcc-blue peer-checked:text-white transition">细纹</span></label>
+                                <label class="cursor-pointer"><input type="checkbox" class="peer sr-only"> <span class="px-3 py-1.5 rounded-full border border-beige text-sm peer-checked:bg-bcc-blue peer-checked:text-white transition">毛孔粗大</span></label>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">年龄</label>
+                                <input type="number" class="w-full px-4 py-2 border border-beige rounded-xl" placeholder="周岁">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">过敏史</label>
+                                <input type="text" class="w-full px-4 py-2 border border-beige rounded-xl" placeholder="如有请注明">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 术后观察记录 -->
+                <div class="glass-card rounded-3xl p-6 fade-in">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-12 h-12 bg-bcc-gold rounded-xl flex items-center justify-center">
+                            <i class="ri-heart-pulse-line text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-bcc-blue">术后观察记录</h3>
+                            <p class="text-sm text-gray-500">记录刷酸后的皮肤反应</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">即时反应评分（0-3分）</label>
+                            <div class="grid grid-cols-3 gap-4">
+                                <div class="text-center">
+                                    <p class="text-xs text-gray-500 mb-2">泛红程度</p>
+                                    <select class="w-full px-2 py-2 border border-beige rounded-lg text-sm">
+                                        <option>无(0)</option>
+                                        <option>轻微(1)</option>
+                                        <option>明显(2)</option>
+                                        <option>严重(3)</option>
+                                    </select>
+                                </div>
+                                <div class="text-center">
+                                    <p class="text-xs text-gray-500 mb-2">刺痛感</p>
+                                    <select class="w-full px-2 py-2 border border-beige rounded-lg text-sm">
+                                        <option>无(0)</option>
+                                        <option>轻微(1)</option>
+                                        <option>中等(2)</option>
+                                        <option>强烈(3)</option>
+                                    </select>
+                                </div>
+                                <div class="text-center">
+                                    <p class="text-xs text-gray-500 mb-2">灼热感</p>
+                                    <select class="w-full px-2 py-2 border border-beige rounded-lg text-sm">
+                                        <option>无(0)</option>
+                                        <option>轻微(1)</option>
+                                        <option>中等(2)</option>
+                                        <option>强烈(3)</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">脱皮程度</label>
+                            <div class="flex gap-2">
+                                <button class="flex-1 py-2 px-3 border border-beige rounded-lg text-sm hover:bg-mint-green/20">无</button>
+                                <button class="flex-1 py-2 px-3 border border-beige rounded-lg text-sm hover:bg-mint-green/20">轻微</button>
+                                <button class="flex-1 py-2 px-3 border border-beige rounded-lg text-sm hover:bg-mint-green/20">局部</button>
+                                <button class="flex-1 py-2 px-3 border border-beige rounded-lg text-sm hover:bg-mint-green/20">广泛</button>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">疼痛评分（0-10分）</label>
+                            <div class="flex items-center space-x-4">
+                                <input type="range" min="0" max="10" value="0" class="flex-1 h-2 bg-beige rounded-lg appearance-none cursor-pointer">
+                                <span id="painScore" class="w-10 h-10 bg-bcc-blue text-white rounded-full flex items-center justify-center font-bold">0</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">皮肤状态描述</label>
+                            <textarea class="w-full px-4 py-2 border border-beige rounded-xl resize-none" rows="3" placeholder="请描述皮肤的整体状态、有无其他不适等..."></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 效果追踪对比 -->
+            <div class="mt-8 glass-card rounded-3xl p-6 fade-in">
+                <div class="flex items-center justify-between mb-6">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-12 h-12 bg-mint-green rounded-xl flex items-center justify-center">
+                            <i class="ri-line-chart-line text-bcc-blue text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-bcc-blue">效果追踪对比表</h3>
+                            <p class="text-sm text-gray-500">每4周记录一次，持续追踪改善效果</p>
+                        </div>
+                    </div>
+                    <button onclick="addTrackingRow()" class="px-4 py-2 bg-bcc-blue text-white rounded-lg text-sm hover:bg-bcc-navy transition">
+                        <i class="ri-add-line mr-1"></i>添加记录
+                    </button>
+                </div>
+
+                <div class="overflow-x-auto">
+                    <table class="w-full min-w-[800px]" id="trackingTable">
+                        <thead>
+                            <tr class="border-b border-beige">
+                                <th class="py-3 px-4 text-left font-semibold text-bcc-blue">评估项目</th>
+                                <th class="py-3 px-4 text-left font-semibold text-bcc-blue">初始状态</th>
+                                <th class="py-3 px-4 text-left font-semibold text-bcc-blue">4周后</th>
+                                <th class="py-3 px-4 text-left font-semibold text-bcc-blue">8周后</th>
+                                <th class="py-3 px-4 text-left font-semibold text-bcc-blue">12周后</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-beige/50">
+                                <td class="py-3 px-4 font-medium">粉刺数量</td>
+                                <td class="py-3 px-4"><input type="text" class="w-full px-2 py-1 border border-beige rounded" placeholder="记录"></td>
+                                <td class="py-3 px-4"><input type="text" class="w-full px-2 py-1 border border-beige rounded" placeholder="记录"></td>
+                                <td class="py-3 px-4"><input type="text" class="w-full px-2 py-1 border border-beige rounded" placeholder="记录"></td>
+                                <td class="py-3 px-4"><input type="text" class="w-full px-2 py-1 border border-beige rounded" placeholder="记录"></td>
+                            </tr>
+                            <tr class="border-b border-beige/50">
+                                <td class="py-3 px-4 font-medium">痘痘情况</td>
+                                <td class="py-3 px-4">
+                                    <select class="w-full px-2 py-1 border border-beige rounded text-sm">
+                                        <option>请选择</option>
+                                        <option>无</option>
+                                        <option>轻微</option>
+                                        <option>中等</option>
+                                        <option>严重</option>
+                                    </select>
+                                </td>
+                                <td class="py-3 px-4">
+                                    <select class="w-full px-2 py-1 border border-beige rounded text-sm">
+                                        <option>请选择</option>
+                                        <option>无</option>
+                                        <option>轻微</option>
+                                        <option>中等</option>
+                                        <option>严重</option>
+                                    </select>
+                                </td>
+                                <td class="py-3 px-4">
+                                    <select class="w-full px-2 py-1 border border-beige rounded text-sm">
+                                        <option>请选择</option>
+                                        <option>无</option>
+                                        <option>轻微</option>
+                                        <option>中等</option>
+                                        <option>严重</option>
+                                    </select>
+                                </td>
+                                <td class="py-3 px-4">
+                                    <select class="w-full px-2 py-1 border border-beige rounded text-sm">
+                                        <option>请选择</option>
+                                        <option>无</option>
+                                        <option>轻微</option>
+                                        <option>中等</option>
+                                        <option>严重</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr class="border-b border-beige/50">
+                                <td class="py-3 px-4 font-medium">皮肤光滑度</td>
+                                <td class="py-3 px-4">
+                                    <div class="flex items-center space-x-2">
+                                        <input type="range" min="1" max="10" value="5" class="w-20 h-2 bg-beige rounded-lg">
+                                        <span class="text-sm text-gray-600">5分</span>
+                                    </div>
+                                </td>
+                                <td class="py-3 px-4">
+                                    <div class="flex items-center space-x-2">
+                                        <input type="range" min="1" max="10" value="5" class="w-20 h-2 bg-beige rounded-lg">
+                                        <span class="text-sm text-gray-600">5分</span>
+                                    </div>
+                                </td>
+                                <td class="py-3 px-4">
+                                    <div class="flex items-center space-x-2">
+                                        <input type="range" min="1" max="10" value="5" class="w-20 h-2 bg-beige rounded-lg">
+                                        <span class="text-sm text-gray-600">5分</span>
+                                    </div>
+                                </td>
+                                <td class="py-3 px-4">
+                                    <div class="flex items-center space-x-2">
+                                        <input type="range" min="1" max="10" value="5" class="w-20 h-2 bg-beige rounded-lg">
+                                        <span class="text-sm text-gray-600">5分</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 px-4 font-medium">整体满意度</td>
+                                <td class="py-3 px-4">
+                                    <div class="flex items-center space-x-2">
+                                        <input type="range" min="1" max="10" value="5" class="w-20 h-2 bg-beige rounded-lg">
+                                        <span class="text-sm text-gray-600">5分</span>
+                                    </div>
+                                </td>
+                                <td class="py-3 px-4">
+                                    <div class="flex items-center space-x-2">
+                                        <input type="range" min="1" max="10" value="5" class="w-20 h-2 bg-beige rounded-lg">
+                                        <span class="text-sm text-gray-600">5分</span>
+                                    </div>
+                                </td>
+                                <td class="py-3 px-4">
+                                    <div class="flex items-center space-x-2">
+                                        <input type="range" min="1" max="10" value="5" class="w-20 h-2 bg-beige rounded-lg">
+                                        <span class="text-sm text-gray-600">5分</span>
+                                    </div>
+                                </td>
+                                <td class="py-3 px-4">
+                                    <div class="flex items-center space-x-2">
+                                        <input type="range" min="1" max="10" value="5" class="w-20 h-2 bg-beige rounded-lg">
+                                        <span class="text-sm text-gray-600">5分</span>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="mt-6 flex justify-end space-x-4">
+                    <button onclick="resetDiary()" class="px-6 py-2 border border-beige rounded-lg text-gray-600 hover:bg-beige transition">
+                        <i class="ri-refresh-line mr-1"></i>重置
+                    </button>
+                    <button onclick="saveDiary()" class="px-6 py-2 bg-bcc-gold text-white rounded-lg hover:bg-orange-600 transition">
+                        <i class="ri-save-line mr-1"></i>保存记录
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 浓度-pH速查表 -->
+    <section id="tool-lookup" class="tool-section py-16 hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-bcc-blue mb-4">
+                    <i class="ri-search-line text-bcc-gold mr-2"></i>
+                    浓度-pH速查表
+                </h2>
+                <p class="text-gray-500 max-w-2xl mx-auto">快速查找各种酸的浓度、pH范围及适用场景</p>
+            </div>
+
+            <!-- 搜索过滤 -->
+            <div class="glass-card rounded-3xl p-6 mb-8 fade-in">
+                <div class="flex flex-col md:flex-row gap-4">
+                    <div class="flex-1">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">搜索酸类名称</label>
+                        <div class="relative">
+                            <input type="text" id="acidSearch" onkeyup="filterAcidTable()" placeholder="输入酸类名称（如：水杨酸、甘醇酸）" class="w-full px-4 py-3 pl-10 border border-beige rounded-xl focus:outline-none focus:ring-2 focus:ring-bcc-blue/20">
+                            <i class="ri-search-line absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                        </div>
+                    </div>
+                    <div class="md:w-48">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">浓度筛选</label>
+                        <select id="concentrationFilter" onchange="filterAcidTable()" class="w-full px-4 py-3 border border-beige rounded-xl focus:outline-none focus:ring-2 focus:ring-bcc-blue/20">
+                            <option value="all">全部浓度</option>
+                            <option value="low">低浓度（≤5%）</option>
+                            <option value="medium">中浓度（5-15%）</option>
+                            <option value="high">高浓度（15-30%）</option>
+                            <option value="medical">医美级（30%+）</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 酸类速查表 -->
+            <div class="glass-card rounded-3xl p-6 fade-in">
+                <div class="overflow-x-auto">
+                    <table class="w-full min-w-[900px]" id="acidTable">
+                        <thead>
+                            <tr class="border-b border-beige">
+                                <th class="py-4 px-4 text-left font-semibold text-bcc-blue">酸类名称</th>
+                                <th class="py-4 px-4 text-left font-semibold text-bcc-blue">常见浓度</th>
+                                <th class="py-4 px-4 text-left font-semibold text-bcc-blue">理想pH</th>
+                                <th class="py-4 px-4 text-left font-semibold text-bcc-blue">主要功效</th>
+                                <th class="py-4 px-4 text-left font-semibold text-bcc-blue">适用人群</th>
+                                <th class="py-4 px-4 text-left font-semibold text-bcc-blue">建议停留时间</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-beige/50 acid-row">
+                                <td class="py-4 px-4">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-10 h-10 bg-bcc-blue/10 rounded-lg flex items-center justify-center">
+                                            <i class="ri-drop-line text-bcc-blue"></i>
+                                        </div>
+                                        <div>
+                                            <p class="font-bold text-bcc-blue">甘醇酸</p>
+                                            <p class="text-xs text-gray-500"> Glycolic Acid</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="py-4 px-4">
+                                    <span class="px-3 py-1 bg-mint-green/40 text-green-700 rounded-full text-sm">5-70%</span>
+                                </td>
+                                <td class="py-4 px-4 text-gray-600">2.5-3.5</td>
+                                <td class="py-4 px-4 text-gray-600">去角质、美白、抗老</td>
+                                <td class="py-4 px-4 text-gray-600">所有肤质</td>
+                                <td class="py-4 px-4 text-gray-600">可过夜-5分钟</td>
+                            </tr>
+                            <tr class="border-b border-beige/50 acid-row">
+                                <td class="py-4 px-4">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-10 h-10 bg-mint-green/30 rounded-lg flex items-center justify-center">
+                                            <i class="ri-leaf-line text-green-700"></i>
+                                        </div>
+                                        <div>
+                                            <p class="font-bold text-bcc-blue">水杨酸</p>
+                                            <p class="text-xs text-gray-500">Salicylic Acid</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="py-4 px-4">
+                                    <span class="px-3 py-1 bg-bcc-gold/30 text-orange-700 rounded-full text-sm">0.5-30%</span>
+                                </td>
+                                <td class="py-4 px-4 text-gray-600">3.0-3.5</td>
+                                <td class="py-4 px-4 text-gray-600">控油祛痘、疏通毛孔</td>
+                                <td class="py-4 px-4 text-gray-600">油性/痘肌</td>
+                                <td class="py-4 px-4 text-gray-600">可过夜-5分钟</td>
+                            </tr>
+                            <tr class="border-b border-beige/50 acid-row">
+                                <td class="py-4 px-4">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-10 h-10 bg-pale-purple/30 rounded-lg flex items-center justify-center">
+                                            <i class="ri-seedling-line text-purple-700"></i>
+                                        </div>
+                                        <div>
+                                            <p class="font-bold text-bcc-blue">乳酸</p>
+                                            <p class="text-xs text-gray-500">Lactic Acid</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="py-4 px-4">
+                                    <span class="px-3 py-1 bg-mint-green/40 text-green-700 rounded-full text-sm">5-15%</span>
+                                </td>
+                                <td class="py-4 px-4 text-gray-600">3.0-4.0</td>
+                                <td class="py-4 px-4 text-gray-600">保湿、美白、温和调理</td>
+                                <td class="py-4 px-4 text-gray-600">所有肤质</td>
+                                <td class="py-4 px-4 text-gray-600">可过夜-15分钟</td>
+                            </tr>
+                            <tr class="border-b border-beige/50 acid-row">
+                                <td class="py-4 px-4">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-10 h-10 bg-rose-gold/30 rounded-lg flex items-center justify-center">
+                                            <i class="ri-checkbox-circle-line text-red-700"></i>
+                                        </div>
+                                        <div>
+                                            <p class="font-bold text-bcc-blue">杏仁酸</p>
+                                            <p class="text-xs text-gray-500">Mandelic Acid</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="py-4 px-4">
+                                    <span class="px-3 py-1 bg-mint-green/40 text-green-700 rounded-full text-sm">5-20%</span>
+                                </td>
+                                <td class="py-4 px-4 text-gray-600">3.5-4.5</td>
+                                <td class="py-4 px-4 text-gray-600">疏通毛孔、美白</td>
+                                <td class="py-4 px-4 text-gray-600">入门级用户</td>
+                                <td class="py-4 px-4 text-gray-600">可过夜-20分钟</td>
+                            </tr>
+                            <tr class="border-b border-beige/50 acid-row">
+                                <td class="py-4 px-4">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-10 h-10 bg-bcc-gold/20 rounded-lg flex items-center justify-center">
+                                            <i class="ri-sun-line text-orange-700"></i>
+                                        </div>
+                                        <div>
+                                            <p class="font-bold text-bcc-blue">壬二酸</p>
+                                            <p class="text-xs text-gray-500">Azelaic Acid</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="py-4 px-4">
+                                    <span class="px-3 py-1 bg-bcc-gold/30 text-orange-700 rounded-full text-sm">10-20%</span>
+                                </td>
+                                <td class="py-4 px-4 text-gray-600">4.5-5.5</td>
+                                <td class="py-4 px-4 text-gray-600">美白、抗炎、祛痘</td>
+                                <td class="py-4 px-4 text-gray-600">敏感肌/色沉肌</td>
+                                <td class="py-4 px-4 text-gray-600">可过夜</td>
+                            </tr>
+                            <tr class="acid-row">
+                                <td class="py-4 px-4">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-10 h-10 bg-powder-blue/30 rounded-lg flex items-center justify-center">
+                                            <i class="ri-water-flash-line text-blue-700"></i>
+                                        </div>
+                                        <div>
+                                            <p class="font-bold text-bcc-blue">乳糖酸</p>
+                                            <p class="text-xs text-gray-500">Lactobionic Acid</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="py-4 px-4">
+                                    <span class="px-3 py-1 bg-mint-green/40 text-green-700 rounded-full text-sm">5-15%</span>
+                                </td>
+                                <td class="py-4 px-4 text-gray-600">3.5-4.5</td>
+                                <td class="py-4 px-4 text-gray-600">保湿、抗老、温和</td>
+                                <td class="py-4 px-4 text-gray-600">敏感肌/干性肌</td>
+                                <td class="py-4 px-4 text-gray-600">可过夜</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 产品推荐清单 -->
+    <section id="tool-products" class="tool-section py-16 hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-bcc-blue mb-4">
+                    <i class="ri-shopping-bag-line text-bcc-gold mr-2"></i>
+                    产品推荐清单
+                </h2>
+                <p class="text-gray-500 max-w-2xl mx-auto">分类推荐各类刷酸产品，按需选择</p>
+            </div>
+
+            <!-- 分类筛选 -->
+            <div class="flex flex-wrap justify-center gap-3 mb-8 fade-in">
+                <button onclick="filterProducts('all')" class="filter-btn tab-active px-4 py-2 rounded-full text-sm font-medium transition-all">全部</button>
+                <button onclick="filterProducts('beginner')" class="filter-btn px-4 py-2 rounded-full text-sm font-medium bg-beige text-gray-600 hover:bg-bcc-blue hover:text-white transition-all">入门级</button>
+                <button onclick="filterProducts('advanced')" class="filter-btn px-4 py-2 rounded-full text-sm font-medium bg-beige text-gray-600 hover:bg-bcc-blue hover:text-white transition-all">进阶级</button>
+                <button onclick="filterProducts('medical')" class="filter-btn px-4 py-2 rounded-full text-sm font-medium bg-beige text-gray-600 hover:bg-bcc-blue hover:text-white transition-all">医美级</button>
+                <button onclick="filterProducts('repair')" class="filter-btn px-4 py-2 rounded-full text-sm font-medium bg-beige text-gray-600 hover:bg-bcc-blue hover:text-white transition-all">修复类</button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="productGrid">
+                <!-- 入门级产品 -->
+                <div class="product-card glass-card rounded-3xl p-6 fade-in hover:shadow-xl hover:-translate-y-2 transition-all duration-300" data-category="beginner">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-12 h-12 bg-mint-green/30 rounded-xl flex items-center justify-center">
+                            <i class="ri-drop-line text-bcc-blue text-xl"></i>
+                        </div>
+                        <div>
+                            <span class="px-2 py-1 bg-mint-green text-green-700 rounded-full text-xs">入门级</span>
+                            <h4 class="font-bold text-bcc-blue">CeraVe SA水杨酸精华</h4>
+                        </div>
+                    </div>
+                    <div class="space-y-2 text-sm text-gray-600 mb-4">
+                        <p><span class="font-medium">成分：</span>2%水杨酸+神经酰胺</p>
+                        <p><span class="font-medium">特点：</span>温和修复，屏障友好</p>
+                        <p><span class="font-medium">适用：</span>痤疮肌肤入门</p>
+                        <p><span class="font-medium">价格：</span>100-150元</p>
+                    </div>
+                    <button class="w-full py-2 bg-bcc-blue text-white rounded-lg hover:bg-bcc-navy transition">
+                        <i class="ri-add-line mr-1"></i>添加到清单
+                    </button>
+                </div>
+
+                <div class="product-card glass-card rounded-3xl p-6 fade-in hover:shadow-xl hover:-translate-y-2 transition-all duration-300" data-category="beginner">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-12 h-12 bg-pale-purple/30 rounded-xl flex items-center justify-center">
+                            <i class="ri-flask-line text-bcc-gold text-xl"></i>
+                        </div>
+                        <div>
+                            <span class="px-2 py-1 bg-mint-green text-green-700 rounded-full text-xs">入门级</span>
+                            <h4 class="font-bold text-bcc-blue">The Ordinary甘醇酸7%</h4>
+                        </div>
+                    </div>
+                    <div class="space-y-2 text-sm text-gray-600 mb-4">
+                        <p><span class="font-medium">成分：</span>7%甘醇酸</p>
+                        <p><span class="font-medium">特点：</span>简单有效，成分党入门</p>
+                        <p><span class="font-medium">适用：</span>所有肤质</p>
+                        <p><span class="font-medium">价格：</span>50-80元</p>
+                    </div>
+                    <button class="w-full py-2 bg-bcc-blue text-white rounded-lg hover:bg-bcc-navy transition">
+                        <i class="ri-add-line mr-1"></i>添加到清单
+                    </button>
+                </div>
+
+                <div class="product-card glass-card rounded-3xl p-6 fade-in hover:shadow-xl hover:-translate-y-2 transition-all duration-300" data-category="beginner">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-12 h-12 bg-rose-gold/30 rounded-xl flex items-center justify-center">
+                            <i class="ri-first-aid-kit-line text-bcc-blue text-xl"></i>
+                        </div>
+                        <div>
+                            <span class="px-2 py-1 bg-mint-green text-green-700 rounded-full text-xs">入门级</span>
+                            <h4 class="font-bold text-bcc-blue">宝拉珍选2%水杨酸</h4>
+                        </div>
+                    </div>
+                    <div class="space-y-2 text-sm text-gray-600 mb-4">
+                        <p><span class="font-medium">成分：</span>2%水杨酸</p>
+                        <p><span class="font-medium">特点：</span>经典款，口碑产品</p>
+                        <p><span class="font-medium">适用：</span>控油去痘入门</p>
+                        <p><span class="font-medium">价格：</span>150-200元</p>
+                    </div>
+                    <button class="w-full py-2 bg-bcc-blue text-white rounded-lg hover:bg-bcc-navy transition">
+                        <i class="ri-add-line mr-1"></i>添加到清单
+                    </button>
+                </div>
+
+                <!-- 进阶级产品 -->
+                <div class="product-card glass-card rounded-3xl p-6 fade-in hover:shadow-xl hover:-translate-y-2 transition-all duration-300" data-category="advanced">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-12 h-12 bg-bcc-blue/10 rounded-xl flex items-center justify-center">
+                            <i class="ri-vip-diamond-line text-bcc-blue text-xl"></i>
+                        </div>
+                        <div>
+                            <span class="px-2 py-1 bg-bcc-gold/30 text-orange-700 rounded-full text-xs">进阶级</span>
+                            <h4 class="font-bold text-bcc-blue">修丽可果酸精华</h4>
+                        </div>
+                    </div>
+                    <div class="space-y-2 text-sm text-gray-600 mb-4">
+                        <p><span class="font-medium">成分：</span>甘醇酸+水杨酸+柠檬酸</p>
+                        <p><span class="font-medium">特点：</span>多酸协同，改善粉刺</p>
+                        <p><span class="font-medium">适用：</span>痤疮、粗糙肌肤</p>
+                        <p><span class="font-medium">价格：</span>400-500元</p>
+                    </div>
+                    <button class="w-full py-2 bg-bcc-blue text-white rounded-lg hover:bg-bcc-navy transition">
+                        <i class="ri-add-line mr-1"></i>添加到清单
+                    </button>
+                </div>
+
+                <div class="product-card glass-card rounded-3xl p-6 fade-in hover:shadow-xl hover:-translate-y-2 transition-all duration-300" data-category="advanced">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-12 h-12 bg-mint-green/20 rounded-xl flex items-center justify-center">
+                            <i class="ri-leaf-line text-green-700 text-xl"></i>
+                        </div>
+                        <div>
+                            <span class="px-2 py-1 bg-bcc-gold/30 text-orange-700 rounded-full text-xs">进阶级</span>
+                            <h4 class="font-bold text-bcc-blue">芯丝翠活性乳液</h4>
+                        </div>
+                    </div>
+                    <div class="space-y-2 text-sm text-gray-600 mb-4">
+                        <p><span class="font-medium">成分：</span>10%乳糖酸</p>
+                        <p><span class="font-medium">特点：</span>温和抗老</p>
+                        <p><span class="font-medium">适用：</span>敏感肌进阶</p>
+                        <p><span class="font-medium">价格：</span>300-400元</p>
+                    </div>
+                    <button class="w-full py-2 bg-bcc-blue text-white rounded-lg hover:bg-bcc-navy transition">
+                        <i class="ri-add-line mr-1"></i>添加到清单
+                    </button>
+                </div>
+
+                <div class="product-card glass-card rounded-3xl p-6 fade-in hover:shadow-xl hover:-translate-y-2 transition-all duration-300" data-category="advanced">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-12 h-12 bg-rose-gold/20 rounded-xl flex items-center justify-center">
+                            <i class="ri-sun-line text-orange-700 text-xl"></i>
+                        </div>
+                        <div>
+                            <span class="px-2 py-1 bg-bcc-gold/30 text-orange-700 rounded-full text-xs">进阶级</span>
+                            <h4 class="font-bold text-bcc-blue">欧玛橄榄凝胶</h4>
+                        </div>
+                    </div>
+                    <div class="space-y-2 text-sm text-gray-600 mb-4">
+                        <p><span class="font-medium">成分：</span>15%壬二酸</p>
+                        <p><span class="font-medium">特点：</span>消炎美白</p>
+                        <p><span class="font-medium">适用：</span>玫瑰痤疮、色沉</p>
+                        <p><span class="font-medium">价格：</span>350-450元</p>
+                    </div>
+                    <button class="w-full py-2 bg-bcc-blue text-white rounded-lg hover:bg-bcc-navy transition">
+                        <i class="ri-add-line mr-1"></i>添加到清单
+                    </button>
+                </div>
+
+                <!-- 修复类 -->
+                <div class="product-card glass-card rounded-3xl p-6 fade-in hover:shadow-xl hover:-translate-y-2 transition-all duration-300" data-category="repair">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-12 h-12 bg-powder-blue/30 rounded-xl flex items-center justify-center">
+                            <i class="ri-heart-pulse-line text-blue-700 text-xl"></i>
+                        </div>
+                        <div>
+                            <span class="px-2 py-1 bg-mint-green text-green-700 rounded-full text-xs">修复类</span>
+                            <h4 class="font-bold text-bcc-blue">修丽可B5精华</h4>
+                        </div>
+                    </div>
+                    <div class="space-y-2 text-sm text-gray-600 mb-4">
+                        <p><span class="font-medium">成分：</span>透明质酸</p>
+                        <p><span class="font-medium">特点：</span>深层补水</p>
+                        <p><span class="font-medium">适用：</span>术后立即使用</p>
+                        <p><span class="font-medium">价格：</span>200-300元</p>
+                    </div>
+                    <button class="w-full py-2 bg-bcc-blue text-white rounded-lg hover:bg-bcc-navy transition">
+                        <i class="ri-add-line mr-1"></i>添加到清单
+                    </button>
+                </div>
+
+                <div class="product-card glass-card rounded-3xl p-6 fade-in hover:shadow-xl hover:-translate-y-2 transition-all duration-300" data-category="repair">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-12 h-12 bg-beige rounded-xl flex items-center justify-center">
+                            <i class="ri-shield-check-line text-bcc-blue text-xl"></i>
+                        </div>
+                        <div>
+                            <span class="px-2 py-1 bg-mint-green text-green-700 rounded-full text-xs">修复类</span>
+                            <h4 class="font-bold text-bcc-blue">CeraVe修复面霜</h4>
+                        </div>
+                    </div>
+                    <div class="space-y-2 text-sm text-gray-600 mb-4">
+                        <p><span class="font-medium">成分：</span>神经酰胺</p>
+                        <p><span class="font-medium">特点：</span>屏障修复</p>
+                        <p><span class="font-medium">适用：</span>术后24小时后</p>
+                        <p><span class="font-medium">价格：</span>100-150元</p>
+                    </div>
+                    <button class="w-full py-2 bg-bcc-blue text-white rounded-lg hover:bg-bcc-navy transition">
+                        <i class="ri-add-line mr-1"></i>添加到清单
+                    </button>
+                </div>
+
+                <div class="product-card glass-card rounded-3xl p-6 fade-in hover:shadow-xl hover:-translate-y-2 transition-all duration-300" data-category="repair">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-12 h-12 bg-bcc-gold/20 rounded-xl flex items-center justify-center">
+                            <i class="ri-sun-line text-orange-700 text-xl"></i>
+                        </div>
+                        <div>
+                            <span class="px-2 py-1 bg-mint-green text-green-700 rounded-full text-xs">修复类</span>
+                            <h4 class="font-bold text-bcc-blue">城野医生防晒霜</h4>
+                        </div>
+                    </div>
+                    <div class="space-y-2 text-sm text-gray-600 mb-4">
+                        <p><span class="font-medium">成分：</span>氧化锌/二氧化钛</p>
+                        <p><span class="font-medium">特点：</span>物理防晒</p>
+                        <p><span class="font-medium">适用：</span>术后2周内首选</p>
+                        <p><span class="font-medium">价格：</span>150-200元</p>
+                    </div>
+                    <button class="w-full py-2 bg-bcc-blue text-white rounded-lg hover:bg-bcc-navy transition">
+                        <i class="ri-add-line mr-1"></i>添加到清单
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 专业术语表 -->
+    <section id="tool-glossary" class="tool-section py-16 hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-bcc-blue mb-4">
+                    <i class="ri-book-2-line text-bcc-gold mr-2"></i>
+                    专业术语表
+                </h2>
+                <p class="text-gray-500 max-w-2xl mx-auto">按分类索引，快速查阅专业术语</p>
+            </div>
+
+            <!-- 分类标签 -->
+            <div class="flex flex-wrap justify-center gap-3 mb-8 fade-in">
+                <button onclick="filterGlossary('all')" class="glossary-btn tab-active px-4 py-2 rounded-full text-sm font-medium transition-all">全部</button>
+                <button onclick="filterGlossary('basic')" class="glossary-btn px-4 py-2 rounded-full text-sm font-medium bg-beige text-gray-600 hover:bg-bcc-blue hover:text-white transition-all">基础概念</button>
+                <button onclick="filterGlossary('treatment')" class="glossary-btn px-4 py-2 rounded-full text-sm font-medium bg-beige text-gray-600 hover:bg-bcc-blue hover:text-white transition-all">治疗相关</button>
+                <button onclick="filterGlossary('ingredient')" class="glossary-btn px-4 py-2 rounded-full text-sm font-medium bg-beige text-gray-600 hover:bg-bcc-blue hover:text-white transition-all">成分相关</button>
+                <button onclick="filterGlossary('skin')" class="glossary-btn px-4 py-2 rounded-full text-sm font-medium bg-beige text-gray-600 hover:bg-bcc-blue hover:text-white transition-all">皮肤问题</button>
+            </div>
+
+            <!-- 术语卡片 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="glossaryGrid">
+                <!-- 基础概念 -->
+                <div class="glossary-card glass-card rounded-2xl p-5 fade-in hover:shadow-lg transition-all" data-category="basic">
+                    <div class="flex items-start justify-between">
+                        <div>
+                            <h4 class="font-bold text-bcc-blue">化学剥脱 (Chemical Peel)</h4>
+                            <p class="text-xs text-gray-400 mt-1">Chemical Peel</p>
+                        </div>
+                        <span class="px-2 py-1 bg-mint-green/40 text-green-700 rounded-full text-xs">基础概念</span>
+                    </div>
+                    <p class="text-sm text-gray-600 mt-3">使用化学物质去除皮肤表层的技术，可改善多种皮肤问题。</p>
+                </div>
+
+                <div class="glossary-card glass-card rounded-2xl p-5 fade-in hover:shadow-lg transition-all" data-category="basic">
+                    <div class="flex items-start justify-between">
+                        <div>
+                            <h4 class="font-bold text-bcc-blue">果酸 (AHA)</h4>
+                            <p class="text-xs text-gray-400 mt-1">Alpha Hydroxy Acid</p>
+                        </div>
+                        <span class="px-2 py-1 bg-mint-green/40 text-green-700 rounded-full text-xs">基础概念</span>
+                    </div>
+                    <p class="text-sm text-gray-600 mt-3">一类水溶性有机酸，包括甘醇酸、乳酸、柠檬酸等。</p>
+                </div>
+
+                <div class="glossary-card glass-card rounded-2xl p-5 fade-in hover:shadow-lg transition-all" data-category="basic">
+                    <div class="flex items-start justify-between">
+                        <div>
+                            <h4 class="font-bold text-bcc-blue">水杨酸 (BHA)</h4>
+                            <p class="text-xs text-gray-400 mt-1">Beta Hydroxy Acid</p>
+                        </div>
+                        <span class="px-2 py-1 bg-mint-green/40 text-green-700 rounded-full text-xs">基础概念</span>
+                    </div>
+                    <p class="text-sm text-gray-600 mt-3">脂溶性有机酸，具有抗炎作用，更适合油性肌肤。</p>
+                </div>
+
+                <div class="glossary-card glass-card rounded-2xl p-5 fade-in hover:shadow-lg transition-all" data-category="basic">
+                    <div class="flex items-start justify-between">
+                        <div>
+                            <h4 class="font-bold text-bcc-blue">皮肤屏障 (Skin Barrier)</h4>
+                            <p class="text-xs text-gray-400 mt-1">Skin Barrier</p>
+                        </div>
+                        <span class="px-2 py-1 bg-mint-green/40 text-green-700 rounded-full text-xs">基础概念</span>
+                    </div>
+                    <p class="text-sm text-gray-600 mt-3">保护皮肤免受外界侵害的功能结构，由角质层和皮脂膜组成。</p>
+                </div>
+
+                <!-- 治疗相关 -->
+                <div class="glossary-card glass-card rounded-2xl p-5 fade-in hover:shadow-lg transition-all" data-category="treatment">
+                    <div class="flex items-start justify-between">
+                        <div>
+                            <h4 class="font-bold text-bcc-blue">剥脱深度 (Depth of Peel)</h4>
+                            <p class="text-xs text-gray-400 mt-1">Depth of Peel</p>
+                        </div>
+                        <span class="px-2 py-1 bg-bcc-gold/30 text-orange-700 rounded-full text-xs">治疗相关</span>
+                    </div>
+                    <p class="text-sm text-gray-600 mt-3">化学剥脱作用到的皮肤深度，分为浅层、中层、深层。</p>
+                </div>
+
+                <div class="glossary-card glass-card rounded-2xl p-5 fade-in hover:shadow-lg transition-all" data-category="treatment">
+                    <div class="flex items-start justify-between">
+                        <div>
+                            <h4 class="font-bold text-bcc-blue">终点反应 (End Point)</h4>
+                            <p class="text-xs text-gray-400 mt-1">End Point</p>
+                        </div>
+                        <span class="px-2 py-1 bg-bcc-gold/30 text-orange-700 rounded-full text-xs">治疗相关</span>
+                    </div>
+                    <p class="text-sm text-gray-600 mt-3">剥脱过程中观察到的皮肤反应，用于判断治疗效果。</p>
+                </div>
+
+                <div class="glossary-card glass-card rounded-2xl p-5 fade-in hover:shadow-lg transition-all" data-category="treatment">
+                    <div class="flex items-start justify-between">
+                        <div>
+                            <h4 class="font-bold text-bcc-blue">爆痘期 (Purging)</h4>
+                            <p class="text-xs text-gray-400 mt-1">Purging</p>
+                        </div>
+                        <span class="px-2 py-1 bg-bcc-gold/30 text-orange-700 rounded-full text-xs">治疗相关</span>
+                    </div>
+                    <p class="text-sm text-gray-600 mt-3">刷酸后痤疮加重的阶段，是皮肤代谢加速的正常反应。</p>
+                </div>
+
+                <div class="glossary-card glass-card rounded-2xl p-5 fade-in hover:shadow-lg transition-all" data-category="treatment">
+                    <div class="flex items-start justify-between">
+                        <div>
+                            <h4 class="font-bold text-bcc-blue">反黑 (PIH)</h4>
+                            <p class="text-xs text-gray-400 mt-1">Post-Inflammatory Hyperpigmentation</p>
+                        </div>
+                        <span class="px-2 py-1 bg-bcc-gold/30 text-orange-700 rounded-full text-xs">治疗相关</span>
+                    </div>
+                    <p class="text-sm text-gray-600 mt-3">炎症后出现的色素沉着，是皮肤自我保护的反应。</p>
+                </div>
+
+                <!-- 成分相关 -->
+                <div class="glossary-card glass-card rounded-2xl p-5 fade-in hover:shadow-lg transition-all" data-category="ingredient">
+                    <div class="flex items-start justify-between">
+                        <div>
+                            <h4 class="font-bold text-bcc-blue">甘醇酸 (Glycolic Acid)</h4>
+                            <p class="text-xs text-gray-400 mt-1">分子量最小的果酸</p>
+                        </div>
+                        <span class="px-2 py-1 bg-pale-purple/40 text-purple-700 rounded-full text-xs">成分相关</span>
+                    </div>
+                    <p class="text-sm text-gray-600 mt-3">最常用的果酸，分子量最小，穿透力强，效果显著。</p>
+                </div>
+
+                <div class="glossary-card glass-card rounded-2xl p-5 fade-in hover:shadow-lg transition-all" data-category="ingredient">
+                    <div class="flex items-start justify-between">
+                        <div>
+                            <h4 class="font-bold text-bcc-blue">神经酰胺 (Ceramide)</h4>
+                            <p class="text-xs text-gray-400 mt-1">皮肤屏障重要成分</p>
+                        </div>
+                        <span class="px-2 py-1 bg-pale-purple/40 text-purple-700 rounded-full text-xs">成分相关</span>
+                    </div>
+                    <p class="text-sm text-gray-600 mt-3">皮肤屏障的重要组成成分，帮助锁水保湿。</p>
+                </div>
+
+                <div class="glossary-card glass-card rounded-2xl p-5 fade-in hover:shadow-lg transition-all" data-category="ingredient">
+                    <div class="flex items-start justify-between">
+                        <div>
+                            <h4 class="font-bold text-bcc-blue">烟酰胺 (Niacinamide)</h4>
+                            <p class="text-xs text-gray-400 mt-1">维生素B3</p>
+                        </div>
+                        <span class="px-2 py-1 bg-pale-purple/40 text-purple-700 rounded-full text-xs">成分相关</span>
+                    </div>
+                    <p class="text-sm text-gray-600 mt-3">维生素B3，具有美白、抗炎、调节皮脂等多重功效。</p>
+                </div>
+
+                <div class="glossary-card glass-card rounded-2xl p-5 fade-in hover:shadow-lg transition-all" data-category="ingredient">
+                    <div class="flex items-start justify-between">
+                        <div>
+                            <h4 class="font-bold text-bcc-blue">乳糖酸 (Lactobionic Acid)</h4>
+                            <p class="text-xs text-gray-400 mt-1">第三代果酸</p>
+                        </div>
+                        <span class="px-2 py-1 bg-pale-purple/40 text-purple-700 rounded-full text-xs">成分相关</span>
+                    </div>
+                    <p class="text-sm text-gray-600 mt-3">第三代果酸，温和且有保湿性，适合敏感肌。</p>
+                </div>
+
+                <!-- 皮肤问题 -->
+                <div class="glossary-card glass-card rounded-2xl p-5 fade-in hover:shadow-lg transition-all" data-category="skin">
+                    <div class="flex items-start justify-between">
+                        <div>
+                            <h4 class="font-bold text-bcc-blue">痤疮 (Acne)</h4>
+                            <p class="text-xs text-gray-400 mt-1">Acne</p>
+                        </div>
+                        <span class="px-2 py-1 bg-rose-gold/40 text-red-700 rounded-full text-xs">皮肤问题</span>
+                    </div>
+                    <p class="text-sm text-gray-600 mt-3">毛囊皮脂腺的慢性炎症性疾病，表现为粉刺、丘疹等。</p>
+                </div>
+
+                <div class="glossary-card glass-card rounded-2xl p-5 fade-in hover:shadow-lg transition-all" data-category="skin">
+                    <div class="flex items-start justify-between">
+                        <div>
+                            <h4 class="font-bold text-bcc-blue">粉刺 (Comedo)</h4>
+                            <p class="text-xs text-gray-400 mt-1">Comedo</p>
+                        </div>
+                        <span class="px-2 py-1 bg-rose-gold/40 text-red-700 rounded-full text-xs">皮肤问题</span>
+                    </div>
+                    <p class="text-sm text-gray-600 mt-3">毛孔堵塞后形成的角栓，分为闭口粉刺和开口粉刺。</p>
+                </div>
+
+                <div class="glossary-card glass-card rounded-2xl p-5 fade-in hover:shadow-lg transition-all" data-category="skin">
+                    <div class="flex items-start justify-between">
+                        <div>
+                            <h4 class="font-bold text-bcc-blue">黄褐斑 (Melasma)</h4>
+                            <p class="text-xs text-gray-400 mt-1">Melasma</p>
+                        </div>
+                        <span class="px-2 py-1 bg-rose-gold/40 text-red-700 rounded-full text-xs">皮肤问题</span>
+                    </div>
+                    <p class="text-sm text-gray-600 mt-3">对称性面部色素沉着疾病，与激素、日晒等因素相关。</p>
+                </div>
+
+                <div class="glossary-card glass-card rounded-2xl p-5 fade-in hover:shadow-lg transition-all" data-category="skin">
+                    <div class="flex items-start justify-between">
+                        <div>
+                            <h4 class="font-bold text-bcc-blue">毛周角化 (Keratosis Pilaris)</h4>
+                            <p class="text-xs text-gray-400 mt-1">Keratosis Pilaris</p>
+                        </div>
+                        <span class="px-2 py-1 bg-rose-gold/40 text-red-700 rounded-full text-xs">皮肤问题</span>
+                    </div>
+                    <p class="text-sm text-gray-600 mt-3">毛孔角化异常导致的颗粒状皮疹，常见于手臂外侧。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 常见问题快速索引 -->
+    <section id="tool-faq" class="tool-section py-16 hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-bcc-blue mb-4">
+                    <i class="ri-question-line text-bcc-gold mr-2"></i>
+                    常见问题快速索引
+                </h2>
+                <p class="text-gray-500 max-w-2xl mx-auto">快速查找常见问题的答案</p>
+            </div>
+
+            <!-- 分类导航 -->
+            <div class="flex flex-wrap justify-center gap-3 mb-8 fade-in">
+                <button onclick="filterFAQ('all')" class="faq-btn tab-active px-4 py-2 rounded-full text-sm font-medium transition-all">全部</button>
+                <button onclick="filterFAQ('beginner')" class="faq-btn px-4 py-2 rounded-full text-sm font-medium bg-beige text-gray-600 hover:bg-bcc-blue hover:text-white transition-all">入门</button>
+                <button onclick="filterFAQ('operation')" class="faq-btn px-4 py-2 rounded-full text-sm font-medium bg-beige text-gray-600 hover:bg-bcc-blue hover:text-white transition-all">操作</button>
+                <button onclick="filterFAQ('product')" class="faq-btn px-4 py-2 rounded-full text-sm font-medium bg-beige text-gray-600 hover:bg-bcc-blue hover:text-white transition-all">产品</button>
+                <button onclick="filterFAQ('safety')" class="faq-btn px-4 py-2 rounded-full text-sm font-medium bg-beige text-gray-600 hover:bg-bcc-blue hover:text-white transition-all">安全</button>
+            </div>
+
+            <!-- FAQ列表 -->
+            <div class="space-y-4" id="faqList">
+                <!-- 入门问题 -->
+                <div class="faq-item glass-card rounded-2xl overflow-hidden fade-in" data-category="beginner">
+                    <button onclick="toggleFAQ(this)" class="w-full px-6 py-4 text-left flex items-center justify-between">
+                        <div class="flex items-center space-x-4">
+                            <span class="w-8 h-8 bg-mint-green rounded-full flex items-center justify-center text-sm font-bold text-green-700">Q</span>
+                            <span class="font-medium text-bcc-blue">刷酸会让皮肤变薄吗？</span>
+                        </div>
+                        <i class="ri-arrow-down-s-line text-gray-400 transition-transform"></i>
+                    </button>
+                    <div class="hidden px-6 pb-4">
+                        <div class="pl-12">
+                            <p class="text-gray-600 text-sm"><span class="font-bold text-green-700">正确使用不会，反而增强皮肤。</span>合理使用刷酸产品可以促进角质层更新，使皮肤更加健康。长期使用适当浓度的果酸还可以刺激胶原蛋白生成，增强皮肤厚度。</p>
+                            <p class="text-xs text-gray-400 mt-2">详见：第八章 8.1.1</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item glass-card rounded-2xl overflow-hidden fade-in" data-category="beginner">
+                    <button onclick="toggleFAQ(this)" class="w-full px-6 py-4 text-left flex items-center justify-between">
+                        <div class="flex items-center space-x-4">
+                            <span class="w-8 h-8 bg-mint-green rounded-full flex items-center justify-center text-sm font-bold text-green-700">Q</span>
+                            <span class="font-medium text-bcc-blue">敏感肌可以用酸吗？</span>
+                        </div>
+                        <i class="ri-arrow-down-s-line text-gray-400 transition-transform"></i>
+                    </button>
+                    <div class="hidden px-6 pb-4">
+                        <div class="pl-12">
+                            <p class="text-gray-600 text-sm"><span class="font-bold text-green-700">可以，选择温和酸类。</span>敏感肌可以选择乳糖酸、杏仁酸等温和酸类，从极低浓度（5%以下）开始，建立耐受后再逐步调整。</p>
+                            <p class="text-xs text-gray-400 mt-2">详见：第八章 8.2.2</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item glass-card rounded-2xl overflow-hidden fade-in" data-category="beginner">
+                    <button onclick="toggleFAQ(this)" class="w-full px-6 py-4 text-left flex items-center justify-between">
+                        <div class="flex items-center space-x-4">
+                            <span class="w-8 h-8 bg-mint-green rounded-full flex items-center justify-center text-sm font-bold text-green-700">Q</span>
+                            <span class="font-medium text-bcc-blue">刷酸后爆痘正常吗？</span>
+                        </div>
+                        <i class="ri-arrow-down-s-line text-gray-400 transition-transform"></i>
+                    </button>
+                    <div class="hidden px-6 pb-4">
+                        <div class="pl-12">
+                            <p class="text-gray-600 text-sm"><span class="font-bold text-green-700">正常，是代谢加速的表现。</span>爆痘期（Purging）是刷酸后常见的暂时性反应，通常持续2-4周。这是毛孔内深层堵塞物被排出的过程，坚持使用会逐渐改善。</p>
+                            <p class="text-xs text-gray-400 mt-2">详见：第八章 8.2.1</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 操作问题 -->
+                <div class="faq-item glass-card rounded-2xl overflow-hidden fade-in" data-category="operation">
+                    <button onclick="toggleFAQ(this)" class="w-full px-6 py-4 text-left flex items-center justify-between">
+                        <div class="flex items-center space-x-4">
+                            <span class="w-8 h-8 bg-bcc-gold/30 rounded-full flex items-center justify-center text-sm font-bold text-orange-700">Q</span>
+                            <span class="font-medium text-bcc-blue">刷酸频率怎么安排？</span>
+                        </div>
+                        <i class="ri-arrow-down-s-line text-gray-400 transition-transform"></i>
+                    </button>
+                    <div class="hidden px-6 pb-4">
+                        <div class="pl-12">
+                            <p class="text-gray-600 text-sm"><span class="font-bold text-green-700">从每周1次开始，逐步增加。</span>新手建议每周1次，持续2周无不适后可增加至每周2-3次。进阶级产品可每周2-3次，但要密切观察皮肤反应。</p>
+                            <p class="text-xs text-gray-400 mt-2">详见：第八章 8.2.3</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item glass-card rounded-2xl overflow-hidden fade-in" data-category="operation">
+                    <button onclick="toggleFAQ(this)" class="w-full px-6 py-4 text-left flex items-center justify-between">
+                        <div class="flex items-center space-x-4">
+                            <span class="w-8 h-8 bg-bcc-gold/30 rounded-full flex items-center justify-center text-sm font-bold text-orange-700">Q</span>
+                            <span class="font-medium text-bcc-blue">刷酸后需要防晒吗？</span>
+                        </div>
+                        <i class="ri-arrow-down-s-line text-gray-400 transition-transform"></i>
+                    </button>
+                    <div class="hidden px-6 pb-4">
+                        <div class="pl-12">
+                            <p class="text-gray-600 text-sm"><span class="font-bold text-green-700">必须严格防晒。</span>刷酸后皮肤屏障较弱，紫外线更容易造成伤害。建议术后2周内硬防晒+物理防晒霜，之后持续使用SPF30+防晒产品。</p>
+                            <p class="text-xs text-gray-400 mt-2">详见：第六章 6.2.2</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 产品问题 -->
+                <div class="faq-item glass-card rounded-2xl overflow-hidden fade-in" data-category="product">
+                    <button onclick="toggleFAQ(this)" class="w-full px-6 py-4 text-left flex items-center justify-between">
+                        <div class="flex items-center space-x-4">
+                            <span class="w-8 h-8 bg-pale-purple/40 rounded-full flex items-center justify-center text-sm font-bold text-purple-700">Q</span>
+                            <span class="font-medium text-bcc-blue">浓度越高越好吗？</span>
+                        </div>
+                        <i class="ri-arrow-down-s-line text-gray-400 transition-transform"></i>
+                    </button>
+                    <div class="hidden px-6 pb-4">
+                        <div class="pl-12">
+                            <p class="text-gray-600 text-sm"><span class="font-bold text-green-700">不是，适合最重要。</span>效果受浓度、pH值、配方、使用方法等多重因素影响。选择与肤质和问题相匹配的浓度，从低浓度开始建立耐受才是正确做法。</p>
+                            <p class="text-xs text-gray-400 mt-2">详见：第十章 10.3.1</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item glass-card rounded-2xl overflow-hidden fade-in" data-category="product">
+                    <button onclick="toggleFAQ(this)" class="w-full px-6 py-4 text-left flex items-center justify-between">
+                        <div class="flex items-center space-x-4">
+                            <span class="w-8 h-8 bg-pale-purple/40 rounded-full flex items-center justify-center text-sm font-bold text-purple-700">Q</span>
+                            <span class="font-medium text-bcc-blue">贵的产品效果更好吗？</span>
+                        </div>
+                        <i class="ri-arrow-down-s-line text-gray-400 transition-transform"></i>
+                    </button>
+                    <div class="hidden px-6 pb-4">
+                        <div class="pl-12">
+                            <p class="text-gray-600 text-sm"><span class="font-bold text-green-700">不一定，看成分和配方。</span>价格受品牌溢价、营销成本、包装等因素影响。选择含有有效成分、配方合理的产品，比追求高价更明智。</p>
+                            <p class="text-xs text-gray-400 mt-2">详见：第十章 10.3.3</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 安全问题 -->
+                <div class="faq-item glass-card rounded-2xl overflow-hidden fade-in" data-category="safety">
+                    <button onclick="toggleFAQ(this)" class="w-full px-6 py-4 text-left flex items-center justify-between">
+                        <div class="flex items-center space-x-4">
+                            <span class="w-8 h-8 bg-rose-gold/40 rounded-full flex items-center justify-center text-sm font-bold text-red-700">Q</span>
+                            <span class="font-medium text-bcc-blue">刷酸灼伤怎么办？</span>
+                        </div>
+                        <i class="ri-arrow-down-s-line text-gray-400 transition-transform"></i>
+                    </button>
+                    <div class="hidden px-6 pb-4">
+                        <div class="pl-12">
+                            <p class="text-gray-600 text-sm"><span class="font-bold text-red-700">立即停用就医。</span>灼伤是刷酸的严重并发症，应立即停止使用，用清水冲洗，及时就医。医美术后灼伤需遵医嘱进行护理。</p>
+                            <p class="text-xs text-gray-400 mt-2">详见：第九章 9.4.1</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item glass-card rounded-2xl overflow-hidden fade-in" data-category="safety">
+                    <button onclick="toggleFAQ(this)" class="w-full px-6 py-4 text-left flex items-center justify-between">
+                        <div class="flex items-center space-x-4">
+                            <span class="w-8 h-8 bg-rose-gold/40 rounded-full flex items-center justify-center text-sm font-bold text-red-700">Q</span>
+                            <span class="font-medium text-bcc-blue">孕妇可以刷酸吗？</span>
+                        </div>
+                        <i class="ri-arrow-down-s-line text-gray-400 transition-transform"></i>
+                    </button>
+                    <div class="hidden px-6 pb-4">
+                        <div class="pl-12">
+                            <p class="text-gray-600 text-sm"><span class="font-bold text-orange-700">需谨慎，建议咨询医生。</span>虽然家用低浓度产品相对安全，但孕期皮肤敏感度增加，建议避免或咨询专业医生后再决定。</p>
+                            <p class="text-xs text-gray-400 mt-2">详见：第五章</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 返回首页导航 -->
+    <section class="py-8 bg-warm-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="index.html" class="px-6 py-3 bg-bcc-blue text-white rounded-full hover:bg-bcc-navy transition flex items-center space-x-2">
+                    <i class="ri-home-line"></i>
+                    <span>返回首页</span>
+                </a>
+                <a href="chapter10.html" class="px-6 py-3 bg-bcc-gold text-white rounded-full hover:bg-orange-600 transition flex items-center space-x-2">
+                    <i class="ri-book-read-line"></i>
+                    <span>第十章</span>
+                </a>
+                <a href="chapter9.html" class="px-6 py-3 bg-beige text-gray-700 rounded-full hover:bg-rose-gold transition flex items-center space-x-2">
+                    <i class="ri-arrow-left-line"></i>
+                    <span>第九章</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-bcc-navy text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <img src="https://docs.bccsw.cn/logo.png" alt="Logo" class="h-12">
+                        <span class="text-lg font-medium">联合丽格（西南）</span>
+                    </div>
+                    <p class="text-gray-300 text-sm">联合丽格（西南）行业资讯分享<br>科学护肤，从了解开始</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">快速导航</h4>
+                    <div class="grid grid-cols-2 gap-2 text-sm text-gray-300">
+                        <a href="chapter1.html" class="hover:text-bcc-gold">第一章</a>
+                        <a href="chapter5.html" class="hover:text-bcc-gold">第五章</a>
+                        <a href="chapter8.html" class="hover:text-bcc-gold">第八章</a>
+                        <a href="chapter10.html" class="hover:text-bcc-gold">第十章</a>
+                        <a href="appendix.html" class="hover:text-bcc-gold">附录</a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">联系我们</h4>
+                    <div class="space-y-2 text-sm text-gray-300">
+                        <p><i class="ri-phone-line mr-2"></i>主热线：023-68726872</p>
+                        <p><i class="ri-mail-line mr-2"></i>bccsw@cqlhlg.work</p>
+                        <p><i class="ri-map-pin-line mr-2"></i>重庆市渝中区临江支路28号</p>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8 text-center text-sm text-gray-400">
+                <p>ICP备案：渝ICP备2024023473号</p>
+                <p class="mt-2">重庆联合丽格科技有限公司</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Tool tabs
+        function showTool(toolId) {
+            document.querySelectorAll('.tool-section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            document.getElementById('tool-' + toolId).classList.remove('hidden');
+
+            document.querySelectorAll('#toolTabs .tab-btn').forEach(btn => {
+                btn.classList.remove('tab-active');
+                btn.classList.add('bg-beige', 'text-gray-600');
+            });
+            document.querySelector(`[data-tab="${toolId}"]`).classList.add('tab-active');
+            document.querySelector(`[data-tab="${toolId}"]`).classList.remove('bg-beige', 'text-gray-600');
+
+            // Re-trigger fade-in animation
+            const targetSection = document.getElementById('tool-' + toolId);
+            targetSection.querySelectorAll('.fade-in').forEach(el => {
+                el.classList.remove('visible');
+            });
+            setTimeout(() => {
+                targetSection.querySelectorAll('.fade-in').forEach(el => {
+                    el.classList.add('visible');
+                });
+            }, 100);
+        }
+
+        // FAQ toggle
+        function toggleFAQ(button) {
+            const faqItem = button.parentElement;
+            const answer = faqItem.querySelector('div:last-child');
+            const icon = button.querySelector('i');
+
+            answer.classList.toggle('hidden');
+            icon.classList.toggle('rotate-180');
+        }
+
+        // Filter functions
+        function filterProducts(category) {
+            document.querySelectorAll('.product-card').forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('tab-active');
+                btn.classList.add('bg-beige', 'text-gray-600');
+            });
+            event.target.classList.add('tab-active');
+            event.target.classList.remove('bg-beige', 'text-gray-600');
+        }
+
+        function filterGlossary(category) {
+            document.querySelectorAll('.glossary-card').forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            document.querySelectorAll('.glossary-btn').forEach(btn => {
+                btn.classList.remove('tab-active');
+                btn.classList.add('bg-beige', 'text-gray-600');
+            });
+            event.target.classList.add('tab-active');
+            event.target.classList.remove('bg-beige', 'text-gray-600');
+        }
+
+        function filterFAQ(category) {
+            document.querySelectorAll('.faq-item').forEach(item => {
+                if (category === 'all' || item.dataset.category === category) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+
+            document.querySelectorAll('.faq-btn').forEach(btn => {
+                btn.classList.remove('tab-active');
+                btn.classList.add('bg-beige', 'text-gray-600');
+            });
+            event.target.classList.add('tab-active');
+            event.target.classList.remove('bg-beige', 'text-gray-600');
+        }
+
+        // Acid table filter
+        function filterAcidTable() {
+            const searchTerm = document.getElementById('acidSearch').value.toLowerCase();
+            const concentrationFilter = document.getElementById('concentrationFilter').value;
+
+            document.querySelectorAll('.acid-row').forEach(row => {
+                const acidName = row.querySelector('td:first-child').textContent.toLowerCase();
+                const concentration = row.querySelector('td:nth-child(2) span').textContent;
+
+                let matchesSearch = acidName.includes(searchTerm);
+                let matchesConcentration = true;
+
+                if (concentrationFilter !== 'all') {
+                    const concValue = parseInt(concentration.match(/\d+/)?.[0] || 0);
+                    switch (concentrationFilter) {
+                        case 'low': matchesConcentration = concValue <= 5; break;
+                        case 'medium': matchesConcentration = concValue > 5 && concValue <= 15; break;
+                        case 'high': matchesConcentration = concValue > 15 && concValue <= 30; break;
+                        case 'medical': matchesConcentration = concValue > 30; break;
+                    }
+                }
+
+                row.style.display = (matchesSearch && matchesConcentration) ? '' : 'none';
+            });
+        }
+
+        // Diary functions
+        function addTrackingRow() {
+            alert('可手动添加表格行来扩展追踪记录');
+        }
+
+        function resetDiary() {
+            if (confirm('确定要重置所有记录吗？此操作不可恢复。')) {
+                document.querySelectorAll('#tool-diary input, #tool-diary select, #tool-diary textarea').forEach(el => {
+                    if (el.type === 'checkbox' || el.type === 'radio') {
+                        el.checked = false;
+                    } else if (el.type === 'date') {
+                        el.value = '';
+                    } else if (el.tagName === 'SELECT') {
+                        el.selectedIndex = 0;
+                    } else {
+                        el.value = '';
+                    }
+                });
+            }
+        }
+
+        function saveDiary() {
+            alert('记录已保存！在实际使用中，这里可以将数据保存到本地存储或导出为文件。');
+        }
+
+        // Pain score slider
+        document.querySelectorAll('input[type="range"]').forEach(slider => {
+            if (slider.id !== 'acidSearch') {
+                slider.addEventListener('input', function() {
+                    const scoreDisplay = this.parentElement.querySelector('span:last-child');
+                    if (scoreDisplay) {
+                        scoreDisplay.textContent = this.value;
+                    }
+                });
+            }
+        });
+
+        // Initialize date picker
+        document.getElementById('diaryDate').valueAsDate = new Date();
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
