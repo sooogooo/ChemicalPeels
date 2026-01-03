@@ -3,28 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="刷酸护肤工具页 - 刷酸日记模板、浓度pH速查表、产品推荐清单、专业术语表">
-    <meta name="keywords" content="刷酸工具,日记模板,浓度pH速查,术语表,产品推荐">
-    <meta name="author" content="重庆联合丽格科技有限公司">
+    <meta name="description" content="附录：刷酸实用工具——刷酸日记模板、浓度pH速查表、产品推荐清单、专业术语表等实用工具。">
+    <meta name="keywords" content="刷酸工具,日记模板,浓度pH速查,术语表,产品推荐,酸类浓度">
+    <meta name="author" content="ChemicalPeels Project">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="附录：刷酸实用工具 - 联合丽格（西南）行业资讯分享">
-    <meta property="og:description" content="刷酸日记模板、浓度pH速查表、产品推荐清单、专业术语表等实用工具">
+    <meta property="og:title" content="附录：刷酸实用工具 | 科学刷酸完全指南">
+    <meta property="og:description" content="刷酸日记模板、浓度pH速查表、产品推荐清单、专业术语表等实用工具。">
     <meta property="og:image" content="https://docs.bccsw.cn/logo.png">
-    <meta property="og:site_name" content="联合丽格（西南）行业资讯分享">
-    <title>附录：刷酸实用工具 - 联合丽格（西南）</title>
-    <link rel="canonical" href="https://docs.bccsw.cn/appendix.html">
-    <link rel="icon" href="https://docs.bccsw.cn/favicon.png">
+    <meta property="og:site_name" content="ChemicalPeels 刷酸科普">
+    <meta property="og:locale" content="zh-CN">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="附录：刷酸实用工具">
+    <meta name="twitter:description" content="刷酸日记模板、浓度pH速查表、产品推荐清单">
+    <meta name="twitter:image" content="https://docs.bccsw.cn/logo.png">
+
+    <meta itemprop="name" content="附录：刷酸实用工具">
+    <meta itemprop="description" content="刷酸日记模板、浓度pH速查表、产品推荐清单、专业术语表等实用工具。">
+    <meta itemprop="image" content="https://docs.bccsw.cn/logo.png">
+
+    <link rel="icon" href="https://docs.bccsw.cn/favicon.png" type="image/png">
+    <link rel="canonical" href="https://sooogooo.github.io/ChemicalPeels/appendix.html">
+
+    <title>附录：刷酸实用工具 | 科学刷酸完全指南</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css">
+
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
                         'bcc-blue': '#0d2c54',
-                        'bcc-navy': '#0a2240',
                         'bcc-gold': '#f5a623',
+                        'bcc-navy': '#0a2240',
                         'warm-white': '#faf9f7',
                         'beige': '#e8e4df',
                         'mint-green': '#c1e3d3',
@@ -34,18 +48,43 @@
                         'rose-gold': '#e8b4a8'
                     },
                     fontFamily: {
-                        'sans': ['Noto Sans SC', 'Inter', 'system-ui', 'sans-serif']
+                        sans: ['Noto Sans SC', 'Inter', 'system-ui', 'sans-serif']
                     }
                 }
             }
         }
     </script>
+
     <style>
-        body {
-            font-family: 'Noto Sans SC', 'Inter', system-ui, sans-serif;
-            line-height: 1.9;
-            letter-spacing: 0.03em;
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Noto Sans SC', 'Inter', sans-serif; font-weight: 300; line-height: 1.9; letter-spacing: 0.03em; }
+
+        .hero-bg {
+            background: linear-gradient(135deg, rgba(13, 44, 84, 0.92), rgba(13, 44, 84, 0.85)),
+                        url('https://images.unsplash.com/photo-1556228578-8d844869b276?w=1920&q=80');
+            background-size: cover; background-position: center; background-attachment: fixed;
         }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -30px) scale(1.05); }
+            66% { transform: translate(-20px, 20px) scale(0.95); }
+        }
+        .float-animation { animation: float 20s ease-in-out infinite; }
+        .float-animation-delay { animation: float 25s ease-in-out infinite reverse; }
+
+        .fade-in { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        .active-scale:active { transform: scale(0.97); }
+
+        .nav-glass {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(232, 228, 223, 0.8);
+        }
+
         .glass-card {
             background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(12px);
@@ -56,36 +95,24 @@
             backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            33% { transform: translate(30px, -30px) scale(1.05); }
-            66% { transform: translate(-20px, 20px) scale(0.95); }
-        }
-        .float-animation { animation: float 20s ease-in-out infinite; }
-        .float-animation-delay { animation: float 25s ease-in-out infinite reverse; }
-        .fade-in {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .hero-bg {
-            background: linear-gradient(135deg, rgba(13, 44, 84, 0.9), rgba(13, 44, 84, 0.75));
-        }
+
         .tab-active {
             background: linear-gradient(135deg, #0d2c54, #0a2240);
             color: white;
         }
+
+        .chapter-nav-item.active { background-color: rgba(245, 166, 35, 0.15); border-left-color: #f5a623; }
+
+        /* Tool Section */
+        .tool-section.hidden { display: none; }
+
         @media (max-width: 768px) {
             .hero-bg { background-attachment: scroll; }
             .diary-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
-<body class="bg-warm-white">
+<body class="bg-warm-white text-gray-800">
     <!-- Navigation -->
     <nav class="fixed w-full z-40 bg-white/95 backdrop-blur-md border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
