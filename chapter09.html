@@ -213,84 +213,103 @@
     </style>
 </head>
 <body class="bg-warm-white text-gray-800 pb-20 md:pb-0">
-    <!-- Navigation -->
-    <nav class="fixed w-full z-40 nav-glass">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center">
-                    <a href="#" class="flex items-center">
-                        <img src="https://docs.bccsw.cn/logo.png" alt="联合丽格" class="h-10">
-                        <span class="ml-3 text-lg font-medium text-gray-800">联合丽格（西南）</span>
-                    </a>
-                </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#" class="text-gray-600 hover:text-[#0d2c54] transition">首页</a>
-                    <a href="#" class="text-gray-600 hover:text-[#0d2c54] transition">资讯</a>
-                    <a href="#" class="text-gray-600 hover:text-[#0d2c54] transition">项目</a>
-                    <a href="#" class="text-gray-600 hover:text-[#0d2c54] transition">案例</a>
-                    <a href="#" class="text-gray-600 hover:text-[#0d2c54] transition">联系我们</a>
-                    <a href="tel:023-68726872" class="px-5 py-2 bg-[#f5a623] text-white rounded-full hover:bg-[#e0951a] transition">
-                        <i class="ri-phone-line mr-1"></i>023-68726872
-                    </a>
-                </div>
-                <button class="md:hidden p-2" onclick="toggleMobileMenu()">
-                    <i class="ri-menu-line text-2xl text-gray-700"></i>
-                </button>
-            </div>
-        </div>
-        <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-100 py-4 px-4">
-            <a href="#" class="block py-2 text-gray-600">首页</a>
-            <a href="#" class="block py-2 text-gray-600">资讯</a>
-            <a href="#" class="block py-2 text-gray-600">项目</a>
-            <a href="#" class="block py-2 text-gray-600">案例</a>
-            <a href="tel:023-68726872" class="block py-2 text-[#f5a623] font-medium">
-                <i class="ri-phone-line mr-1"></i>023-68726872
+    <!-- 导航栏 -->
+    <nav class="fixed w-full z-40 bg-white/95 backdrop-blur-md border-b border-gray-100 transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center relative z-50">
+            <a href="index.html" class="active-scale transition">
+                <span class="text-2xl font-light text-bcc-blue">
+                    <i class="ri-drop-line text-bcc-gold"></i>
+                    Chemical<span class="font-medium">Peels</span>
+                </span>
             </a>
+
+            <div class="hidden lg:flex space-x-8 text-bcc-blue font-medium text-sm">
+                <a href="index.html" class="hover:text-bcc-gold transition py-2 border-b-2 border-transparent hover:border-bcc-gold">首页</a>
+                <a href="#acne-cases" class="hover:text-bcc-gold transition py-2 border-b-2 border-bcc-gold">痤疮改善</a>
+                <a href="#pigment-cases" class="hover:text-bcc-gold transition py-2 border-b-2 border-transparent hover:border-bcc-gold">色素问题</a>
+                <a href="#antiaging-cases" class="hover:text-bcc-gold transition py-2 border-b-2 border-transparent hover:border-bcc-gold">抗衰案例</a>
+                <a href="#warning-cases" class="hover:text-bcc-gold transition py-2 border-b-2 border-transparent hover:border-bcc-gold">警示案例</a>
+            </div>
+
+            <div class="hidden lg:flex items-center gap-4">
+                <a href="https://github.com/sooogooo/ChemicalPeels" target="_blank" class="text-bcc-blue hover:text-bcc-gold transition px-2 active-scale" title="GitHub">
+                    <i class="ri-github-line text-xl"></i>
+                </a>
+                <a href="chapter10.html" class="bg-bcc-gold text-white px-6 py-2.5 rounded-full font-medium shadow-lg hover:bg-yellow-600 transition active-scale text-sm">
+                    下一章 <i class="ri-arrow-right-line ml-1"></i>
+                </a>
+            </div>
+
+            <button class="lg:hidden text-bcc-blue text-2xl focus:outline-none active-scale" onclick="toggleMobileMenu()">
+                <i class="ri-menu-line" id="menu-icon"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="absolute top-full left-0 w-full bg-white shadow-lg border-t border-gray-100 z-40 lg:hidden flex flex-col">
+            <a href="index.html" onclick="toggleMobileMenu()" class="py-4 px-6 border-b border-gray-100 font-medium text-bcc-blue hover:bg-gray-50">首页</a>
+            <a href="#acne-cases" onclick="toggleMobileMenu()" class="py-4 px-6 border-b border-gray-100 font-medium text-bcc-blue hover:bg-gray-50">痤疮改善</a>
+            <a href="#pigment-cases" onclick="toggleMobileMenu()" class="py-4 px-6 border-b border-gray-100 font-medium text-bcc-blue hover:bg-gray-50">色素问题</a>
+            <a href="#antiaging-cases" onclick="toggleMobileMenu()" class="py-4 px-6 border-b border-gray-100 font-medium text-bcc-blue hover:bg-gray-50">抗衰案例</a>
+            <a href="#warning-cases" onclick="toggleMobileMenu()" class="py-4 px-6 font-medium text-bcc-blue hover:bg-gray-50">警示案例</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero-section min-h-[50vh] flex items-center justify-center pt-16">
-        <div class="absolute inset-0 overflow-hidden">
-            <div class="absolute top-20 right-20 w-64 h-64 bg-[#f5a623] rounded-full opacity-10 blur-3xl float-animation"></div>
-            <div class="absolute bottom-20 left-20 w-48 h-48 bg-white rounded-full opacity-10 blur-3xl float-animation-delay"></div>
-        </div>
-        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
-            <span class="inline-block px-4 py-1 bg-white/20 text-white rounded-full text-sm mb-6 fade-in">
-                第九章
-            </span>
-            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 fade-in fade-in-delay-1">
+    <section class="hero-section min-h-[50vh] flex items-center pt-24 pb-16 relative overflow-hidden">
+        <div class="absolute top-20 right-10 w-72 h-72 rounded-full bg-mint-green/10 float-animation blur-3xl"></div>
+        <div class="absolute bottom-10 left-10 w-60 h-60 rounded-full bg-pale-purple/10 float-animation-delay blur-3xl"></div>
+
+        <div class="container mx-auto px-6 text-center text-white relative z-10">
+            <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-5 py-2.5 rounded-full mb-6 border border-white/20">
+                <i class="ri-book-3-line text-bcc-gold"></i>
+                <span class="text-sm tracking-widest font-light">第九章</span>
+            </div>
+
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-light mb-4 leading-tight tracking-tight">
                 真实案例与前后对比
             </h1>
-            <p class="text-lg sm:text-xl text-gray-200 max-w-2xl mx-auto fade-in fade-in-delay-2">
-                通过真实案例了解刷酸的效果与风险，为您的护肤决策提供参考
+            <p class="text-lg md:text-xl font-light text-gray-200 mb-6 max-w-2xl mx-auto leading-relaxed">
+                通过真实案例了解刷酸的效果与风险
             </p>
-        </div>
-    </section>
 
-    <!-- Case Navigation -->
-    <section class="py-6 px-4 bg-white border-b border-gray-100 sticky top-16 z-30">
-        <div class="max-w-6xl mx-auto">
-            <div class="flex flex-wrap justify-center gap-3">
-                <a href="#acne-cases" class="px-4 py-2 bg-[#c5d8f0] text-[#0d2c54] rounded-full text-sm hover:bg-[#c5d8f0]/70 transition font-medium">
-                    <i class="ri-face-smile-line mr-1"></i>痤疮改善
-                </a>
-                <a href="#pigment-cases" class="px-4 py-2 bg-[#d8ccf0] text-[#5b21b6] rounded-full text-sm hover:bg-[#d8ccf0]/70 transition font-medium">
-                    <i class="ri-sun-line mr-1"></i>色素问题
-                </a>
-                <a href="#antiaging-cases" class="px-4 py-2 bg-[#c1e3d3] text-[#065f46] rounded-full text-sm hover:bg-[#c1e3d3]/70 transition font-medium">
-                    <i class="ri-time-line mr-1"></i>抗衰案例
-                </a>
-                <a href="#warning-cases" class="px-4 py-2 bg-red-100 text-[#dc2626] rounded-full text-sm hover:bg-red-200 transition font-medium">
-                    <i class="ri-error-warning-line mr-1"></i>警示案例
-                </a>
+            <div class="flex flex-wrap justify-center gap-4 text-sm">
+                <span class="bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20">
+                    <i class="ri-face-smile-line mr-2 text-bcc-gold"></i>痤疮改善
+                </span>
+                <span class="bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20">
+                    <i class="ri-sun-line mr-2 text-bcc-gold"></i>色素问题
+                </span>
+                <span class="bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20">
+                    <i class="ri-time-line mr-2 text-bcc-gold"></i>抗衰案例
+                </span>
             </div>
         </div>
     </section>
 
-    <!-- Main Content -->
+    <!-- 章节导航 -->
+    <div class="bg-white border-b border-gray-100 sticky top-[72px] z-30">
+        <div class="container mx-auto px-6">
+            <div class="flex items-center gap-2 md:gap-6 py-3 overflow-x-auto scrollbar-hide">
+                <a href="#acne-cases" class="chapter-nav-item active whitespace-nowrap px-4 py-2 rounded-lg text-sm font-medium text-bcc-blue border-l-4 border-bcc-gold transition">
+                    9.1 痤疮改善
+                </a>
+                <a href="#pigment-cases" class="chapter-nav-item whitespace-nowrap px-4 py-2 rounded-lg text-sm font-medium text-bcc-blue border-l-4 border-transparent transition">
+                    9.2 色素问题
+                </a>
+                <a href="#antiaging-cases" class="chapter-nav-item whitespace-nowrap px-4 py-2 rounded-lg text-sm font-medium text-bcc-blue border-l-4 border-transparent transition">
+                    9.3 抗衰案例
+                </a>
+                <a href="#warning-cases" class="chapter-nav-item whitespace-nowrap px-4 py-2 rounded-lg text-sm font-medium text-bcc-blue border-l-4 border-transparent transition">
+                    9.4 警示案例
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 主内容区 -->
     <main class="pb-20">
-        <!-- Section 1: Acne Cases -->
+
+        <!-- 9.1 痤疮改善案例 -->
         <section id="acne-cases" class="py-16 px-4">
             <div class="max-w-6xl mx-auto">
                 <div class="text-center mb-12">
@@ -1122,6 +1141,21 @@
         </section>
     </main>
 
+    <!-- 底部导航区 -->
+    <div class="fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 py-4 px-6 z-30 md:relative md:bg-transparent md:border-t-0 md:py-0 md:px-0">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="chapter08.html" class="flex items-center text-bcc-blue hover:text-bcc-gold transition">
+                <i class="ri-arrow-left-line mr-2"></i>
+                <span class="hidden sm:inline">上一章</span>
+            </a>
+            <span class="text-sm text-gray-400">第九章</span>
+            <a href="chapter10.html" class="flex items-center text-bcc-blue hover:text-bcc-gold transition">
+                <span class="hidden sm:inline">下一章</span>
+                <i class="ri-arrow-right-line ml-2"></i>
+            </a>
+        </div>
+    </div>
+
     <!-- CTA Section -->
     <section class="py-16 px-4 bg-[#0d2c54]">
         <div class="max-w-4xl mx-auto text-center">
@@ -1192,9 +1226,39 @@
 
     <!-- Scripts -->
     <script>
+        // Mobile menu toggle
         function toggleMobileMenu() {
-            const menu = document.getElementById('mobileMenu');
+            const menu = document.getElementById('mobile-menu');
             menu.classList.toggle('hidden');
+            const icon = document.getElementById('menu-icon');
+            if (menu.classList.contains('hidden')) {
+                icon.classList.remove('ri-close-line');
+                icon.classList.add('ri-menu-line');
+            } else {
+                icon.classList.remove('ri-menu-line');
+                icon.classList.add('ri-close-line');
+            }
+        }
+
+        // Update active nav on scroll
+        function updateActiveNav() {
+            const sections = document.querySelectorAll('section[id$="-cases"]');
+            const navItems = document.querySelectorAll('.chapter-nav-item');
+
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 150;
+                if (window.scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('href') === '#' + current) {
+                    item.classList.add('active');
+                }
+            });
         }
 
         function sharePage() {
@@ -1243,6 +1307,9 @@
         document.querySelectorAll('.case-card').forEach(card => {
             progressObserver.observe(card);
         });
+
+        // Scroll event listener for active nav
+        window.addEventListener('scroll', updateActiveNav);
     </script>
 </body>
 </html>
