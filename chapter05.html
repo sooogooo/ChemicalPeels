@@ -95,11 +95,8 @@
             <div class="flex justify-between items-center h-16">
                 <!-- Left: Logo -->
                 <div class="flex items-center space-x-3">
-                    <a href="index.html" class="flex items-center space-x-3">
-                        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-bcc-blue to-bcc-navy flex items-center justify-center">
-                            <i class="ri-flask-line text-white text-xl"></i>
-                        </div>
-                        <span class="text-lg font-bold text-bcc-blue hidden sm:block">ChemicalPeels</span>
+                    <a href="index.html" class="active-scale transition">
+                        <img src="images/logo-chemicalpeels.svg" alt="ChemicalPeels" class="h-8">
                     </a>
                 </div>
 
@@ -580,62 +577,71 @@
         </div>
     </div>
 
+    <!-- 章节导航区 -->
+    <div class="bg-white border-t border-gray-100 py-6">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                <a href="chapter04.html" class="flex items-center gap-2 text-bcc-blue hover:text-bcc-gold transition active-scale">
+                    <i class="ri-arrow-left-line"></i>
+                    <span>上一章</span>
+                </a>
+
+                <div class="flex items-center gap-2 text-sm text-gray-400">
+                    <span>第五章</span>
+                    <span class="mx-2">|</span>
+                    <span>共10章</span>
+                </div>
+
+                <a href="chapter06.html" class="flex items-center gap-2 bg-bcc-gold text-white px-6 py-2.5 rounded-full font-medium shadow-lg hover:bg-yellow-600 transition active-scale">
+                    <span>下一章：术后护理</span>
+                    <i class="ri-arrow-right-line"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
-    <footer class="bg-bcc-navy text-white py-12">
+    <footer class="bg-bcc-navy text-white pt-12 pb-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-4 gap-8">
-                <div class="col-span-2">
-                    <div class="flex items-center space-x-3 mb-4">
-                        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-bcc-gold to-amber-600 flex items-center justify-center">
-                            <i class="ri-flask-line text-white text-lg"></i>
-                        </div>
-                        <div>
-                            <p class="font-bold">ChemicalPeels</p>
-                            <p class="text-sm text-gray-400">科学刷酸完全指南</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-400 text-sm mb-4"> ChemicalPeels Project 致力于提供科学、准确的刷酸医美科普内容，帮助读者安全有效地进行皮肤护理。</p>
-                    <div class="flex space-x-4">
-                        <a href="https://github.com/sooogooo/ChemicalPeels" target="_blank" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors">
-                            <i class="ri-github-fill text-xl"></i>
-                        </a>
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4 mb-8">
+                <!-- 左下角：联合丽格 -->
+                <div class="flex items-center gap-3">
+                    <img src="https://docs.bccsw.cn/logo.png" alt="联合丽格" class="h-10">
+                    <div class="text-white">
+                        <p class="font-medium">联合丽格（西南中心）</p>
+                        <p class="text-xs text-gray-400">行业资讯分享</p>
                     </div>
                 </div>
-                <div>
-                    <h4 class="font-medium mb-4">快速链接</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="index.html" class="hover:text-white transition">首页</a></li>
-                        <li><a href="contents.html" class="hover:text-white transition">目录</a></li>
-                        <li><a href="appendix.html" class="hover:text-white transition">附录工具</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-medium mb-4">项目信息</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="https://github.com/sooogooo/ChemicalPeels" target="_blank" class="hover:text-white transition">GitHub 仓库</a></li>
-                        <li><a href="design-01.html" class="hover:text-white transition">设计规范</a></li>
-                    </ul>
+                <!-- 中间：ChemicalPeels -->
+                <span class="text-xl font-light text-white hidden md:block">
+                    <i class="ri-drop-line text-bcc-gold"></i>
+                    Chemical<span class="font-medium">Peels</span>
+                </span>
+                <!-- 右侧：GitHub -->
+                <div class="flex gap-4">
+                    <a href="https://github.com/sooogooo/ChemicalPeels" target="_blank" class="text-gray-400 hover:text-bcc-gold transition">
+                        <i class="ri-github-line text-xl"></i>
+                    </a>
                 </div>
             </div>
-            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-400">
+            <div class="border-t border-gray-700 pt-8 text-center text-sm text-gray-400">
                 <p>© 2024-2026 ChemicalPeels Project | <a href="https://github.com/sooogooo/ChemicalPeels" target="_blank" class="hover:text-white">GitHub</a></p>
+                <p class="mt-2">CC BY-NC-SA 4.0</p>
             </div>
         </div>
     </footer>
 
-    <!-- Mobile Bottom Navigation -->
+    <!-- 移动端底部常驻条 -->
     <div class="md:hidden fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 flex z-50 shadow-lg">
-        <a href="chapter04.html" class="flex-1 flex items-center justify-center py-3 bg-beige/30 text-gray-600 hover:text-bcc-blue">
-            <i class="ri-arrow-left-line mr-1"></i>
-            <span class="text-sm">上一章</span>
+        <a href="chapter04.html" class="flex-1 py-3 text-bcc-blue flex flex-col items-center justify-center active:bg-gray-50 transition border-r border-gray-100">
+            <i class="ri-arrow-left-line text-xl mb-1"></i>
+            <span class="text-xs">上一章</span>
         </a>
-        <a href="index.html" class="flex-1 flex items-center justify-center py-3 bg-bcc-blue text-white">
-            <i class="ri-home-line mr-1"></i>
-            <span class="text-sm">目录</span>
-        </a>
-        <a href="chapter06.html" class="flex-1 flex items-center justify-center py-3 bg-bcc-gold text-white">
-            <span class="text-sm">下一章</span>
-            <i class="ri-arrow-right-line ml-1"></i>
+        <a href="chapter06.html" class="flex-[2] bg-bcc-blue text-white flex flex-col items-center justify-center active:bg-bcc-navy transition">
+            <span class="text-xs opacity-80 mb-0.5">下一章</span>
+            <span class="flex items-center text-sm font-medium">
+                <i class="ri-arrow-right-line mr-1 text-sm"></i> 护理
+            </span>
         </a>
     </div>
 

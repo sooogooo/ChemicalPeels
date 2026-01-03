@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 40" fill="none">
+  <!-- 背景 -->
+  <rect width="120" height="40" fill="none"/>
+  <!-- 水滴图标 -->
+  <path d="M20 8C20 8 8 18 8 25C8 30.5 12.5 35 18 35C23.5 35 28 30.5 28 25C28 18 20 8 20 8Z" fill="#0d2c54"/>
+  <path d="M20 12C20 12 11 20 11 25C11 28 14 31 17 31C20 31 23 28 23 25C23 20 20 12 20 12Z" fill="#f5a623"/>
+  <!-- 文字 -->
+  <text x="35" y="26" font-family="'Noto Sans SC', system-ui, sans-serif" font-size="18" font-weight="300" fill="#0d2c54">Chemical</text>
+  <text x="108" y="26" font-family="'Noto Sans SC', system-ui, sans-serif" font-size="18" font-weight="500" fill="#0d2c54">Peels</text>
+</svg>

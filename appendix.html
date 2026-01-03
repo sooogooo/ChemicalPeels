@@ -117,9 +117,8 @@
     <nav class="fixed w-full z-40 bg-white/95 backdrop-blur-md border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
-                <a href="index.html" class="flex items-center space-x-3">
-                    <img src="https://docs.bccsw.cn/logo.png" alt="Logo" class="h-10">
-                    <span class="text-bcc-blue font-medium">联合丽格（西南）</span>
+                <a href="index.html" class="active-scale transition">
+                    <img src="images/logo-chemicalpeels.svg" alt="ChemicalPeels" class="h-8">
                 </a>
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="index.html" class="text-gray-600 hover:text-bcc-blue transition">首页</a>
@@ -1268,38 +1267,32 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-bcc-navy text-white py-12">
+    <footer class="bg-bcc-navy text-white pt-12 pb-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-                <div>
-                    <div class="flex items-center space-x-3 mb-4">
-                        <img src="https://docs.bccsw.cn/logo.png" alt="Logo" class="h-12">
-                        <span class="text-lg font-medium">联合丽格（西南）</span>
-                    </div>
-                    <p class="text-gray-300 text-sm">联合丽格（西南）行业资讯分享<br>科学护肤，从了解开始</p>
-                </div>
-                <div>
-                    <h4 class="font-bold mb-4">快速导航</h4>
-                    <div class="grid grid-cols-2 gap-2 text-sm text-gray-300">
-                        <a href="chapter01.html" class="hover:text-bcc-gold">第一章</a>
-                        <a href="chapter05.html" class="hover:text-bcc-gold">第五章</a>
-                        <a href="chapter08.html" class="hover:text-bcc-gold">第八章</a>
-                        <a href="chapter10.html" class="hover:text-bcc-gold">第十章</a>
-                        <a href="appendix.html" class="hover:text-bcc-gold">附录</a>
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4 mb-8">
+                <!-- 左下角：联合丽格 -->
+                <div class="flex items-center gap-3">
+                    <img src="https://docs.bccsw.cn/logo.png" alt="联合丽格" class="h-10">
+                    <div class="text-white">
+                        <p class="font-medium">联合丽格（西南中心）</p>
+                        <p class="text-xs text-gray-400">行业资讯分享</p>
                     </div>
                 </div>
-                <div>
-                    <h4 class="font-bold mb-4">联系我们</h4>
-                    <div class="space-y-2 text-sm text-gray-300">
-                        <p><i class="ri-phone-line mr-2"></i>主热线：023-68726872</p>
-                        <p><i class="ri-mail-line mr-2"></i>bccsw@cqlhlg.work</p>
-                        <p><i class="ri-map-pin-line mr-2"></i>重庆市渝中区临江支路28号</p>
-                    </div>
+                <!-- 中间：ChemicalPeels -->
+                <span class="text-xl font-light text-white hidden md:block">
+                    <i class="ri-drop-line text-bcc-gold"></i>
+                    Chemical<span class="font-medium">Peels</span>
+                </span>
+                <!-- 右侧：GitHub -->
+                <div class="flex gap-4">
+                    <a href="https://github.com/sooogooo/ChemicalPeels" target="_blank" class="text-gray-400 hover:text-bcc-gold transition">
+                        <i class="ri-github-line text-xl"></i>
+                    </a>
                 </div>
             </div>
             <div class="border-t border-gray-700 pt-8 text-center text-sm text-gray-400">
-                <p>ICP备案：渝ICP备2024023473号</p>
-                <p class="mt-2">重庆联合丽格科技有限公司</p>
+                <p>© 2024-2026 ChemicalPeels Project | <a href="https://github.com/sooogooo/ChemicalPeels" target="_blank" class="hover:text-white">GitHub</a></p>
+                <p class="mt-2">CC BY-NC-SA 4.0</p>
             </div>
         </div>
     </footer>
@@ -1483,5 +1476,42 @@
             observer.observe(el);
         });
     </script>
+
+    <!-- 章节导航区 -->
+    <div class="bg-white border-t border-gray-100 py-6">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                <a href="chapter10.html" class="flex items-center gap-2 text-bcc-blue hover:text-bcc-gold transition active-scale">
+                    <i class="ri-arrow-left-line"></i>
+                    <span>上一章</span>
+                </a>
+
+                <div class="flex items-center gap-2 text-sm text-gray-400">
+                    <span>附录</span>
+                    <span class="mx-2">|</span>
+                    <span>实用工具</span>
+                </div>
+
+                <a href="index.html" class="flex items-center gap-2 bg-bcc-gold text-white px-6 py-2.5 rounded-full font-medium shadow-lg hover:bg-yellow-600 transition active-scale">
+                    <span>返回首页</span>
+                    <i class="ri-arrow-right-line"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 移动端底部常驻条 -->
+    <div class="md:hidden fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 flex z-50 shadow-lg">
+        <a href="chapter10.html" class="flex-1 py-3 text-bcc-blue flex flex-col items-center justify-center active:bg-gray-50 transition border-r border-gray-100">
+            <i class="ri-arrow-left-line text-xl mb-1"></i>
+            <span class="text-xs">上一章</span>
+        </a>
+        <a href="index.html" class="flex-[2] bg-bcc-blue text-white flex flex-col items-center justify-center active:bg-bcc-navy transition">
+            <span class="text-xs opacity-80 mb-0.5">返回</span>
+            <span class="flex items-center text-sm font-medium">
+                <i class="ri-home-line mr-1 text-sm"></i> 首页
+            </span>
+        </a>
+    </div>
 </body>
 </html>

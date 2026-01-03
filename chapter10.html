@@ -3,20 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="刷酸护肤品选购指南 - 成分解读、产品点评、常见误区">
+    <meta name="description" content="第十章：刷酸护肤品的选购指南——全面解读刷酸产品选购要点，成分表阅读指南，产品推荐及常见误区分析。">
     <meta name="keywords" content="刷酸,护肤品选购,果酸,水杨酸,壬二酸,成分表">
-    <meta name="author" content="重庆联合丽格科技有限公司">
+    <meta name="author" content="ChemicalPeels Project">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="第十章：刷酸护肤品的选购指南 - 联合丽格（西南）行业资讯分享">
+    <meta property="og:title" content="第十章：刷酸护肤品的选购指南 | 科学刷酸完全指南">
     <meta property="og:description" content="全面解读刷酸产品选购要点，成分表阅读指南，产品推荐及常见误区分析">
     <meta property="og:image" content="https://docs.bccsw.cn/logo.png">
-    <meta property="og:site_name" content="联合丽格（西南）行业资讯分享">
-    <title>第十章：刷酸护肤品的选购指南 - 联合丽格（西南）</title>
-    <link rel="canonical" href="https://docs.bccsw.cn/chapter10.html">
-    <link rel="icon" href="https://docs.bccsw.cn/favicon.png">
+    <meta property="og:site_name" content="ChemicalPeels 刷酸科普">
+    <meta property="og:locale" content="zh-CN">
+    <meta property="og:url" content="https://sooogooo.github.io/ChemicalPeels/chapter10.html">
+    <link rel="canonical" href="https://sooogooo.github.io/ChemicalPeels/chapter10.html">
+    <link rel="icon" href="https://docs.bccsw.cn/favicon.png" type="image/png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css">
     <script>
         tailwind.config = {
             theme: {
@@ -41,20 +42,13 @@
         }
     </script>
     <style>
-        body {
-            font-family: 'Noto Sans SC', 'Inter', system-ui, sans-serif;
-            line-height: 1.9;
-            letter-spacing: 0.03em;
-        }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(232, 228, 223, 0.8);
-        }
-        .glass-card-dark {
-            background: rgba(13, 44, 84, 0.85);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Noto Sans SC', 'Inter', sans-serif; font-weight: 300; line-height: 1.9; letter-spacing: 0.03em; }
+        .hero-section {
+            background: linear-gradient(135deg, rgba(13, 44, 84, 0.92), rgba(13, 44, 84, 0.85)),
+                        url('https://images.unsplash.com/photo-1556228578-8d844869b276?w=1920&q=80');
+            background-size: cover; background-position: center; background-attachment: fixed;
         }
         @keyframes float {
             0%, 100% { transform: translate(0, 0) scale(1); }
@@ -63,17 +57,17 @@
         }
         .float-animation { animation: float 20s ease-in-out infinite; }
         .float-animation-delay { animation: float 25s ease-in-out infinite reverse; }
-        .fade-in {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .hero-bg {
-            background: linear-gradient(135deg, rgba(13, 44, 84, 0.9), rgba(13, 44, 84, 0.75));
+        .fade-in { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        .fade-in-delay-1 { transition-delay: 0.1s; }
+        .fade-in-delay-2 { transition-delay: 0.2s; }
+        .fade-in-delay-3 { transition-delay: 0.3s; }
+        .active-scale:active { transform: scale(0.97); }
+        .nav-glass { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(232, 228, 223, 0.8); }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(232, 228, 223, 0.8);
         }
         .pyramid-tier {
             clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
@@ -104,42 +98,45 @@
             border-left-color: #f5a623;
         }
         @media (max-width: 768px) {
-            .hero-bg { background-attachment: scroll; }
+            .hero-section { background-attachment: scroll; }
         }
     </style>
 </head>
-<body class="bg-warm-white">
-    <!-- Navigation -->
-    <nav class="fixed w-full z-40 bg-white/95 backdrop-blur-md border-b border-gray-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <a href="index.html" class="flex items-center space-x-3">
-                    <img src="https://docs.bccsw.cn/logo.png" alt="Logo" class="h-10">
-                    <span class="text-bcc-blue font-medium">联合丽格（西南）</span>
+<body class="bg-warm-white pb-20 md:pb-0">
+    <!-- 导航栏 -->
+    <nav class="fixed w-full z-40 bg-white/95 backdrop-blur-md border-b border-gray-100 transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center relative z-50">
+            <a href="index.html" class="active-scale transition">
+                <img src="images/logo-chemicalpeels.svg" alt="ChemicalPeels" class="h-8">
+            </a>
+
+            <div class="hidden lg:flex space-x-8 text-bcc-blue font-medium text-sm">
+                <a href="index.html" class="hover:text-bcc-gold transition py-2 border-b-2 border-transparent hover:border-bcc-gold">首页</a>
+                <a href="#section10-1" class="hover:text-bcc-gold transition py-2 border-b-2 border-bcc-gold">成分指南</a>
+                <a href="#section10-2" class="hover:text-bcc-gold transition py-2 border-b-2 border-transparent hover:border-bcc-gold">选购要点</a>
+                <a href="#section10-3" class="hover:text-bcc-gold transition py-2 border-b-2 border-transparent hover:border-bcc-gold">常见误区</a>
+            </div>
+
+            <div class="hidden lg:flex items-center gap-4">
+                <a href="https://github.com/sooogooo/ChemicalPeels" target="_blank" class="text-bcc-blue hover:text-bcc-gold transition px-2 active-scale" title="GitHub">
+                    <i class="ri-github-line text-xl"></i>
                 </a>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="index.html" class="text-gray-600 hover:text-bcc-blue transition">首页</a>
-                    <a href="chapter01.html" class="text-gray-600 hover:text-bcc-blue transition">第一章</a>
-                    <a href="chapter05.html" class="text-gray-600 hover:text-bcc-blue transition">第五章</a>
-                    <a href="chapter08.html" class="text-gray-600 hover:text-bcc-blue transition">第八章</a>
-                    <a href="chapter10.html" class="text-bcc-blue font-medium">第十章</a>
-                    <a href="appendix.html" class="text-gray-600 hover:text-bcc-blue transition">附录</a>
-                </div>
-                <button class="md:hidden text-gray-600" onclick="toggleMenu()">
-                    <i class="ri-menu-line text-2xl"></i>
-                </button>
+                <a href="index.html" class="bg-bcc-gold text-white px-6 py-2.5 rounded-full font-medium shadow-lg hover:bg-yellow-600 transition active-scale text-sm">
+                    返回首页 <i class="ri-arrow-right-line ml-1"></i>
+                </a>
             </div>
+
+            <button class="lg:hidden text-bcc-blue text-2xl focus:outline-none active-scale" onclick="toggleMobileMenu()">
+                <i class="ri-menu-line" id="menu-icon"></i>
+            </button>
         </div>
-        <!-- Mobile Menu -->
-        <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-100">
-            <div class="px-4 py-4 space-y-2">
-                <a href="index.html" class="block py-2 text-gray-600 hover:text-bcc-blue">首页</a>
-                <a href="chapter1.html" class="block py-2 text-gray-600 hover:text-bcc-blue">第一章</a>
-                <a href="chapter5.html" class="block py-2 text-gray-600 hover:text-bcc-blue">第五章</a>
-                <a href="chapter8.html" class="block py-2 text-gray-600 hover:text-bcc-blue">第八章</a>
-                <a href="chapter10.html" class="block py-2 text-bcc-blue font-medium">第十章</a>
-                <a href="appendix.html" class="block py-2 text-gray-600 hover:text-bcc-blue">附录</a>
-            </div>
+
+        <div id="mobile-menu" class="absolute top-full left-0 w-full bg-white shadow-lg border-t border-gray-100 z-40 lg:hidden flex flex-col">
+            <a href="index.html" onclick="toggleMobileMenu()" class="py-4 px-6 border-b border-gray-100 font-medium text-bcc-blue hover:bg-gray-50">首页</a>
+            <a href="#section10-1" onclick="toggleMobileMenu()" class="py-4 px-6 border-b border-gray-100 font-medium text-bcc-blue hover:bg-gray-50">成分指南</a>
+            <a href="#section10-2" onclick="toggleMobileMenu()" class="py-4 px-6 border-b border-gray-100 font-medium text-bcc-blue hover:bg-gray-50">选购要点</a>
+            <a href="#section10-3" onclick="toggleMobileMenu()" class="py-4 px-6 border-b border-gray-100 font-medium text-bcc-blue hover:bg-gray-50">常见误区</a>
+            <a href="index.html" onclick="toggleMobileMenu()" class="py-4 px-6 font-medium text-bcc-blue hover:bg-gray-50">返回首页</a>
         </div>
     </nav>
 
@@ -313,15 +310,15 @@
         </div>
     </section>
 
-    <!-- 产品推荐分层金字塔 -->
-    <section class="py-16 bg-warm-white">
+    <!-- 成分解读 -->
+    <section id="section10-1" class="py-16 bg-warm-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12 fade-in">
                 <h2 class="text-3xl md:text-4xl font-bold text-bcc-blue mb-4">
-                    <i class="ri-trophy-line text-bcc-gold mr-2"></i>
-                    产品推荐分层金字塔
+                    <i class="ri-flask-line text-bcc-gold mr-2"></i>
+                    成分解读
                 </h2>
-                <p class="text-gray-500 max-w-2xl mx-auto">根据需求和预算选择适合的产品层级</p>
+                <p class="text-gray-500 max-w-2xl mx-auto">了解核心成分，选对适合自己的刷酸产品</p>
             </div>
 
             <div class="flex flex-col items-center fade-in">
@@ -493,15 +490,15 @@
         </div>
     </section>
 
-    <!-- 常见误区 vs 正确认知 -->
-    <section class="py-16 bg-warm-white">
+    <!-- 选购要点 -->
+    <section id="section10-2" class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12 fade-in">
                 <h2 class="text-3xl md:text-4xl font-bold text-bcc-blue mb-4">
-                    <i class="ri-error-warning-line text-bcc-gold mr-2"></i>
-                    常见误区 vs 正确认知
+                    <i class="ri-shopping-bag-3-line text-bcc-gold mr-2"></i>
+                    选购要点
                 </h2>
-                <p class="text-gray-500 max-w-2xl mx-auto">避开选购陷阱，做出明智决策</p>
+                <p class="text-gray-500 max-w-2xl mx-auto">掌握选购技巧，避免踩坑</p>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 fade-in">
@@ -707,48 +704,98 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-bcc-navy text-white py-12">
+    <footer class="bg-bcc-navy text-white pt-12 pb-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-                <div>
-                    <div class="flex items-center space-x-3 mb-4">
-                        <img src="https://docs.bccsw.cn/logo.png" alt="Logo" class="h-12">
-                        <span class="text-lg font-medium">联合丽格（西南）</span>
-                    </div>
-                    <p class="text-gray-300 text-sm">联合丽格（西南）行业资讯分享<br>科学护肤，从了解开始</p>
-                </div>
-                <div>
-                    <h4 class="font-bold mb-4">快速导航</h4>
-                    <div class="grid grid-cols-2 gap-2 text-sm text-gray-300">
-                        <a href="chapter01.html" class="hover:text-bcc-gold">第一章</a>
-                        <a href="chapter05.html" class="hover:text-bcc-gold">第五章</a>
-                        <a href="chapter08.html" class="hover:text-bcc-gold">第八章</a>
-                        <a href="chapter10.html" class="hover:text-bcc-gold">第十章</a>
-                        <a href="appendix.html" class="hover:text-bcc-gold">附录</a>
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4 mb-8">
+                <!-- 左下角：联合丽格 -->
+                <div class="flex items-center gap-3">
+                    <img src="https://docs.bccsw.cn/logo.png" alt="联合丽格" class="h-10">
+                    <div class="text-white">
+                        <p class="font-medium">联合丽格（西南中心）</p>
+                        <p class="text-xs text-gray-400">行业资讯分享</p>
                     </div>
                 </div>
-                <div>
-                    <h4 class="font-bold mb-4">联系我们</h4>
-                    <div class="space-y-2 text-sm text-gray-300">
-                        <p><i class="ri-phone-line mr-2"></i>主热线：023-68726872</p>
-                        <p><i class="ri-mail-line mr-2"></i>bccsw@cqlhlg.work</p>
-                        <p><i class="ri-map-pin-line mr-2"></i>重庆市渝中区临江支路28号</p>
-                    </div>
+                <!-- 中间：ChemicalPeels -->
+                <span class="text-xl font-light text-white hidden md:block">
+                    <i class="ri-drop-line text-bcc-gold"></i>
+                    Chemical<span class="font-medium">Peels</span>
+                </span>
+                <!-- 右侧：GitHub -->
+                <div class="flex gap-4">
+                    <a href="https://github.com/sooogooo/ChemicalPeels" target="_blank" class="text-gray-400 hover:text-bcc-gold transition">
+                        <i class="ri-github-line text-xl"></i>
+                    </a>
                 </div>
             </div>
             <div class="border-t border-gray-700 pt-8 text-center text-sm text-gray-400">
-                <p>ICP备案：渝ICP备2024023473号</p>
-                <p class="mt-2">重庆联合丽格科技有限公司</p>
+                <p>© 2024-2026 ChemicalPeels Project | <a href="https://github.com/sooogooo/ChemicalPeels" target="_blank" class="hover:text-white">GitHub</a></p>
+                <p class="mt-2">CC BY-NC-SA 4.0</p>
             </div>
         </div>
     </footer>
 
+    <!-- 章节导航区 -->
+    <div class="bg-white border-t border-gray-100 py-6">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                <a href="chapter09.html" class="flex items-center gap-2 text-bcc-blue hover:text-bcc-gold transition active-scale">
+                    <i class="ri-arrow-left-line"></i>
+                    <span>上一章</span>
+                </a>
+
+                <div class="flex items-center gap-2 text-sm text-gray-400">
+                    <span>第十章</span>
+                    <span class="mx-2">|</span>
+                    <span>共10章</span>
+                </div>
+
+                <a href="index.html" class="flex items-center gap-2 bg-bcc-gold text-white px-6 py-2.5 rounded-full font-medium shadow-lg hover:bg-yellow-600 transition active-scale">
+                    <span>返回首页</span>
+                    <i class="ri-arrow-right-line"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 移动端底部常驻条 -->
+    <div class="md:hidden fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 flex z-50 shadow-lg">
+        <a href="chapter09.html" class="flex-1 py-3 text-bcc-blue flex flex-col items-center justify-center active:bg-gray-50 transition border-r border-gray-100">
+            <i class="ri-arrow-left-line text-xl mb-1"></i>
+            <span class="text-xs">上一章</span>
+        </a>
+        <a href="index.html" class="flex-[2] bg-bcc-blue text-white flex flex-col items-center justify-center active:bg-bcc-navy transition">
+            <span class="text-xs opacity-80 mb-0.5">返回</span>
+            <span class="flex items-center text-sm font-medium">
+                <i class="ri-home-line mr-1 text-sm"></i> 首页
+            </span>
+        </a>
+    </div>
+
     <script>
         // Mobile menu toggle
-        function toggleMenu() {
-            const menu = document.getElementById('mobileMenu');
-            menu.classList.toggle('hidden');
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            if (menu.classList.contains('open')) {
+                menu.classList.remove('open');
+                icon.classList.remove('ri-close-line');
+                icon.classList.add('ri-menu-line');
+            } else {
+                menu.classList.add('open');
+                icon.classList.remove('ri-menu-line');
+                icon.classList.add('ri-close-line');
+            }
         }
+
+        // Navbar shadow on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 20) {
+                nav.classList.add('shadow-md');
+            } else {
+                nav.classList.remove('shadow-md');
+            }
+        });
 
         // Fade in animation on scroll
         const observerOptions = {

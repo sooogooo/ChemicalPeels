@@ -100,10 +100,7 @@
     <nav class="fixed w-full z-40 bg-white/95 backdrop-blur-md border-b border-gray-100 transition-all duration-300" id="navbar">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center relative z-50">
             <a href="index.html" class="active-scale transition">
-                <span class="text-2xl font-light text-bcc-blue">
-                    <i class="ri-drop-line text-bcc-gold"></i>
-                    Chemical<span class="font-medium">Peels</span>
-                </span>
+                <img src="images/logo-chemicalpeels.svg" alt="ChemicalPeels" class="h-8">
             </a>
 
             <div class="hidden lg:flex space-x-8 text-bcc-blue font-medium text-sm">
@@ -676,11 +673,20 @@
     <footer class="bg-bcc-navy text-white pt-12 pb-8">
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between items-center gap-4 mb-8">
-                <span class="text-xl font-light text-white">
+                <!-- 左下角：联合丽格 -->
+                <div class="flex items-center gap-3">
+                    <img src="https://docs.bccsw.cn/logo.png" alt="联合丽格" class="h-10">
+                    <div class="text-white">
+                        <p class="font-medium">联合丽格（西南中心）</p>
+                        <p class="text-xs text-gray-400">行业资讯分享</p>
+                    </div>
+                </div>
+                <!-- 中间：ChemicalPeels -->
+                <span class="text-xl font-light text-white hidden md:block">
                     <i class="ri-drop-line text-bcc-gold"></i>
                     Chemical<span class="font-medium">Peels</span>
                 </span>
-                <p class="text-sm text-gray-400">科学刷酸：医美级焕肤完全指南</p>
+                <!-- 右侧：GitHub -->
                 <div class="flex gap-4">
                     <a href="https://github.com/sooogooo/ChemicalPeels" target="_blank" class="text-gray-400 hover:text-bcc-gold transition">
                         <i class="ri-github-line text-xl"></i>
