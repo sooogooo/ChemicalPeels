@@ -64,16 +64,8 @@
     </script>
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body {
             font-family: 'Noto Sans SC', 'Inter', sans-serif;
             font-weight: 300;
@@ -83,82 +75,107 @@
             -moz-osx-font-smoothing: grayscale;
         }
 
-        /* 视差背景 */
+        /* Hero Section */
         .hero-section {
-            background: linear-gradient(135deg, rgba(13, 44, 84, 0.9), rgba(13, 44, 84, 0.8)),
+            background: linear-gradient(135deg, rgba(13, 44, 84, 0.92), rgba(13, 44, 84, 0.85)),
                         url('https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=1920&q=80');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
         }
+        @supports (-webkit-touch-callout: none) { .hero-section { background-attachment: scroll; } }
 
-        @supports (-webkit-touch-callout: none) {
-            .hero-section { background-attachment: scroll; }
-        }
-
-        /* 浮动动画 */
+        /* Floating Animation */
         @keyframes float {
             0%, 100% { transform: translate(0, 0) scale(1); }
             33% { transform: translate(30px, -30px) scale(1.05); }
             66% { transform: translate(-20px, 20px) scale(0.95); }
         }
-
         .float-animation { animation: float 20s ease-in-out infinite; }
         .float-animation-delay { animation: float 25s ease-in-out infinite reverse; }
 
-        /* 渐入动画 */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
+        /* Fade In Animation */
+        .fade-in { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
         .fade-in-delay-1 { transition-delay: 0.1s; }
         .fade-in-delay-2 { transition-delay: 0.2s; }
         .fade-in-delay-3 { transition-delay: 0.3s; }
 
-        /* 点击缩放 */
-        .active-scale:active { transform: scale(0.97); }
+        /* Card Hover */
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-8px); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15); }
 
-        /* 连接线 */
-        .connector-line {
-            background: linear-gradient(90deg, var(--mint-green), var(--pale-purple));
+        /* Progress Bar */
+        .progress-bar { transition: width 1s ease-out; }
+
+        /* Chapter Card */
+        .chapter-card { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .chapter-card:hover { transform: translateY(-4px) scale(1.01); }
+        .chapter-card:hover .chapter-icon { transform: scale(1.1) rotate(5deg); }
+
+        /* Search Glow */
+        .search-glow:focus { box-shadow: 0 0 0 3px rgba(245, 166, 35, 0.3); }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #faf9f7; }
+        ::-webkit-scrollbar-thumb { background: #0d2c54; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #f5a623; }
+
+        /* TOC Active */
+        .toc-link.active { color: #f5a623; border-left-color: #f5a623; background: linear-gradient(90deg, rgba(245,166,35,0.1), transparent); }
+
+        /* Tooltip */
+        .tooltip { position: relative; }
+        .tooltip::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 4px 8px;
+            background: #0d2c54;
+            color: white;
+            font-size: 12px;
+            border-radius: 4px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s;
         }
+        .tooltip:hover::after { opacity: 1; }
     </style>
 </head>
 <body class="bg-warm-white text-gray-800 pb-20 md:pb-0">
 
-    <!-- 导航栏 -->
-    <nav class="fixed w-full z-40 bg-white/95 backdrop-blur-md border-b border-gray-100 transition-all duration-300" id="navbar">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center relative z-50">
-            <!-- Logo -->
-            <a href="#" class="active-scale transition">
-                <span class="text-2xl font-light text-bcc-blue">
-                    <i class="ri-drop-line text-bcc-gold"></i>
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 active-scale transition">
+                <i class="ri-drop-line text-3xl text-bcc-gold"></i>
+                <span class="text-xl font-light text-bcc-blue hidden sm:inline">
                     Chemical<span class="font-medium">Peels</span>
                 </span>
             </a>
 
-            <!-- Desktop Menu -->
-            <div class="hidden lg:flex space-x-8 text-bcc-blue font-medium text-sm">
-                <a href="#overview" class="hover:text-bcc-gold transition py-2 border-b-2 border-transparent hover:border-bcc-gold">核心内容</a>
-                <a href="#chapters" class="hover:text-bcc-gold transition py-2 border-b-2 border-transparent hover:border-bcc-gold">章节概览</a>
-                <a href="#features" class="hover:text-bcc-gold transition py-2 border-b-2 border-transparent hover:border-bcc-gold">特色亮点</a>
-                <a href="#author" class="hover:text-bcc-gold transition py-2 border-b-2 border-transparent hover:border-bcc-gold">作者信息</a>
+            <!-- Search Bar -->
+            <div class="hidden lg:flex items-center bg-gray-100 rounded-full px-4 py-2 w-64">
+                <i class="ri-search-line text-gray-400"></i>
+                <input type="text" id="searchInput" placeholder="搜索章节..."
+                    class="bg-transparent border-none outline-none ml-2 text-sm w-full text-gray-700 placeholder-gray-400">
             </div>
 
-            <!-- Desktop Right Actions -->
-            <div class="hidden lg:flex items-center gap-4">
-                <a href="https://github.com/sooogooo/ChemicalPeels" target="_blank" class="text-bcc-blue hover:text-bcc-gold transition px-2 active-scale" title="GitHub 仓库">
+            <!-- Desktop Menu -->
+            <div class="hidden lg:flex items-center gap-6 text-bcc-blue text-sm font-medium">
+                <a href="#overview" class="hover:text-bcc-gold transition">概述</a>
+                <a href="#chapters" class="hover:text-bcc-gold transition">章节</a>
+                <a href="#tools" class="hover:text-bcc-gold transition">工具</a>
+                <a href="#resources" class="hover:text-bcc-gold transition">资源</a>
+                <a href="https://github.com/sooogooo/ChemicalPeels" target="_blank" class="text-gray-400 hover:text-bcc-gold transition">
                     <i class="ri-github-line text-xl"></i>
                 </a>
-                <a href="#download" class="bg-bcc-gold text-white px-6 py-2.5 rounded-full font-medium shadow-lg hover:bg-yellow-600 transition active-scale text-sm">
-                    <i class="ri-download-line mr-2"></i>获取本书
+                <a href="#download" class="bg-bcc-gold text-white px-5 py-2 rounded-full hover:bg-yellow-600 transition active-scale text-sm">
+                    开始阅读
                 </a>
             </div>
 
@@ -168,25 +185,32 @@
             </button>
         </div>
 
-        <!-- Mobile Dropdown Menu -->
+        <!-- Mobile Menu -->
         <div id="mobile-menu" class="absolute top-full left-0 w-full bg-white shadow-lg border-t border-gray-100 z-40 lg:hidden flex flex-col">
-            <a href="#overview" onclick="toggleMobileMenu()" class="py-4 px-6 border-b border-gray-100 font-medium text-bcc-blue hover:bg-gray-50">核心内容</a>
-            <a href="#chapters" onclick="toggleMobileMenu()" class="py-4 px-6 border-b border-gray-100 font-medium text-bcc-blue hover:bg-gray-50">章节概览</a>
-            <a href="#features" onclick="toggleMobileMenu()" class="py-4 px-6 border-b border-gray-100 font-medium text-bcc-blue hover:bg-gray-50">特色亮点</a>
-            <a href="#author" onclick="toggleMobileMenu()" class="py-4 px-6 font-medium text-bcc-blue hover:bg-gray-50">作者信息</a>
+            <div class="p-4 border-b border-gray-100">
+                <div class="flex items-center bg-gray-100 rounded-full px-4 py-2">
+                    <i class="ri-search-line text-gray-400"></i>
+                    <input type="text" id="mobileSearchInput" placeholder="搜索章节..."
+                        class="bg-transparent border-none outline-none ml-2 text-sm w-full">
+                </div>
+            </div>
+            <a href="#overview" onclick="toggleMobileMenu()" class="py-4 px-6 border-b border-gray-100 font-medium text-bcc-blue hover:bg-gray-50">概述</a>
+            <a href="#chapters" onclick="toggleMobileMenu()" class="py-4 px-6 border-b border-gray-100 font-medium text-bcc-blue hover:bg-gray-50">章节</a>
+            <a href="#tools" onclick="toggleMobileMenu()" class="py-4 px-6 border-b border-gray-100 font-medium text-bcc-blue hover:bg-gray-50">工具</a>
+            <a href="#resources" onclick="toggleMobileMenu()" class="py-4 px-6 border-b border-gray-100 font-medium text-bcc-blue hover:bg-gray-50">资源</a>
+            <a href="https://github.com/sooogooo/ChemicalPeels" onclick="toggleMobileMenu()" class="py-4 px-6 font-medium text-bcc-blue hover:bg-gray-50">GitHub</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero-section min-h-screen flex items-center pt-24 pb-20 relative overflow-hidden">
-        <!-- 浮动装饰 -->
         <div class="absolute top-20 right-10 w-96 h-96 rounded-full bg-mint-green/10 float-animation blur-3xl"></div>
         <div class="absolute bottom-20 left-10 w-80 h-80 rounded-full bg-pale-purple/10 float-animation-delay blur-3xl"></div>
 
         <div class="container mx-auto px-6 text-center text-white relative z-10">
             <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-5 py-2.5 rounded-full mb-8 border border-white/20">
                 <i class="ri-book-3-line text-bcc-gold"></i>
-                <span class="text-sm tracking-widest font-light">开源科普项目</span>
+                <span class="text-sm tracking-widest font-light">开源科普项目 v1.0</span>
             </div>
 
             <h1 class="text-4xl md:text-5xl lg:text-6xl font-light mb-6 leading-tight tracking-tight">
@@ -197,49 +221,43 @@
             <p class="text-lg md:text-xl font-light text-gray-200 mb-4 max-w-3xl mx-auto leading-relaxed">
                 从皮肤结构到术后护理，10章全面科普
             </p>
-
             <p class="text-base font-light text-gray-300 mb-10 max-w-2xl mx-auto leading-loose">
-                化学剥脱是一种有上百年历史的医学美容技术，从古埃及的酸奶敷面到现代医美。<br class="hidden md:block">
-                这本书帮你理解原理、避开误区、安全变美。
+                化学剥脱是一种有上百年历史的医学美容技术，这本书帮你理解原理、避开误区、安全变美。
             </p>
 
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#overview" class="bg-bcc-gold text-white px-8 py-4 rounded-xl font-medium text-base shadow-2xl hover:scale-105 transition active-scale">
-                    <i class="ri-arrow-down-line mr-2"></i>了解更多
+            <div class="flex flex-col sm:flex-row justify-center gap-4 mb-12">
+                <a href="#chapters" class="bg-bcc-gold text-white px-8 py-4 rounded-xl font-medium shadow-2xl hover:scale-105 transition active-scale inline-flex items-center justify-center">
+                    <i class="ri-book-open-line mr-2"></i>开始阅读
                 </a>
-                <a href="https://github.com/sooogooo/ChemicalPeels" target="_blank" class="glass-card text-white px-8 py-4 rounded-xl font-medium text-base hover:bg-white/20 transition active-scale inline-flex items-center justify-center gap-2">
-                    <i class="ri-github-line"></i> GitHub
+                <a href="appendix.html" class="bg-white/10 backdrop-blur-sm border border-white/30 text-white px-8 py-4 rounded-xl font-medium hover:bg-white/20 transition active-scale inline-flex items-center justify-center">
+                    <i class="ri-tools-line mr-2"></i>实用工具
                 </a>
             </div>
-        </div>
-    </section>
 
-    <!-- Stats Section -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-                <div class="text-center p-8 rounded-3xl bg-warm-white border border-beige hover:shadow-xl hover:-translate-y-2 transition-all duration-300 fade-in">
-                    <div class="text-4xl md:text-5xl font-light text-bcc-blue mb-3 tracking-tight">10<span class="text-2xl text-bcc-gold">章</span></div>
-                    <div class="text-sm text-gray-500 tracking-wide">系统化内容体系</div>
+            <!-- Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/20">
+                    <div class="text-3xl font-light">10</div>
+                    <div class="text-xs text-gray-300">完整章节</div>
                 </div>
-                <div class="text-center p-8 rounded-3xl bg-warm-white border border-beige hover:shadow-xl hover:-translate-y-2 transition-all duration-300 fade-in fade-in-delay-1">
-                    <div class="text-4xl md:text-5xl font-light text-bcc-blue mb-3 tracking-tight">48<span class="text-2xl text-bcc-gold">+</span></div>
-                    <div class="text-sm text-gray-500 tracking-wide">千字科普内容</div>
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/20">
+                    <div class="text-3xl font-light">48K+</div>
+                    <div class="text-xs text-gray-300">科普内容</div>
                 </div>
-                <div class="text-center p-8 rounded-3xl bg-warm-white border border-beige hover:shadow-xl hover:-translate-y-2 transition-all duration-300 fade-in fade-in-delay-2">
-                    <div class="text-4xl md:text-5xl font-light text-bcc-blue mb-3 tracking-tight">6<span class="text-2xl text-bcc-gold">类</span></div>
-                    <div class="text-sm text-gray-500 tracking-wide">常见酸类详解</div>
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/20">
+                    <div class="text-3xl font-light">6类</div>
+                    <div class="text-xs text-gray-300">酸类详解</div>
                 </div>
-                <div class="text-center p-8 rounded-3xl bg-warm-white border border-beige hover:shadow-xl hover:-translate-y-2 transition-all duration-300 fade-in fade-in-delay-3">
-                    <div class="text-4xl md:text-5xl font-light text-bcc-blue mb-3 tracking-tight">4<span class="text-2xl text-bcc-gold">类</span></div>
-                    <div class="text-sm text-gray-500 tracking-wide">目标读者定位</div>
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/20">
+                    <div class="text-3xl font-light">11+</div>
+                    <div class="text-xs text-gray-300">实用工具</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Overview Section -->
-    <section id="overview" class="py-20 bg-warm-white">
+    <section id="overview" class="py-20 bg-white">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
                 <div class="inline-flex items-center gap-2 bg-gradient-to-r from-mint-green to-pale-purple px-5 py-2 rounded-full mb-6">
@@ -253,91 +271,55 @@
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
-                <!-- 基础认知 -->
-                <div class="bg-white p-8 rounded-3xl border border-beige hover:shadow-xl hover:-translate-y-2 transition-all duration-300 fade-in">
+                <div class="bg-warm-white p-8 rounded-3xl border border-beige card-hover fade-in">
                     <div class="w-14 h-14 rounded-2xl bg-soft-rose flex items-center justify-center mb-6">
                         <i class="ri-body-scan-line text-2xl text-gray-700"></i>
                     </div>
-                    <h3 class="text-xl font-medium mb-4 text-bcc-blue tracking-tight">认识你的皮肤</h3>
-                    <p class="text-gray-500 text-sm leading-loose mb-4">
-                        了解皮肤结构与功能，掌握Fitzpatrick皮肤分型，判断自己的肤质特点。
-                    </p>
-                    <ul class="space-y-3 text-sm text-gray-500">
-                        <li class="flex items-start gap-2">
-                            <span class="w-1.5 h-1.5 rounded-full bg-rose-gold mt-2 flex-shrink-0"></span>
-                            <span>表皮层与28天代谢周期</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="w-1.5 h-1.5 rounded-full bg-rose-gold mt-2 flex-shrink-0"></span>
-                            <span>皮肤屏障的砖墙结构</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="w-1.5 h-1.5 rounded-full bg-rose-gold mt-2 flex-shrink-0"></span>
-                            <span>常见皮肤问题解析</span>
-                        </li>
-                    </ul>
+                    <h3 class="text-xl font-medium mb-4 text-bcc-blue">认识你的皮肤</h3>
+                    <p class="text-gray-500 text-sm leading-loose mb-4">了解皮肤结构与功能，掌握Fitzpatrick皮肤分型，判断自己的肤质特点。</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full">表皮层</span>
+                        <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full">真皮层</span>
+                        <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full">砖墙结构</span>
+                    </div>
                 </div>
 
-                <!-- 科学原理 -->
-                <div class="bg-white p-8 rounded-3xl border border-beige hover:shadow-xl hover:-translate-y-2 transition-all duration-300 fade-in fade-in-delay-1">
+                <div class="bg-warm-white p-8 rounded-3xl border border-beige card-hover fade-in fade-in-delay-1">
                     <div class="w-14 h-14 rounded-2xl bg-mint-green flex items-center justify-center mb-6">
                         <i class="ri-flask-line text-2xl text-gray-700"></i>
                     </div>
-                    <h3 class="text-xl font-medium mb-4 text-bcc-blue tracking-tight">理解剥脱原理</h3>
-                    <p class="text-gray-500 text-sm leading-loose mb-4">
-                        从古埃及到现代医美，深入理解化学剥脱的科学机制与作用原理。
-                    </p>
-                    <ul class="space-y-3 text-sm text-gray-500">
-                        <li class="flex items-start gap-2">
-                            <span class="w-1.5 h-1.5 rounded-full bg-bcc-gold mt-2 flex-shrink-0"></span>
-                            <span>角质溶解与松解过程</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="w-1.5 h-1.5 rounded-full bg-bcc-gold mt-2 flex-shrink-0"></span>
-                            <span>真皮层刺激与胶原再生</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="w-1.5 h-1.5 rounded-full bg-bcc-gold mt-2 flex-shrink-0"></span>
-                            <span>剥脱深度的分类与选择</span>
-                        </li>
-                    </ul>
+                    <h3 class="text-xl font-medium mb-4 text-bcc-blue">理解剥脱原理</h3>
+                    <p class="text-gray-500 text-sm leading-loose mb-4">从古埃及到现代医美，深入理解化学剥脱的科学机制与作用原理。</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full">角质溶解</span>
+                        <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full">胶原再生</span>
+                        <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full">皮肤重塑</span>
+                    </div>
                 </div>
 
-                <!-- 安全实践 -->
-                <div class="bg-white p-8 rounded-3xl border border-beige hover:shadow-xl hover:-translate-y-2 transition-all duration-300 fade-in fade-in-delay-2">
+                <div class="bg-warm-white p-8 rounded-3xl border border-beige card-hover fade-in fade-in-delay-2">
                     <div class="w-14 h-14 rounded-2xl bg-pale-purple flex items-center justify-center mb-6">
                         <i class="ri-shield-check-line text-2xl text-gray-700"></i>
                     </div>
-                    <h3 class="text-xl font-medium mb-4 text-bcc-blue tracking-tight">安全实践指南</h3>
-                    <p class="text-gray-500 text-sm leading-loose mb-4">
-                        掌握适应症与禁忌症，学会术后护理，避免常见误区与风险。
-                    </p>
-                    <ul class="space-y-3 text-sm text-gray-500">
-                        <li class="flex items-start gap-2">
-                            <span class="w-1.5 h-1.5 rounded-full bg-bcc-gold mt-2 flex-shrink-0"></span>
-                            <span>哪些人适合/不适合刷酸</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="w-1.5 h-1.5 rounded-full bg-bcc-gold mt-2 flex-shrink-0"></span>
-                            <span>术前准备与术后护理</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="w-1.5 h-1.5 rounded-full bg-bcc-gold mt-2 flex-shrink-0"></span>
-                            <span>不良反应的处理方法</span>
-                        </li>
-                    </ul>
+                    <h3 class="text-xl font-medium mb-4 text-bcc-blue">安全实践指南</h3>
+                    <p class="text-gray-500 text-sm leading-loose mb-4">掌握适应症与禁忌症，学会术后护理，避免常见误区与风险。</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full">禁忌症</span>
+                        <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full">术后护理</span>
+                        <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full">不良反应</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Chapters Section -->
-    <section id="chapters" class="py-20 bg-white">
+    <section id="chapters" class="py-20 bg-warm-white">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
                 <div class="inline-flex items-center gap-2 bg-gradient-to-r from-mint-green to-pale-purple px-5 py-2 rounded-full mb-6">
                     <i class="ri-book-mark-line text-bcc-blue"></i>
-                    <span class="text-sm font-medium text-bcc-blue tracking-wider">章节概览</span>
+                    <span class="text-sm font-medium text-bcc-blue tracking-wider">章节导航</span>
                 </div>
                 <h2 class="text-3xl md:text-4xl font-light text-bcc-blue mb-4 tracking-tight">10章内容体系</h2>
                 <p class="text-lg text-gray-500 font-light max-w-2xl mx-auto">
@@ -345,198 +327,229 @@
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Chapter 1-3 -->
-                <div class="bg-warm-white rounded-3xl p-6 border border-beige hover:shadow-lg transition fade-in">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-10 h-10 rounded-xl bg-bcc-blue text-white flex items-center justify-center font-medium">01</div>
-                        <h4 class="font-medium text-bcc-blue">认识你的皮肤</h4>
+            <!-- Chapter Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="chapterGrid">
+                <!-- Chapter 01 -->
+                <a href="chapter01.html" class="chapter-card bg-white p-6 rounded-3xl border border-beige hover:border-bcc-blue group">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-bcc-blue text-white flex items-center justify-center font-medium group-hover:bg-bcc-gold transition">01</div>
+                        <i class="ri-arrow-right-line text-bcc-gold opacity-0 group-hover:opacity-100 transition transform group-hover:translate-x-1"></i>
                     </div>
-                    <p class="text-gray-500 text-sm leading-loose">
-                        皮肤结构与功能、常见问题解析、Fitzpatrick皮肤分型
-                    </p>
-                </div>
+                    <h4 class="font-medium text-bcc-blue mb-2">认识你的皮肤</h4>
+                    <p class="text-gray-500 text-xs leading-loose">皮肤结构、功能、常见问题与分型</p>
+                    <div class="mt-4 flex items-center gap-2">
+                        <span class="text-xs text-bcc-gold"><i class="ri-time-line"></i> 5,000字</span>
+                        <span class="text-xs text-gray-400">|</span>
+                        <span class="text-xs text-gray-400">基础篇</span>
+                    </div>
+                </a>
 
-                <div class="bg-warm-white rounded-3xl p-6 border border-beige hover:shadow-lg transition fade-in fade-in-delay-1">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-10 h-10 rounded-xl bg-bcc-blue text-white flex items-center justify-center font-medium">02</div>
-                        <h4 class="font-medium text-bcc-blue">化学剥脱的科学原理</h4>
+                <!-- Chapter 02 -->
+                <a href="chapter02.html" class="chapter-card bg-white p-6 rounded-3xl border border-beige hover:border-bcc-blue group">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-bcc-blue text-white flex items-center justify-center font-medium group-hover:bg-bcc-gold transition">02</div>
+                        <i class="ri-arrow-right-line text-bcc-gold opacity-0 group-hover:opacity-100 transition transform group-hover:translate-x-1"></i>
                     </div>
-                    <p class="text-gray-500 text-sm leading-loose">
-                        定义与历史、作用原理、剥脱深度分类、效果影响因素
-                    </p>
-                </div>
+                    <h4 class="font-medium text-bcc-blue mb-2">化学剥脱的科学原理</h4>
+                    <p class="text-gray-500 text-xs leading-loose">定义、历史、作用机制与深度分类</p>
+                    <div class="mt-4 flex items-center gap-2">
+                        <span class="text-xs text-bcc-gold"><i class="ri-time-line"></i> 6,300字</span>
+                        <span class="text-xs text-gray-400">|</span>
+                        <span class="text-xs text-gray-400">原理篇</span>
+                    </div>
+                </a>
 
-                <div class="bg-warm-white rounded-3xl p-6 border border-beige hover:shadow-lg transition fade-in fade-in-delay-2">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-10 h-10 rounded-xl bg-bcc-blue text-white flex items-center justify-center font-medium">03</div>
-                        <h4 class="font-medium text-bcc-blue">常见酸类详解</h4>
+                <!-- Chapter 03 -->
+                <a href="chapter03.html" class="chapter-card bg-white p-6 rounded-3xl border border-beige hover:border-bcc-blue group">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-bcc-blue text-white flex items-center justify-center font-medium group-hover:bg-bcc-gold transition">03</div>
+                        <i class="ri-arrow-right-line text-bcc-gold opacity-0 group-hover:opacity-100 transition transform group-hover:translate-x-1"></i>
                     </div>
-                    <p class="text-gray-500 text-sm leading-loose">
-                        AHAs、BHA、复合酸、医美级专业酸剂全面解析
-                    </p>
-                </div>
+                    <h4 class="font-medium text-bcc-blue mb-2">常见酸类详解</h4>
+                    <p class="text-gray-500 text-xs leading-loose">AHAs、BHAs、复合酸与医美级酸剂</p>
+                    <div class="mt-4 flex items-center gap-2">
+                        <span class="text-xs text-bcc-gold"><i class="ri-time-line"></i> 6,150字</span>
+                        <span class="text-xs text-gray-400">|</span>
+                        <span class="text-xs text-gray-400">成分篇</span>
+                    </div>
+                </a>
 
-                <!-- Chapter 4-6 -->
-                <div class="bg-warm-white rounded-3xl p-6 border border-beige hover:shadow-lg transition fade-in">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-10 h-10 rounded-xl bg-bcc-blue text-white flex items-center justify-center font-medium">04</div>
-                        <h4 class="font-medium text-bcc-blue">适应症与禁忌症</h4>
+                <!-- Chapter 04 -->
+                <a href="chapter04.html" class="chapter-card bg-white p-6 rounded-3xl border border-beige hover:border-bcc-blue group">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-bcc-blue text-white flex items-center justify-center font-medium group-hover:bg-bcc-gold transition">04</div>
+                        <i class="ri-arrow-right-line text-bcc-gold opacity-0 group-hover:opacity-100 transition transform group-hover:translate-x-1"></i>
                     </div>
-                    <p class="text-gray-500 text-sm leading-loose">
-                        适合刷酸的皮肤问题、禁忌人群、特殊人群考量
-                    </p>
-                </div>
+                    <h4 class="font-medium text-bcc-blue mb-2">适应症与禁忌症</h4>
+                    <p class="text-gray-500 text-xs leading-loose">适合人群、安全指南与特殊考量</p>
+                    <div class="mt-4 flex items-center gap-2">
+                        <span class="text-xs text-bcc-gold"><i class="ri-time-line"></i> 6,200字</span>
+                        <span class="text-xs text-gray-400">|</span>
+                        <span class="text-xs text-gray-400">安全篇</span>
+                    </div>
+                </a>
 
-                <div class="bg-warm-white rounded-3xl p-6 border border-beige hover:shadow-lg transition fade-in fade-in-delay-1">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-10 h-10 rounded-xl bg-bcc-blue text-white flex items-center justify-center font-medium">05</div>
-                        <h4 class="font-medium text-bcc-blue">专业刷酸全流程</h4>
+                <!-- Chapter 05 -->
+                <a href="chapter05.html" class="chapter-card bg-white p-6 rounded-3xl border border-beige hover:border-bcc-blue group">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-bcc-blue text-white flex items-center justify-center font-medium group-hover:bg-bcc-gold transition">05</div>
+                        <i class="ri-arrow-right-line text-bcc-gold opacity-0 group-hover:opacity-100 transition transform group-hover:translate-x-1"></i>
                     </div>
-                    <p class="text-gray-500 text-sm leading-loose">
-                        术前评估、操作步骤、家用刷酸指南、机构选择
-                    </p>
-                </div>
+                    <h4 class="font-medium text-bcc-blue mb-2">专业刷酸全流程</h4>
+                    <p class="text-gray-500 text-xs leading-loose">术前评估、操作步骤与机构选择</p>
+                    <div class="mt-4 flex items-center gap-2">
+                        <span class="text-xs text-bcc-gold"><i class="ri-time-line"></i> 4,400字</span>
+                        <span class="text-xs text-gray-400">|</span>
+                        <span class="text-xs text-gray-400">实操篇</span>
+                    </div>
+                </a>
 
-                <div class="bg-warm-white rounded-3xl p-6 border border-beige hover:shadow-lg transition fade-in fade-in-delay-2">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-10 h-10 rounded-xl bg-bcc-blue text-white flex items-center justify-center font-medium">06</div>
-                        <h4 class="font-medium text-bcc-blue">术后护理黄金期</h4>
+                <!-- Chapter 06 -->
+                <a href="chapter06.html" class="chapter-card bg-white p-6 rounded-3xl border border-beige hover:border-bcc-blue group">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-bcc-blue text-white flex items-center justify-center font-medium group-hover:bg-bcc-gold transition">06</div>
+                        <i class="ri-arrow-right-line text-bcc-gold opacity-0 group-hover:opacity-100 transition transform group-hover:translate-x-1"></i>
                     </div>
-                    <p class="text-gray-500 text-sm leading-loose">
-                        皮肤变化过程、护理原则、常见问题处理、生活注意
-                    </p>
-                </div>
+                    <h4 class="font-medium text-bcc-blue mb-2">术后护理黄金期</h4>
+                    <p class="text-gray-500 text-xs leading-loose">皮肤变化过程与护理要点</p>
+                    <div class="mt-4 flex items-center gap-2">
+                        <span class="text-xs text-bcc-gold"><i class="ri-time-line"></i> 4,200字</span>
+                        <span class="text-xs text-gray-400">|</span>
+                        <span class="text-xs text-gray-400">护理篇</span>
+                    </div>
+                </a>
 
-                <!-- Chapter 7-10 -->
-                <div class="bg-warm-white rounded-3xl p-6 border border-beige hover:shadow-lg transition fade-in">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-10 h-10 rounded-xl bg-bcc-blue text-white flex items-center justify-center font-medium">07</div>
-                        <h4 class="font-medium text-bcc-blue">联合应用指南</h4>
+                <!-- Chapter 07 -->
+                <a href="chapter07.html" class="chapter-card bg-white p-6 rounded-3xl border border-beige hover:border-bcc-blue group">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-bcc-blue text-white flex items-center justify-center font-medium group-hover:bg-bcc-gold transition">07</div>
+                        <i class="ri-arrow-right-line text-bcc-gold opacity-0 group-hover:opacity-100 transition transform group-hover:translate-x-1"></i>
                     </div>
-                    <p class="text-gray-500 text-sm leading-loose">
-                        与光电项目、注射类项目、日常护肤品的配合策略
-                    </p>
-                </div>
+                    <h4 class="font-medium text-bcc-blue mb-2">联合应用指南</h4>
+                    <p class="text-gray-500 text-xs leading-loose">与光电、注射、护肤品的配合策略</p>
+                    <div class="mt-4 flex items-center gap-2">
+                        <span class="text-xs text-bcc-gold"><i class="ri-time-line"></i> 2,800字</span>
+                        <span class="text-xs text-gray-400">|</span>
+                        <span class="text-xs text-gray-400">进阶篇</span>
+                    </div>
+                </a>
 
-                <div class="bg-warm-white rounded-3xl p-6 border border-beige hover:shadow-lg transition fade-in fade-in-delay-1">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-10 h-10 rounded-xl bg-bcc-blue text-white flex items-center justify-center font-medium">08</div>
-                        <h4 class="font-medium text-bcc-blue">常见问题解答</h4>
+                <!-- Chapter 08 -->
+                <a href="chapter08.html" class="chapter-card bg-white p-6 rounded-3xl border border-beige hover:border-bcc-blue group">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-bcc-blue text-white flex items-center justify-center font-medium group-hover:bg-bcc-gold transition">08</div>
+                        <i class="ri-arrow-right-line text-bcc-gold opacity-0 group-hover:opacity-100 transition transform group-hover:translate-x-1"></i>
                     </div>
-                    <p class="text-gray-500 text-sm leading-loose">
-                        基础认知、操作实战、效果预期类问题全面解答
-                    </p>
-                </div>
+                    <h4 class="font-medium text-bcc-blue mb-2">常见问题解答</h4>
+                    <p class="text-gray-500 text-xs leading-loose">FAQ、基础认知与操作实战</p>
+                    <div class="mt-4 flex items-center gap-2">
+                        <span class="text-xs text-bcc-gold"><i class="ri-time-line"></i> 2,800字</span>
+                        <span class="text-xs text-gray-400">|</span>
+                        <span class="text-xs text-gray-400">问答篇</span>
+                    </div>
+                </a>
 
-                <div class="bg-warm-white rounded-3xl p-6 border border-beige hover:shadow-lg transition fade-in fade-in-delay-2">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-10 h-10 rounded-xl bg-bcc-blue text-white flex items-center justify-center font-medium">09</div>
-                        <h4 class="font-medium text-bcc-blue">真实案例对比</h4>
+                <!-- Chapter 09 -->
+                <a href="chapter09.html" class="chapter-card bg-white p-6 rounded-3xl border border-beige hover:border-bcc-blue group">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-bcc-blue text-white flex items-center justify-center font-medium group-hover:bg-bcc-gold transition">09</div>
+                        <i class="ri-arrow-right-line text-bcc-gold opacity-0 group-hover:opacity-100 transition transform group-hover:translate-x-1"></i>
                     </div>
-                    <p class="text-gray-500 text-sm leading-loose">
-                        痤疮改善、色素问题、抗衰老案例与不良反应警示
-                    </p>
-                </div>
+                    <h4 class="font-medium text-bcc-blue mb-2">真实案例对比</h4>
+                    <p class="text-gray-500 text-xs leading-loose">改善案例与不良反应警示</p>
+                    <div class="mt-4 flex items-center gap-2">
+                        <span class="text-xs text-bcc-gold"><i class="ri-time-line"></i> 3,550字</span>
+                        <span class="text-xs text-gray-400">|</span>
+                        <span class="text-xs text-gray-400">案例篇</span>
+                    </div>
+                </a>
 
-                <!-- Chapter 10 & Appendix -->
-                <div class="bg-warm-white rounded-3xl p-6 border border-beige hover:shadow-lg transition fade-in">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-10 h-10 rounded-xl bg-bcc-blue text-white flex items-center justify-center font-medium">10</div>
-                        <h4 class="font-medium text-bcc-blue">选购指南</h4>
+                <!-- Chapter 10 -->
+                <a href="chapter10.html" class="chapter-card bg-white p-6 rounded-3xl border border-beige hover:border-bcc-blue group">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-bcc-blue text-white flex items-center justify-center font-medium group-hover:bg-bcc-gold transition">10</div>
+                        <i class="ri-arrow-right-line text-bcc-gold opacity-0 group-hover:opacity-100 transition transform group-hover:translate-x-1"></i>
                     </div>
-                    <p class="text-gray-500 text-sm leading-loose">
-                        成分表解读、主流产品点评、选购常见误区
-                    </p>
-                </div>
-
-                <div class="bg-warm-white rounded-3xl p-6 border border-beige hover:shadow-lg transition fade-in fade-in-delay-1">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-10 h-10 rounded-xl bg-bcc-gold text-white flex items-center justify-center font-medium">A</div>
-                        <h4 class="font-medium text-bcc-blue">实用附录</h4>
+                    <h4 class="font-medium text-bcc-blue mb-2">刷酸护肤品选购指南</h4>
+                    <p class="text-gray-500 text-xs leading-loose">成分表解读、产品点评与选购误区</p>
+                    <div class="mt-4 flex items-center gap-2">
+                        <span class="text-xs text-bcc-gold"><i class="ri-time-line"></i> 4,000字</span>
+                        <span class="text-xs text-gray-400">|</span>
+                        <span class="text-xs text-gray-400">选购篇</span>
                     </div>
-                    <p class="text-gray-500 text-sm leading-loose">
-                        刷酸日记模板、浓度速查表、修复产品推荐、术语表
-                    </p>
-                </div>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section id="features" class="py-20 bg-gradient-to-b from-warm-white to-white">
+    <!-- Tools Section -->
+    <section id="tools" class="py-20 bg-white">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
                 <div class="inline-flex items-center gap-2 bg-gradient-to-r from-mint-green to-pale-purple px-5 py-2 rounded-full mb-6">
-                    <i class="ri-star-line text-bcc-blue"></i>
-                    <span class="text-sm font-medium text-bcc-blue tracking-wider">特色亮点</span>
+                    <i class="ri-tools-line text-bcc-blue"></i>
+                    <span class="text-sm font-medium text-bcc-blue tracking-wider">实用工具</span>
                 </div>
-                <h2 class="text-3xl md:text-4xl font-light text-bcc-blue mb-4 tracking-tight">为什么选择这本书</h2>
+                <h2 class="text-3xl md:text-4xl font-light text-bcc-blue mb-4 tracking-tight">附录与工具</h2>
+                <p class="text-lg text-gray-500 font-light max-w-2xl mx-auto">
+                    速查表、日记模板、术语表，一站式工具箱
+                </p>
             </div>
 
-            <div class="max-w-5xl mx-auto">
-                <div class="grid md:grid-cols-2 gap-8 relative">
-                    <!-- Connecting Line -->
-                    <div class="hidden md:block absolute top-10 left-[16%] right-[16%] h-0.5 connector-line"></div>
-
-                    <!-- Feature 1 -->
-                    <div class="relative fade-in">
-                        <div class="w-20 h-20 bg-white border-4 border-bcc-blue text-bcc-blue text-2xl font-medium rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg hover:bg-bcc-blue hover:text-white transition duration-300">
-                            <i class="ri-search-eye-line text-3xl"></i>
-                        </div>
-                        <div class="bg-white p-8 rounded-3xl shadow-lg border border-beige hover:shadow-xl transition text-center">
-                            <h5 class="font-medium text-lg text-bcc-blue mb-2">科学严谨</h5>
-                            <p class="text-gray-500 text-sm leading-loose">
-                                基于皮肤科学原理，不夸大效果，不回避风险。帮助你做出明智的护肤决策。
-                            </p>
-                        </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <a href="appendix.html" class="bg-gradient-to-br from-bcc-blue to-bcc-navy text-white p-6 rounded-3xl card-hover group">
+                    <div class="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center mb-4">
+                        <i class="ri-file-list-3-line text-2xl"></i>
                     </div>
-
-                    <!-- Feature 2 -->
-                    <div class="relative fade-in fade-in-delay-1">
-                        <div class="w-20 h-20 bg-white border-4 border-bcc-blue text-bcc-blue text-2xl font-medium rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg hover:bg-bcc-blue hover:text-white transition duration-300">
-                            <i class="ri-user-heart-line text-3xl"></i>
-                        </div>
-                        <div class="bg-white p-8 rounded-3xl shadow-lg border border-beige hover:shadow-xl transition text-center">
-                            <h5 class="font-medium text-lg text-bcc-blue mb-2">安全优先</h5>
-                            <p class="text-gray-500 text-sm leading-loose">
-                                详细的禁忌症说明，术后护理指南，帮你避开刷酸的常见误区与风险。
-                            </p>
-                        </div>
+                    <h4 class="font-medium text-lg mb-2">完整附录</h4>
+                    <p class="text-white/70 text-sm leading-loose">日记模板、速查表、术语表</p>
+                    <div class="mt-4 flex items-center gap-2 text-bcc-gold text-sm">
+                        <span>立即访问</span>
+                        <i class="ri-arrow-right-line group-hover:translate-x-1 transition"></i>
                     </div>
+                </a>
 
-                    <!-- Feature 3 -->
-                    <div class="relative fade-in fade-in-delay-2">
-                        <div class="w-20 h-20 bg-white border-4 border-bcc-blue text-bcc-blue text-2xl font-medium rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg hover:bg-bcc-blue hover:text-white transition duration-300">
-                            <i class="ri-layout-grid-line text-3xl"></i>
-                        </div>
-                        <div class="bg-white p-8 rounded-3xl shadow-lg border border-beige hover:shadow-xl transition text-center">
-                            <h5 class="font-medium text-lg text-bcc-blue mb-2">系统全面</h5>
-                            <p class="text-gray-500 text-sm leading-loose">
-                                10章内容涵盖理论、实践、案例、选购，完整知识体系一站式获取。
-                            </p>
-                        </div>
+                <a href="contents.html" class="bg-gradient-to-br from-mint-green to-mint-green/70 text-green-900 p-6 rounded-3xl card-hover group">
+                    <div class="w-14 h-14 rounded-2xl bg-white/50 flex items-center justify-center mb-4">
+                        <i class="ri-book-2-line text-2xl"></i>
                     </div>
+                    <h4 class="font-medium text-lg mb-2">书籍目录</h4>
+                    <p class="text-green-800/70 text-sm leading-loose">完整大纲与内容导航</p>
+                    <div class="mt-4 flex items-center gap-2 text-green-900 text-sm">
+                        <span>立即访问</span>
+                        <i class="ri-arrow-right-line group-hover:translate-x-1 transition"></i>
+                    </div>
+                </a>
 
-                    <!-- Feature 4 -->
-                    <div class="relative fade-in">
-                        <div class="w-20 h-20 bg-bcc-gold text-white text-2xl font-medium rounded-full flex items-center justify-center mx-auto mb-6 shadow-xl">
-                            <i class="ri-open-source-line text-3xl"></i>
-                        </div>
-                        <div class="bg-white p-8 rounded-3xl shadow-lg border border-beige hover:shadow-xl transition text-center">
-                            <h5 class="font-medium text-lg text-bcc-blue mb-2">开源共享</h5>
-                            <p class="text-gray-500 text-sm leading-loose">
-                                GitHub开源项目，持续更新优化，欢迎贡献与反馈，共同完善内容。
-                            </p>
-                        </div>
+                <a href="design-01.html" class="bg-gradient-to-br from-bcc-gold to-yellow-500 text-white p-6 rounded-3xl card-hover group">
+                    <div class="w-14 h-14 rounded-2xl bg-white/20 flex items-center justify-center mb-4">
+                        <i class="ri-palette-line text-2xl"></i>
                     </div>
-                </div>
+                    <h4 class="font-medium text-lg mb-2">设计规范</h4>
+                    <p class="text-white/80 text-sm leading-loose">网站设计规范与组件库</p>
+                    <div class="mt-4 flex items-center gap-2 text-white text-sm">
+                        <span>立即访问</span>
+                        <i class="ri-arrow-right-line group-hover:translate-x-1 transition"></i>
+                    </div>
+                </a>
+
+                <a href="https://github.com/sooogooo/ChemicalPeels" target="_blank" class="bg-gradient-to-br from-gray-700 to-gray-900 text-white p-6 rounded-3xl card-hover group">
+                    <div class="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center mb-4">
+                        <i class="ri-github-line text-2xl"></i>
+                    </div>
+                    <h4 class="font-medium text-lg mb-2">GitHub</h4>
+                    <p class="text-white/70 text-sm leading-loose">源码、Issues、贡献指南</p>
+                    <div class="mt-4 flex items-center gap-2 text-bcc-gold text-sm">
+                        <span>立即访问</span>
+                        <i class="ri-arrow-right-line group-hover:translate-x-1 transition"></i>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Reader Types Section -->
-    <section class="py-20 bg-white">
+    <!-- Resources Section -->
+    <section id="resources" class="py-20 bg-warm-white">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
                 <div class="inline-flex items-center gap-2 bg-gradient-to-r from-mint-green to-pale-purple px-5 py-2 rounded-full mb-6">
@@ -546,9 +559,9 @@
                 <h2 class="text-3xl md:text-4xl font-light text-bcc-blue mb-4 tracking-tight">适合谁阅读</h2>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="bg-gradient-to-br from-soft-rose to-white p-8 rounded-3xl text-center hover:shadow-xl transition fade-in">
-                    <div class="w-16 h-16 rounded-full bg-white shadow-md flex items-center justify-center mx-auto mb-5">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+                <div class="bg-white p-8 rounded-3xl text-center card-hover">
+                    <div class="w-16 h-16 rounded-full bg-soft-rose flex items-center justify-center mx-auto mb-5">
                         <i class="ri-customer-service-2-line text-2xl text-bcc-blue"></i>
                     </div>
                     <h4 class="font-medium text-bcc-blue mb-2">医美消费者</h4>
@@ -556,8 +569,8 @@
                     <div class="text-xs text-bcc-gold font-medium">重点章节：04-07</div>
                 </div>
 
-                <div class="bg-gradient-to-br from-mint-green/30 to-white p-8 rounded-3xl text-center hover:shadow-xl transition fade-in fade-in-delay-1">
-                    <div class="w-16 h-16 rounded-full bg-white shadow-md flex items-center justify-center mx-auto mb-5">
+                <div class="bg-white p-8 rounded-3xl text-center card-hover">
+                    <div class="w-16 h-16 rounded-full bg-mint-green/30 flex items-center justify-center mx-auto mb-5">
                         <i class="ri-skin-care-line text-2xl text-bcc-blue"></i>
                     </div>
                     <h4 class="font-medium text-bcc-blue mb-2">护肤爱好者</h4>
@@ -565,8 +578,8 @@
                     <div class="text-xs text-bcc-gold font-medium">重点章节：03, 08, 10</div>
                 </div>
 
-                <div class="bg-gradient-to-br from-pale-purple/30 to-white p-8 rounded-3xl text-center hover:shadow-xl transition fade-in fade-in-delay-2">
-                    <div class="w-16 h-16 rounded-full bg-white shadow-md flex items-center justify-center mx-auto mb-5">
+                <div class="bg-white p-8 rounded-3xl text-center card-hover">
+                    <div class="w-16 h-16 rounded-full bg-pale-purple/30 flex items-center justify-center mx-auto mb-5">
                         <i class="ri-stethoscope-line text-2xl text-bcc-blue"></i>
                     </div>
                     <h4 class="font-medium text-bcc-blue mb-2">皮肤科从业者</h4>
@@ -574,120 +587,13 @@
                     <div class="text-xs text-bcc-gold font-medium">建议全本精读</div>
                 </div>
 
-                <div class="bg-gradient-to-br from-powder-blue/30 to-white p-8 rounded-3xl text-center hover:shadow-xl transition fade-in fade-in-delay-3">
-                    <div class="w-16 h-16 rounded-full bg-white shadow-md flex items-center justify-center mx-auto mb-5">
+                <div class="bg-white p-8 rounded-3xl text-center card-hover">
+                    <div class="w-16 h-16 rounded-full bg-powder-blue/30 flex items-center justify-center mx-auto mb-5">
                         <i class="ri-heart-pulse-line text-2xl text-bcc-blue"></i>
                     </div>
                     <h4 class="font-medium text-bcc-blue mb-2">敏感肌人群</h4>
                     <p class="text-xs text-gray-500 mb-4">担心刷酸安全性</p>
                     <div class="text-xs text-bcc-gold font-medium">重点章节：04.2, 06.3</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Author Section -->
-    <section id="author" class="py-20 bg-bcc-blue text-white relative overflow-hidden">
-        <!-- 装饰背景 -->
-        <div class="absolute top-0 right-0 w-96 h-96 rounded-full bg-white/5 blur-3xl"></div>
-        <div class="absolute bottom-0 left-0 w-80 h-80 rounded-full bg-bcc-gold/10 blur-3xl"></div>
-
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div>
-                    <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-5 py-2.5 rounded-full mb-6 border border-white/20">
-                        <i class="ri-code-line text-bcc-gold"></i>
-                        <span class="text-sm tracking-widest font-light">开源项目</span>
-                    </div>
-                    <h2 class="text-3xl md:text-4xl font-light mb-6 leading-tight">
-                        Chemical<span class="text-bcc-gold text-2xl md:text-3xl font-light">Peels</span>
-                    </h2>
-                    <p class="text-gray-300 text-lg leading-loose mb-8">
-                        这是一个开源科普项目，致力于帮助更多人科学、安全地了解化学剥脱医美技术。
-                    </p>
-
-                    <div class="flex flex-col gap-4">
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 rounded-2xl bg-bcc-gold/20 flex items-center justify-center flex-shrink-0">
-                                <i class="ri-github-fill text-bcc-gold text-xl"></i>
-                            </div>
-                            <div>
-                                <h5 class="font-medium mb-1">GitHub 开源</h5>
-                                <p class="text-sm text-gray-400 leading-loose">
-                                    完整源码托管在 GitHub，欢迎 Star、Fork、Issue、Pull Request
-                                </p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 rounded-2xl bg-bcc-gold/20 flex items-center justify-center flex-shrink-0">
-                                <i class="ri-creative-commons-line text-bcc-gold text-xl"></i>
-                            </div>
-                            <div>
-                                <h5 class="font-medium mb-1">知识共享</h5>
-                                <p class="text-sm text-gray-400 leading-loose">
-                                    内容采用 CC BY-NC-SA 4.0 协议分享，欢迎非商业用途转载
-                                </p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 rounded-2xl bg-bcc-gold/20 flex items-center justify-center flex-shrink-0">
-                                <i class="ri-team-line text-bcc-gold text-xl"></i>
-                            </div>
-                            <div>
-                                <h5 class="font-medium mb-1">社区共建</h5>
-                                <p class="text-sm text-gray-400 leading-loose">
-                                    征集读者反馈与案例分享，持续优化更新内容
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-white/5 backdrop-blur-sm rounded-3xl p-8 md:p-10 border border-white/10">
-                    <h3 class="text-2xl font-medium mb-8 text-center">项目信息</h3>
-
-                    <div class="space-y-6">
-                        <div class="flex items-center gap-4 p-4 rounded-2xl bg-white/5 hover:bg-white/10 transition">
-                            <div class="w-12 h-12 rounded-full bg-bcc-gold/20 flex items-center justify-center">
-                                <i class="ri-github-line text-bcc-gold text-xl"></i>
-                            </div>
-                            <div>
-                                <p class="text-xs text-gray-400 uppercase tracking-wider">GitHub</p>
-                                <a href="https://github.com/sooogooo/ChemicalPeels" target="_blank" class="font-medium text-sm hover:text-bcc-gold transition">
-                                    sooogooo/ChemicalPeels
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="flex items-center gap-4 p-4 rounded-2xl bg-white/5 hover:bg-white/10 transition">
-                            <div class="w-12 h-12 rounded-full bg-bcc-gold/20 flex items-center justify-center">
-                                <i class="ri-mail-line text-bcc-gold text-xl"></i>
-                            </div>
-                            <div>
-                                <p class="text-xs text-gray-400 uppercase tracking-wider">联系邮箱</p>
-                                <a href="mailto:sooogooo@gmail.com" class="font-medium text-sm hover:text-bcc-gold transition">
-                                    sooogooo@gmail.com
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="flex items-center gap-4 p-4 rounded-2xl bg-white/5 hover:bg-white/10 transition">
-                            <div class="w-12 h-12 rounded-full bg-bcc-gold/20 flex items-center justify-center">
-                                <i class="ri-cc-line text-bcc-gold text-xl"></i>
-                            </div>
-                            <div>
-                                <p class="text-xs text-gray-400 uppercase tracking-wider">开源协议</p>
-                                <p class="font-medium text-sm">CC BY-NC-SA 4.0</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="mt-8 pt-8 border-t border-white/10 text-center">
-                        <p class="text-sm text-gray-400 mb-4">贡献指南 · 问题反馈 · 案例投稿</p>
-                        <a href="https://github.com/sooogooo/ChemicalPeels/issues" target="_blank" class="inline-flex items-center gap-2 bg-bcc-gold text-white px-8 py-3 rounded-xl font-medium hover:bg-yellow-600 transition active-scale">
-                            <i class="ri-add-line"></i> 参与贡献
-                        </a>
-                    </div>
                 </div>
             </div>
         </div>
@@ -699,7 +605,7 @@
             <div class="max-w-3xl mx-auto">
                 <div class="inline-flex items-center gap-2 bg-mint-green/30 px-5 py-2.5 rounded-full mb-6">
                     <i class="ri-download-cloud-line text-bcc-blue"></i>
-                    <span class="text-sm font-medium text-bcc-blue tracking-wider">获取本书</span>
+                    <span class="text-sm font-medium text-bcc-blue tracking-wider">开始阅读</span>
                 </div>
                 <h2 class="text-3xl md:text-4xl font-light text-bcc-blue mb-6 tracking-tight">开始你的刷酸科学之旅</h2>
                 <p class="text-lg text-gray-500 mb-10 leading-loose">
@@ -707,26 +613,11 @@
                     理解原理，才能安全变美。
                 </p>
                 <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <a href="https://github.com/sooogooo/ChemicalPeels" target="_blank" class="inline-flex items-center justify-center gap-2 bg-bcc-blue text-white px-10 py-4 rounded-xl font-medium shadow-xl hover:bg-bcc-navy transition active-scale">
-                        <i class="ri-github-fill text-xl"></i> GitHub 仓库
+                    <a href="chapter01.html" class="inline-flex items-center justify-center gap-2 bg-bcc-blue text-white px-10 py-4 rounded-xl font-medium shadow-xl hover:bg-bcc-navy transition active-scale">
+                        <i class="ri-book-open-line text-xl"></i> 从第一章开始
                     </a>
-                    <a href="#author" class="inline-flex items-center justify-center gap-2 border-2 border-bcc-blue text-bcc-blue px-10 py-4 rounded-xl font-medium hover:bg-bcc-blue hover:text-white transition active-scale">
-                        <i class="ri-eye-line text-xl"></i> 查看目录
-                    </a>
-                </div>
-
-                <div class="mt-12 grid grid-cols-3 gap-4 max-w-lg mx-auto">
-                    <a href="contents.md" class="text-center p-4 rounded-xl border border-beige hover:border-bcc-blue hover:text-bcc-blue transition">
-                        <i class="ri-file-text-line text-xl mb-2 text-bcc-gold"></i>
-                        <p class="text-xs">contents.md</p>
-                    </a>
-                    <a href="chapter01.md" class="text-center p-4 rounded-xl border border-beige hover:border-bcc-blue hover:text-bcc-blue transition">
-                        <i class="ri-file-copy-line text-xl mb-2 text-bcc-gold"></i>
-                        <p class="text-xs">第一章</p>
-                    </a>
-                    <a href="design-01.md" class="text-center p-4 rounded-xl border border-beige hover:border-bcc-blue hover:text-bcc-blue transition">
-                        <i class="ri-palette-line text-xl mb-2 text-bcc-gold"></i>
-                        <p class="text-xs">设计规范</p>
+                    <a href="appendix.html" class="inline-flex items-center justify-center gap-2 border-2 border-bcc-blue text-bcc-blue px-10 py-4 rounded-xl font-medium hover:bg-bcc-blue hover:text-white transition active-scale">
+                        <i class="ri-tools-line text-xl"></i> 实用工具箱
                     </a>
                 </div>
             </div>
@@ -737,12 +628,11 @@
     <footer class="bg-bcc-navy text-white pt-16 pb-12">
         <div class="container mx-auto px-6">
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
-                <!-- Brand -->
                 <div class="lg:col-span-2">
-                    <span class="text-2xl font-light text-white mb-6 inline-block">
-                        <i class="ri-drop-line text-bcc-gold"></i>
-                        Chemical<span class="font-medium">Peels</span>
-                    </span>
+                    <div class="flex items-center gap-2 mb-6">
+                        <i class="ri-drop-line text-3xl text-bcc-gold"></i>
+                        <span class="text-xl font-light">Chemical<span class="font-medium">Peels</span></span>
+                    </div>
                     <p class="text-gray-400 text-sm leading-loose mb-6 max-w-md">
                         开源科普项目，帮助更多人科学、安全地了解化学剥脱医美技术。
                     </p>
@@ -752,49 +642,43 @@
                     </p>
                 </div>
 
-                <!-- Quick Links -->
                 <div>
                     <h4 class="font-medium mb-6 flex items-center">
                         <span class="w-1.5 h-5 bg-bcc-gold mr-3 rounded-full"></span>快速链接
                     </h4>
                     <div class="space-y-3">
-                        <a href="#overview" class="block text-gray-400 hover:text-bcc-gold transition text-sm flex items-center gap-2">
-                            <i class="ri-arrow-right-s-line"></i> 核心内容
+                        <a href="chapter01.html" class="block text-gray-400 hover:text-bcc-gold transition text-sm flex items-center gap-2">
+                            <i class="ri-arrow-right-s-line"></i> 第一章
                         </a>
-                        <a href="#chapters" class="block text-gray-400 hover:text-bcc-gold transition text-sm flex items-center gap-2">
-                            <i class="ri-arrow-right-s-line"></i> 章节概览
+                        <a href="chapter02.html" class="block text-gray-400 hover:text-bcc-gold transition text-sm flex items-center gap-2">
+                            <i class="ri-arrow-right-s-line"></i> 第二章
                         </a>
-                        <a href="#features" class="block text-gray-400 hover:text-bcc-gold transition text-sm flex items-center gap-2">
-                            <i class="ri-arrow-right-s-line"></i> 特色亮点
+                        <a href="chapter03.html" class="block text-gray-400 hover:text-bcc-gold transition text-sm flex items-center gap-2">
+                            <i class="ri-arrow-right-s-line"></i> 第三章
                         </a>
-                        <a href="#author" class="block text-gray-400 hover:text-bcc-gold transition text-sm flex items-center gap-2">
-                            <i class="ri-arrow-right-s-line"></i> 作者信息
+                        <a href="appendix.html" class="block text-gray-400 hover:text-bcc-gold transition text-sm flex items-center gap-2">
+                            <i class="ri-arrow-right-s-line"></i> 附录工具
                         </a>
                     </div>
                 </div>
 
-                <!-- Contact -->
                 <div>
                     <h4 class="font-medium mb-6 flex items-center">
-                        <span class="w-1.5 h-5 bg-bcc-gold mr-3 rounded-full"></span>联系我们
+                        <span class="w-1.5 h-5 bg-bcc-gold mr-3 rounded-full"></span>资源
                     </h4>
-                    <div class="space-y-4 text-sm">
-                        <div class="flex items-start gap-3">
-                            <i class="ri-github-line text-bcc-gold mt-0.5"></i>
-                            <a href="https://github.com/sooogooo/ChemicalPeels" target="_blank" class="text-gray-400 hover:text-bcc-gold transition">
-                                GitHub 仓库
-                            </a>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <i class="ri-mail-line text-bcc-gold mt-0.5"></i>
-                            <a href="mailto:sooogooo@gmail.com" class="text-gray-400 hover:text-bcc-gold transition">
-                                sooogooo@gmail.com
-                            </a>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <i class="ri-creative-commons-line text-bcc-gold mt-0.5"></i>
-                            <span class="text-gray-400">CC BY-NC-SA 4.0</span>
-                        </div>
+                    <div class="space-y-3">
+                        <a href="contents.html" class="block text-gray-400 hover:text-bcc-gold transition text-sm flex items-center gap-2">
+                            <i class="ri-file-list-line"></i> 完整目录
+                        </a>
+                        <a href="design-01.html" class="block text-gray-400 hover:text-bcc-gold transition text-sm flex items-center gap-2">
+                            <i class="ri-palette-line"></i> 设计规范
+                        </a>
+                        <a href="https://github.com/sooogooo/ChemicalPeels" target="_blank" class="block text-gray-400 hover:text-bcc-gold transition text-sm flex items-center gap-2">
+                            <i class="ri-github-line"></i> GitHub
+                        </a>
+                        <a href="mailto:sooogooo@gmail.com" class="block text-gray-400 hover:text-bcc-gold transition text-sm flex items-center gap-2">
+                            <i class="ri-mail-line"></i> 联系作者
+                        </a>
                     </div>
                 </div>
             </div>
@@ -802,70 +686,88 @@
             <div class="pt-8 border-t border-white/10 text-center">
                 <p class="text-gray-500 text-sm leading-loose">
                     © 2024-2026 ChemicalPeels Project |
-                    <a href="https://github.com/sooogooo/ChemicalPeels" target="_blank" class="hover:text-bcc-gold transition">
-                        开源项目
-                    </a> |
-                    基于 <a href="https://tailwindcss.com" target="_blank" class="hover:text-bcc-gold transition">Tailwind CSS</a> + <a href="https://remixicon.com" target="_blank" class="hover:text-bcc-gold transition">Remix Icon</a>
+                    <a href="https://github.com/sooogooo/ChemicalPeels" target="_blank" class="hover:text-bcc-gold transition">开源项目</a> |
+                    Powered by <a href="https://tailwindcss.com" target="_blank" class="hover:text-bcc-gold transition">Tailwind CSS</a>
                 </p>
             </div>
         </div>
     </footer>
 
-    <!-- 移动端底部常驻条 -->
+    <!-- Mobile Bottom Bar -->
     <div class="md:hidden fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 flex z-50 shadow-lg">
         <a href="#overview" class="flex-1 py-3 text-bcc-blue flex flex-col items-center justify-center active:bg-gray-50 transition border-r border-gray-100">
-            <i class="ri-information-line text-xl mb-1 text-bcc-gold"></i>
-            <span class="text-xs">介绍</span>
+            <i class="ri-home-line text-xl mb-1"></i>
+            <span class="text-xs">概述</span>
         </a>
         <a href="#chapters" class="flex-1 py-3 text-bcc-blue flex flex-col items-center justify-center active:bg-gray-50 transition border-r border-gray-100">
             <i class="ri-book-line text-xl mb-1"></i>
             <span class="text-xs">章节</span>
         </a>
-        <a href="https://github.com/sooogooo/ChemicalPeels" target="_blank" class="flex-[2] bg-bcc-blue text-white flex flex-col items-center justify-center active:bg-bcc-navy transition">
-            <span class="text-xs opacity-80 mb-0.5">GitHub</span>
-            <span class="flex items-center text-base font-medium">
-                <i class="ri-github-line mr-2 text-sm"></i> Star
+        <a href="#tools" class="flex-1 py-3 text-bcc-blue flex flex-col items-center justify-center active:bg-gray-50 transition border-r border-gray-100">
+            <i class="ri-tools-line text-xl mb-1"></i>
+            <span class="text-xs">工具</span>
+        </a>
+        <a href="chapter01.html" class="flex-[2] bg-bcc-blue text-white flex flex-col items-center justify-center active:bg-bcc-navy transition">
+            <span class="flex items-center text-sm font-medium">
+                <i class="ri-book-open-line mr-1"></i> 开始阅读
             </span>
         </a>
     </div>
 
     <script>
-        // 移动端菜单
+        // Mobile Menu
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
             const icon = document.getElementById('menu-icon');
-
+            menu.classList.toggle('open');
             if (menu.classList.contains('open')) {
-                menu.classList.remove('open');
-                icon.classList.remove('ri-close-line');
-                icon.classList.add('ri-menu-line');
-            } else {
-                menu.classList.add('open');
                 icon.classList.remove('ri-menu-line');
                 icon.classList.add('ri-close-line');
+            } else {
+                icon.classList.remove('ri-close-line');
+                icon.classList.add('ri-menu-line');
             }
         }
 
-        // 滚动效果
+        // Navbar Shadow
         window.addEventListener('scroll', () => {
             const nav = document.getElementById('navbar');
-            if (window.scrollY > 20) {
-                nav.classList.add('shadow-md');
-            } else {
-                nav.classList.remove('shadow-md');
-            }
+            nav.classList.toggle('shadow-md', window.scrollY > 20);
         });
 
-        // 滚动动画
+        // Fade In Animation
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
                 }
             });
-        }, { threshold: 0.15 });
-
+        }, { threshold: 0.1 });
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Search Functionality
+        document.getElementById('searchInput').addEventListener('input', function(e) {
+            const term = e.target.value.toLowerCase();
+            filterChapters(term);
+        });
+        document.getElementById('mobileSearchInput').addEventListener('input', function(e) {
+            const term = e.target.value.toLowerCase();
+            filterChapters(term);
+        });
+
+        function filterChapters(term) {
+            document.querySelectorAll('.chapter-card').forEach(card => {
+                const title = card.querySelector('h4').textContent.toLowerCase();
+                const desc = card.querySelector('p').textContent.toLowerCase();
+                const match = title.includes(term) || desc.includes(term);
+                card.style.display = match ? 'block' : 'none';
+                if (!match && term) {
+                    card.style.opacity = '0.3';
+                } else {
+                    card.style.opacity = '1';
+                }
+            });
+        }
     </script>
 </body>
 </html>
